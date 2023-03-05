@@ -25,13 +25,13 @@ input:nth-of-type(2):checked ~ section.buttons >label:nth-of-type(2) {
 
 /* 하단 메뉴 */
 .item {
-  padding: 10px;
   border: 1px solid black;
   border-top: none;
+  padding: 10px;
   overflow: hidden;
 }
 
-.thumnail {
+.thumbnail {
   float: left;
 }
 
