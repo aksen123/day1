@@ -39,14 +39,14 @@ a {
 #main_header > a.left {
   left: 5px; top: 7px;
   width: 62px; height: 32px;
-  background: url('../img/css_sprites.png')
+  background: url('http://aksen0523.dothome.co.kr/mobile/css_sprites.png')
   -0 -0;
 }
 
 #main_header > label.rigth {
   right: 5px; top: 7px;
   width: 32px; height: 32px;
-  background: url('../img/css_sprites.png') -62px 0;
+  background: url('http://aksen0523.dothome.co.kr/mobile/css_sprites.png') -62px 0;
 }
 
 /* 하단박스 메뉴 */
