@@ -1,0 +1,234 @@
+@import url('/basiccode/reset.css');
+
+/* Header */
+body {
+  width: 980px;
+  margin: 10px auto;
+}
+#main_header {
+position: relative;
+}
+#main_header .logo {
+  position: absolute;
+  top:  10px; left: 15px;
+}
+#main_header .login_menu {
+  position: absolute;
+  top: 10px; right: 0;
+}
+.login_menu > span > a {
+  display: inline-block;
+  width: 70px;
+  text-align: center;
+  color: #000;
+}
+
+/* Aside */
+body {
+  position: relative;
+}
+#global_aside {
+  position: relative;
+  left: 990px; top: 75px;
+  width: 90px;
+}
+#global_aside > a {
+  display: block ;
+  margin-bottom: 10px;
+}
+
+/* Gnb_top menu */
+#top_gnb {
+  overflow: hidden;
+  position: absolute;
+  top: 75px;
+}
+#top_gnb .menu {
+  float: left;
+  width: 140px; height: 50px;
+  background: url('./img/css_sprites.png');
+}
+/* =========== Gnb_top / Click before =========== */
+#top_gnb .item1 {
+  background-position: 0 0;
+}
+#top_gnb .item2 {
+  background-position: 0 -50px;
+}
+#top_gnb .item3 {
+  background-position: 0 -100px;
+}
+#top_gnb .item4 {
+  background-position: 0 -150px;
+}
+#top_gnb .item5 {
+  background-position: 0 -200px;
+}
+#top_gnb .item6 {
+  background-position: 0 -250px;
+}
+#top_gnb .item7 {
+  background-position: 0 -300px;
+}
+
+/* =========== Gnb_top / Mouse over =========== */
+#top_gnb .item1:hover {
+  background-position: 0 -350px;
+}
+#top_gnb .item2:hover {
+  background-position: 0 -400px;
+}
+#top_gnb .item3:hover {
+  background-position: 0 -450px;
+}
+#top_gnb .item4:hover {
+  background-position: 0 -500px;
+}
+#top_gnb .item5:hover {
+  background-position: 0 -550px;
+}
+#top_gnb .item6:hover {
+  background-position: 0 -650px;
+}
+#top_gnb .item7:hover {
+  background-position: 0 -600px;
+}
+
+/* =========== Gnb_top / Click :Active =========== */
+#top_gnb .item1:active {
+  background-position: 0 0;
+}
+#top_gnb .item2:active {
+  background-position: 0 -50px;
+}
+#top_gnb .item3:active {
+  background-position: 0 -100px;
+}
+#top_gnb .item4:active {
+  background-position: 0 -150px;
+}
+#top_gnb .item5:active {
+  background-position: 0 -200px;
+}
+#top_gnb .item6:active {
+  background-position: 0 -250px;
+}
+#top_gnb .item7:active {
+  background-position: 0 -300px;
+}
+
+/* Bottom gnb menu */
+  #bottom_gnb {
+    overflow: hidden;
+    position: absolute;
+    top: 125px;
+  }
+  #bottom_gnb .menu {
+    float: left;
+    width: 98px; height: 90px;
+    background: url('./img/css_sprites_bottom.png');
+  }
+/* =========== Bottom_top / Click before =========== */
+#bottom_gnb .item1 {
+  background-position: 0 0;
+}
+#bottom_gnb .item2 {
+  background-position: 0 -80px;
+}
+#bottom_gnb .item3 {
+  background-position: 0 -160px;
+}
+#bottom_gnb .item4 {
+  background-position: 0 -240px;
+}
+#bottom_gnb .item5 {
+  background-position: 0 -320px;
+}
+#bottom_gnb .item6 {
+  background-position: 0 -400px;
+}
+#bottom_gnb .item7 {
+  background-position: 0 -480px;
+}
+#bottom_gnb .item8 {
+  background-position: 0 -560px;
+}
+#bottom_gnb .item9 {
+  background-position: 0 -640px;
+}
+#bottom_gnb .item10 {
+  background-position: 0 -720px;
+}
+/* =========== Bottom_top / Mouse over =========== */
+#bottom_gnb .item1:hover {
+  background-position: 0 -800px;
+}
+#bottom_gnb .item2:hover {
+  background-position: 0 -880px;
+}
+#bottom_gnb .item3:hover {
+  background-position: 0 -960px;
+}
+#bottom_gnb .item4:hover {
+  background-position: 0 -1040px;
+}
+#bottom_gnb .item5:hover {
+  background-position: 0 -1120px;
+}
+#bottom_gnb .item6:hover {
+  background-position: 0 -1200px;
+}
+#bottom_gnb .item7:hover {
+  background-position: 0 -1280px;
+}
+#bottom_gnb .item8:hover {
+  background-position: 0 -1440px;
+}
+#bottom_gnb .item9:hover {
+  background-position: 0 -1520px;
+}
+#bottom_gnb .item10:hover {
+  background-position: 0 -1360px;
+}
+/* =========== Bottom_top / Click :Active =========== */
+
+
+/* Detail list */
+#detail_list {
+  overflow: hidden;
+  position: absolute;
+  top: 205px;
+
+  background-color: #000;
+  width: 980px; height: 320px;
+  float: left; text-align: center;
+}
+#detail_list ul {
+  float: left;
+  width: 180px;
+  padding-left: 14px;
+}
+#detail_list li {
+  color: #fff;
+  height: 15px;
+  margin-top: 9px;
+  padding: 3px 5px;
+  text-align: center;
+}
+#detail_list .header {
+  color: #48c5ff;
+  font-weight: bold;
+}
+
+/* content */
+#content {
+margin-top: -130px;
+}
+#product_section #product_article {
+  float: left;
+  width: 795px;
+}
+#product_section #product_aside {
+  float: right;
+  width: 170px;
+}
