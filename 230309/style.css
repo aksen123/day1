@@ -1,0 +1,37 @@
+@import url('/basiccode/reset.css');
+body {
+  width: 220px; height: 300px;
+  position: relative;
+  left: 50%; top: 500px;
+}
+#wrap {
+  position: absolute;
+}
+#logo {
+  position: absolute;
+  left: 50px; top: -130px;
+}
+#wrap > #logo > img {
+  width: 100px;
+}
+
+#login {
+  margin-top: 10px;
+}
+#login input {
+  width: 200px;
+  padding: 10px 5px;
+  margin-top: 1px;
+}
+#check {
+  text-align: center;
+  font-size: 0.9em;
+  margin: 10px;
+}
+#submit input {
+  width: 220px;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: rgb(53, 88, 240);
+  color: white;
+}
