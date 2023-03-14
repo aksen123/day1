@@ -1,0 +1,49 @@
+/* Import Local CSS */
+@import url('/css/reset.css');
+@import url('/css/variables.css');
+
+
+
+/* Common CSS */
+* {
+  font-family: var(--primary-kr);
+}
+body {
+  margin: 0;
+  color: var(--dark-black);
+  font-size: 14px;
+}
+.logo {
+  font-family: var(--logo-en);
+}
+
+/* Layout CSS */
+.container {
+  width: 375px;
+  position: relative;
+}
+
+/* Preloading Html */
+.preloading {
+  height: 100vh;
+}
+.preloading-inner {
+  height: inherit;
+  background: url('/img/01-Preloading-01.jpg') no-repeat -110px center;
+  background-size: cover;
+}
+.heading-preloading-inner {
+  position: absolute;
+  top: 130px; left: 30px;
+}
+.heading-preloading-inner .logo {
+  font-size: 32px;
+  color: var(--crimson); 
+}
+.slogan span {
+  display: block;
+  font-family: var(--secondary-kr);
+  margin-top: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
