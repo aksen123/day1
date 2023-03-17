@@ -3,6 +3,7 @@
 }
 a {
   text-decoration: none;
+  color: var(--dark-black);
 }
 li {
   list-style: none;
