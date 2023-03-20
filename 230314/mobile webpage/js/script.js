@@ -38,4 +38,30 @@ $(function() {
     autoplaySpeed:3000,
     slidesToScroll: 1
   });
+
+  // Goods Suggestion Slider
+  $('.goods-suggestion-items').slick({
+    slidesToShow: 3,
+    dots: false,
+    arrows: true,
+    slidesToScroll: 2
+  });
+
+  // Wish
+  $('.wish').click(function() {
+    $(this).toggleClass('active')
+  });
+
+  // Front Footer
+  $('.btn-view-more').click(function() {
+    $('.company-info-more').toggle()
+  });
+
+  // Goods Detail Slider
+  $('.goods-detail-slider').slick({
+    slidesToShow: 1,
+    dots: true,
+    arrows: true,
+    slidesToScroll: 1
+  });
 });
