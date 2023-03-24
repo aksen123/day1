@@ -215,8 +215,7 @@ header {
 
 /* ### About Page ### */
 .about-inner {
-  background-color: #0dace3;
-  background: #0dace3 url('/images/line-drawing.png') no-repeat right bottom;
+  background: #0dace3 url('/images/line-drawing.png') no-repeat right ;
   height: 100%;
 }
 .about-items {
@@ -229,7 +228,7 @@ header {
 }
 .item {
   overflow: hidden;
-  margin-bottom: 120px;
+  /* margin-bottom: 120px; */
 }
 .item:hover h3 {
   color: #000;  
@@ -254,6 +253,7 @@ header {
 .item p {
   font-size: 18px;
   overflow: hidden;
+  margin-bottom: 50px;
 }
 
 /* ### project Page ### */
@@ -280,7 +280,6 @@ header {
   height: 100%;
   float: left;
   width: 33.33%;
-
 }
 .tab .project-info {
   width: 25%;
@@ -462,9 +461,7 @@ input[id=tab3]:checked ~ .tabs {
 .plan-photo img {
   height: 256px;
 }
-.history-slider > div {
-  
-}
+
 .history-slider h4 {
   color: #fff;
   font-size: 20px;
@@ -973,7 +970,7 @@ font-size: 70px;
   font-weight: 300;
   padding-top: 140px;
 }
-.project-detail .hiring-slogan p::before {
+.hiring-slogan p::before {
   left: -30px;
   top: -70px;
 }
