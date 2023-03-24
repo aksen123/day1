@@ -1,0 +1,44 @@
+@import url('/basiccode/reset.css');
+
+body {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#wrap {
+  position: relative;
+  height: 90px;
+  background-color: antiquewhite;
+}
+#wrap > h1 {
+  position: absolute;
+   left:30px; bottom: 10px;
+}
+#wrap ul {
+  position: absolute;
+  overflow: hidden;
+  bottom: 0; right: 0;
+}
+#gnb li {
+  background-color: black;
+  float: right;
+  margin-left: 0px;
+  width: 130px; height: 50px;
+  text-align: center;
+  line-height: 50px;
+
+}
+
+#lnb ul {
+  position: absolute;
+  overflow: hidden;
+  top: 10px;
+  font-size: 10px;
+  }
+#lnb li {
+  background-color: gray;
+  float: left;
+  width: 70px;
+  text-align: center;
+}
