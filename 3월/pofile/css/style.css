@@ -1,0 +1,110 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+
+.container {
+  width: 100%;
+}
+
+/* ##### Main header ##### */
+.main-header {
+  width: 100%;
+  height: 100px;
+  position: relative;
+
+  background-color: #fff;
+  position: fixed;
+  z-index: 100;
+}
+.main-navigation {
+  width: 50%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+}
+.main-navigation a {
+  color: #999;
+  font-weight: 700;
+  transition: 0.6s;
+}
+.main-navigation li a::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: rgb(174, 0, 255);
+
+  display: none;
+}
+.main-navigation li a:hover {
+  color: rgb(174, 0, 255);
+}
+.main-navigation li a:hover::after {
+  display: block;
+}
+.main-navigation .left-navigation ul {
+  position: relative;
+  left: 3vw;
+  display: flex;  
+  gap: 2vw;
+}
+.main-navigation .right-navigation {
+  display: flex; 
+  gap: 2vw;
+}
+.main-navigation .right-navigation ul {
+  position: relative;
+  right: 3vw;
+  display: flex;
+  gap: 2vw;
+}
+
+.main-navigation .main-logo {
+  width: 100px;
+}
+.right-navigation .sns a {
+  margin-right: 10px;
+}
+
+/* ##### Content ##### */
+.content {
+  position: absolute;
+  top: 110px;
+  width: 100%;
+}
+.content .main-content {
+  width: 100%;
+  /* height: 100%; */
+
+  border: 2px solid ;
+}
+.main-content .profile {
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+
+  border: 2px solid ;
+
+}
+.main-content .content-slider {
+  width: 60%;
+  display: inline-block;
+  margin: 0;
+  border: 2px solid ;
+}
