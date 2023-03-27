@@ -168,12 +168,21 @@ li {
 .content-link li:hover .sub-txt {
   opacity: 1;
 }
-.content-link li .sub-image img {
+.content-link li .sub-image img:first-child {
   width: 20%;
   height: 300px;
   position: absolute;
   top: 0;
   right: 20vw;
+
+  opacity: 0;
+}
+.content-link li .sub-image img:last-child {
+  width: 20%;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 20vw;
 
   opacity: 0;
 }
