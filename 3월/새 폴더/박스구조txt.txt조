@@ -1,0 +1,22 @@
+.container
+	.heading
+		.top-menu
+			.logo
+			.top-nav
+				.left-nav
+					ul>(li > a)*3
+				.right-nav
+					ul>(li > a)*3
+	.content
+		.profile-page
+			.info
+				img
+				h1
+				p * n
+			.skills
+				h1
+				.profile-skills
+					.about-profile
+					.about-skills
+		.show-page
+		

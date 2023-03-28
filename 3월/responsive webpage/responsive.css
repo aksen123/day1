@@ -117,15 +117,15 @@
   }
 
   /* Show Hide Section */
-  #home,
+  /* #home,
   #about,
   #project,
   #plan,
   #awards,
   #location,
   #contact {
-    /* display: none; */
-  }
+    display: none;
+  } */
 
   /* ### Home Page ### */
   .home-inner {
