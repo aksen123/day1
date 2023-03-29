@@ -17,22 +17,143 @@ a {
   top: 0;
   left: 0;
   background-color: #fff;
-
+  /* display: none; */
 }
 .top-menu {
-  background-color: antiquewhite;
+
   width: calc(100% - 40px);
   margin: auto;
   height: 60px;
   line-height: 60px;
   text-align: center;
+  position: relative;
 }
 .top-menu .logo {
+  width: 20%;
+  height: inherit;
+  line-height: inherit;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+
+}
+.logo h1 {
+  margin: auto;
   color: #555;
 }
 .top-menu .top-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  height: inherit;
   display: flex;
+
+  align-items: center;
 }
-.top-nav .left-nav ul{
+.left-nav {
+  width: 40%;
+  position: absolute;
+  left: 5%;
+  transform: translateX(-5%);
+}
+.top-nav .left-nav ul {
   display: flex;
+  justify-content: space-around;
+  font-size: 20px;
 }
+.right-nav {
+  position: absolute;
+  right: 5%;
+  transform: translateX(-5%);
+  width: 40%;
+}
+.top-nav .right-nav ul {
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+}
+.top-nav ul a:hover {
+  
+  color: rgb(4, 179, 248);
+}
+
+/* === section === */
+body {
+  color: #222;
+  font-size: 15px;
+  margin: 0;
+  height: 100vh;
+  background-color: #aaa;
+}
+.cd-section {
+  height: 100vh;
+}
+.cd-section > div {
+  height: 100%;
+  position: relative;
+}
+.content {
+  background-color: #ddd;
+  width: calc(100% - 40px);
+  height: calc(100% - 80px);
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  overflow: hidden;
+}
+
+.content .profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content .info {
+  background: url('/img/bg.jpg') no-repeat center;
+  background-size: cover;
+  height: 50vh;
+  width: 100%;
+
+  text-align: center;
+}
+.info h1 {
+  font-size: 50px;
+  padding: 50px;
+  color: #555;
+}
+.info h3 {
+  position: relative;
+}
+
+.info h3 span{
+  position: absolute;
+  animation: hand 1s infinite;
+}
+@keyframes hand {
+  0% {
+    opacity: 0;
+
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.info p {
+  margin-top: 30px;
+  animation-name: lorem;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction:  alternate;
+}
+@keyframes lorem {
+    0% {
+      opacity: 0.05;
+      transform: translateY(0);
+    }
+    100%{
+      transform: translateY(10px);
+    }
+  }
