@@ -1,0 +1,38 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+
+}
+a {
+  text-decoration: none;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+
+}
+.top-menu {
+  background-color: antiquewhite;
+  width: calc(100% - 40px);
+  margin: auto;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+.top-menu .logo {
+  color: #555;
+}
+.top-menu .top-nav {
+  display: flex;
+}
+.top-nav .left-nav ul{
+  display: flex;
+}
