@@ -1,0 +1,245 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+
+}
+a {
+  text-decoration: none;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  /* display: none; */
+}
+.top-menu {
+
+  width: calc(100% - 40px);
+  margin: auto;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  position: relative;
+}
+.top-menu .logo {
+  width: 20%;
+  height: inherit;
+  line-height: inherit;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+
+}
+.logo h1 {
+  margin: auto;
+  color: #555;
+}
+.top-menu .top-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  height: inherit;
+  display: flex;
+
+  align-items: center;
+}
+.left-nav {
+  width: 40%;
+  position: absolute;
+  left: 5%;
+  transform: translateX(-5%);
+}
+.top-nav .left-nav ul {
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+}
+.right-nav {
+  position: absolute;
+  right: 5%;
+  transform: translateX(-5%);
+  width: 40%;
+}
+.top-nav .right-nav ul {
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+}
+.top-nav ul a:hover {
+  
+  color: rgb(4, 179, 248);
+}
+
+/* === section 1 === */
+body {
+  color: #222;
+  font-size: 15px;
+  margin: 0;
+  height: 100vh;
+  background-color: #fff;
+}
+.cd-section {
+  height: 100vh;
+}
+.cd-section > div {
+  height: 100%;
+  position: relative;
+}
+.content {
+  background-color: #ddd;
+  width: calc(100% - 40px);
+  height: calc(100% - 80px);
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  overflow: hidden;
+}
+
+.content .profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content .info {
+  background: url('/img/bg.jpg') no-repeat center;
+  background-size: cover;
+  height: 50vh;
+  width: 100%;
+
+  text-align: center;
+}
+.info h1 {
+  font-size: 50px;
+  padding: 50px;
+  color: #555;
+}
+.info h3 {
+  color: #000;
+  position: relative;
+}
+.info p {
+  margin-top: 30px;
+  animation-name: lorem;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction:  alternate;
+}
+@keyframes lorem {
+    0% {
+      opacity: 0.05;
+      transform: translateY(0);
+    }
+    100%{
+      transform: translateY(10px);
+    }
+  }
+.profile-skills {
+  width: 100%;
+  height: 50vh;
+  text-align: center;
+  background: url('/img/bg2.jpg') no-repeat center;
+  background-size: cover;
+}
+.profile-skills h1 {
+  font-size: 30px;
+  color: #555;
+  position: relative;
+}
+.profile-skills h1::before {
+  content: "\f2bb";
+  font-family: fontawesome;
+  margin-right: 10px;
+}
+.profile-skills h1::after {
+  content: "";
+  width: 220px;
+  height: 1px;
+  display: block;
+  background-color: #555;
+  opacity: 0.5;
+  
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+.profile {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.about-profile {
+  position: relative;
+}
+.profile .about-profile ul {
+
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: space-evenly;
+}
+.profile .about-profile li {
+  width: 100px;
+  text-align: left;
+  position: relative;
+}
+.about-profile li i {
+  font-size: 40px;
+  position: absolute;
+  left: -50px;
+  bottom: 18px;
+  color: #000;
+}
+.about-profile li span {
+  font-weight: bold;
+  font-size: 15px;
+  display: inline-block;
+  transform: translateY(10px);
+}
+.about-profile li:nth-child(2) p {
+  filter: blur(1.5px);
+}
+.profile .skill ul {
+
+  width: 50%;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: space-evenly;
+}
+.profile .skill li {
+  width: 100px;
+  text-align: left;
+  position: relative;
+}
+.skill li i {
+  font-size: 40px;
+  position: absolute;
+  left: -50px;
+  bottom: 18px;
+  color: #000;
+}
+.skill li span {
+  font-weight: bold;
+  font-size: 15px;
+  display: inline-block;
+  transform: translateY(10px);
+}
+
+/* === section 2 === */
