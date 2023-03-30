@@ -80,13 +80,13 @@ a {
   color: rgb(4, 179, 248);
 }
 
-/* === section === */
+/* === section 1 === */
 body {
   color: #222;
   font-size: 15px;
   margin: 0;
   height: 100vh;
-  background-color: #aaa;
+  background-color: #fff;
 }
 .cd-section {
   height: 100vh;
@@ -124,21 +124,8 @@ body {
   color: #555;
 }
 .info h3 {
+  color: #555;
   position: relative;
-}
-
-.info h3 span{
-  position: absolute;
-  animation: hand 1s infinite;
-}
-@keyframes hand {
-  0% {
-    opacity: 0;
-
-  }
-  100% {
-    opacity: 1;
-  }
 }
 .info p {
   margin-top: 30px;
@@ -157,3 +144,10 @@ body {
       transform: translateY(10px);
     }
   }
+.profile-skills {
+  width: 100%;
+  height: 50vh;
+  text-align: center;
+  background: url('/img/bg2.jpg') no-repeat center;
+  background-size: cover;
+}

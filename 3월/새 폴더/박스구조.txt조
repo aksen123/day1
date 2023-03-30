@@ -1,0 +1,29 @@
+.container
+	.heading
+		.top-menu
+			.logo
+			.top-nav
+				.left-nav
+					ul>(li > a)*3
+				.right-nav
+					ul>(li > a)*3
+	.content
+		.profile-page
+			.info
+				img
+				h1
+				p * n
+			.profile-skills
+				h1
+				.profile
+					.about-profile
+						ul > li * 3
+					.skill
+						ul > li * 3
+		.show-page
+			.menu
+				ul >( li > a ) * n
+			.photo-slider
+				img * n
+				
+				
