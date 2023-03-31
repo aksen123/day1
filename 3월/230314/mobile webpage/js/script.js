@@ -64,4 +64,25 @@ $(function() {
     arrows: true,
     slidesToScroll: 1
   });
+
+  // Goods Accordian
+  $('.goods-accordion .detail').eq(0).show();
+  $('.goods-accordion .title').click(function() {
+    $(this).next().toggle();
+    $(this).addClass('active');
+    $(this).siblings('.goods-accordion .title').removeClass('active')
+  });
+
+  // Goods Order Info
+  $('.btn-order-choice').click(function() {
+    $('.goods-order-choice').hide();
+    $('.goods-order-final').slideDown(250);
+    $('.overlay-fold').show();
+  });
+  $('.btn-fold, .overlay-fold').click(function() {
+    $('.goods-order-choice').show();
+    $('.goods-order-final').slideUp(250);
+    $('.overlay-fold').hide();
+  });
+  
 });

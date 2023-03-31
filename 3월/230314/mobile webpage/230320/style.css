@@ -1,0 +1,145 @@
+@import url("/css/variables.css");
+@import url("/css/reset.css");
+
+
+.container {
+  width: 100%;
+  /* height: 100%; */
+  position: relative;
+}
+.signin-main-photo {
+  height: 250px;
+  background: url('/img/02-Login-01.jpg') no-repeat;
+}
+.signin-content {
+  padding: 0 20px;
+  text-align: center;
+}
+.signin-logo {
+  margin-top: 20px;
+}
+.signin-logo .logo {
+  font-family: var(--primary-kr);
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+.signin-logo p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.signin-field input {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 20px;
+
+  border: 1px solid var(--light-gray);
+  box-sizing: border-box;
+
+  margin-top: 10px;
+}
+.signin-field input::placeholder {
+  color: var(--light-gray);
+  transition: 0.3s;
+}
+.signin-field input:focus::placeholder {
+  opacity: 0;
+}
+.signin-field input:focus {
+  outline: none;
+  border-color: var(--yellowgreen);
+}
+
+.signin-status {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.signin-status input[type=checkbox] {
+  display: none;
+}
+.signin-status label, a {
+  font-size: 14px;
+  font-weight: bold;
+}
+.signin-status em::before {
+  content: "\F26B" ;
+  font-family: bootstrap-icons;
+  display: inline-block;
+  transform: translate(-4px,2px);
+  color: var(--light-gray);
+}
+.signin-status input[type=checkbox]:checked + em::before {
+  color: var(--crimson);
+}
+.btn-signin {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--yellowgreen);
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  border-color: transparent;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.join {
+  font-weight: bold;
+}
+.join a{
+  font-weight: bold;
+  text-decoration: underline;
+}
+.sns {
+  margin-top: 15px;
+  padding: 0 30px;
+}
+.sns span {
+  color: var(--light-gray);
+  font-size: 15px;
+}
+.sns .sns-link {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.gnb {
+  width: 100%;   height: 65px;
+  position: absolute;
+  margin-top: 50px;
+  /* bottom: 0; */
+  border-top: 1px solid var(--light-gray);
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.gnb a {
+  flex: 1;
+  position: relative;
+  display: block;
+  text-align: center;
+}
+.gnb a:hover {
+  background-color: black;
+}
+
+.gnb .cart-alarm {
+  position: relative;
+}
+.gnb em::before {
+  content: '6';
+  position: absolute;
+  top: -7px;
+  right: 25px;
+  display: block;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--royalblue);
+  color: #fff;
+}
