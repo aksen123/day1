@@ -28,13 +28,16 @@ button {
 button:hover{
   background-color: #2980b9;
 }
-ul, li {
-  list-style: none;
+ul {
   margin: 20px 10px;
 }
 li {
+  list-style: none;
   border-bottom: 1px dotted lightgrey;
   margin-bottom: 7px;
   padding-bottom: 7px;
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
