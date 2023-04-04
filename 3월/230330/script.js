@@ -68,5 +68,5 @@ init();
 form.addEventListener('submit', handler);
 
 
-// localStorage.setItem('Hello', 'world'); //Hello 라는 키값으로 world 아이템을 저장
-// const myDate = localStorage.getItem('Hello'); //키값으로 아이템 호출
+// localStorage.setItem('Hello', 'world');  //Hello 라는 키값으로 world 아이템을 저장
+// const myDate = localStorage.getItem('Hello');  //키값으로 아이템 호출
