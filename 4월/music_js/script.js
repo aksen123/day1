@@ -1,12 +1,12 @@
 const frame = document.querySelector("section");
-const lists = frame.querySelectorAll("article")
+const lists = frame.querySelectorAll("article");
 const deg = 45;
 const len = lists.length - 1;
 
 let i = 0;
 for(let el of lists) {
   let pic = el.querySelector(".pic");
-  el.style.transform = `rotate(${deg*i}deg) translateY(-100vh)`
+  el.style.transform = `rotate(${deg * i}deg) translateY(-100vh)`//
   i++;
   pic.style.backgroundImage = `url(/img/member${i}.jpg)`
   let play = el.querySelector(".play");
@@ -32,22 +32,24 @@ for(let el of lists) {
 
 const prev = document.querySelector(".btnPrev");
 const next = document.querySelector(".btnNext");
-
+let active = 0;
 let num = 0;
 prev.addEventListener("click", ()=> {
   num++;
   frame.style.transform = `rotate(${deg * num}deg)`
   active == 0 ? active = len : active--;
   activation(active, lists);
+  console.log(active)
 })
+
 next.addEventListener("click", ()=> {
   num--;
   frame.style.transform = `rotate(${deg * num}deg)`
   active == len ? active = 0 : active++;
   activation(active, lists);
+  console.log(active)
 })
 
-let active = 0;
 function activation(index, lists) {
   for(let el of lists) {
     el.classList.remove("on");

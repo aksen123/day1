@@ -77,6 +77,7 @@ figure section {
   left: 50%;
   margin-left: -10vw;
   /* transform: translate(-50%,-50%); */
+  /* transition: 0.8s; 추가 */
 }
 figure section article {
   width: 100%;
@@ -199,6 +200,14 @@ figure section article .inner .on::after {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+@keyframes ani2 {
+  0% {
+    transform: translateY(10%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(10%) rotate(360deg);
   }
 }
 
