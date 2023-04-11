@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-1.4.1.js"></script>
+
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
+  <!-- <script src="./test.js"></script> -->
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrap"></div>
+  <div class="login_wrap">
+    <h1>로그인</h1>
+    <form action="member_login.php" class="login_f" method="post">
+      <p>
+        <label for="user_id">아이디</label>
+        <input type="text" name="user_id" id="user_id" value="korean">
+      </p>
+      <p>
+        <label for="user_pw">비밀번호</label>
+        <input type="text" name="user_pw" id="user_pw" value="12345">
+      </p>
+      <p class="login_btn">
+        <input type="submit" value="login">
+      </p>
+    </form>
+  </div>
+</body>
+</html>

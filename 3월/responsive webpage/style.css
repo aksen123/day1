@@ -139,7 +139,7 @@ header {
   color: crimson;
 }
 .opacity-image {
-  background: url('/images/section-bg-01.jpg')no-repeat center center;
+  background: url('./images/section-bg-01.jpg')no-repeat center center;
   background-size: cover;
   height: 100%;
   opacity: 0;
@@ -215,7 +215,7 @@ header {
 
 /* ### About Page ### */
 .about-inner {
-  background: #0dace3 url('/images/line-drawing.png') no-repeat right ;
+  background: #0dace3 url('./images/line-drawing.png') no-repeat right ;
   height: 100%;
 }
 .about-items {
@@ -559,7 +559,7 @@ hr.bar {
 
 /* ### Location Page ### */
 .location-inner {
-  background: url('/images/background-location.jpg')no-repeat center center;
+  background: url('./images/background-location.jpg')no-repeat center center;
   background-size: cover;
   height: 100%;
 }
@@ -945,7 +945,7 @@ outline: none;
 
 /* ### Subpage : Project Page ### */
 .hiring-main.project-main1 {
-  background: url('/images/project-main-01-01.jpg') no-repeat center center;
+  background: url('./images/project-main-01-01.jpg') no-repeat center center;
   background-size: cover;
   height: 100vh;
 }
