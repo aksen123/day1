@@ -18,5 +18,4 @@ let num = Math.ceil(Math.random() * 45);
 //       }
 //       pick();
 //   } 
-
 // }
