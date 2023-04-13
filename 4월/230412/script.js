@@ -1,10 +1,15 @@
-const bookInfo = {
-  title : "자바스크립트",
-  pubDate : "2023-04-11",
-  page : 272,
-  finished : true
+let userNum = parseInt(prompt("숫자를 입력 해주세요"));
+
+if(!isNaN(userNum)) {
+  isPositive(userNum);
 }
 
-for(key in bookInfo) {
-  document.write(`${key} : ${bookInfo[key]}<br /> `)
-}
+function isPositive(number) {
+  if(number > 0) {
+    alert(`${number} : 양수 입니다`)
+  } else if(number < 0){
+    alert(`${number} : 음수 입니다`)
+  } else {
+    alert(`${number} : 0 입니다`)
+  }
+} 
