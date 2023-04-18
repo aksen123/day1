@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+button {
+background-color: #ddd;
+padding: 1rem 3rem;
+border: 1px solid #222;
+border-radius: 5px;
+}
+#show {
+position: fixed;
+top: 20px;
+right: 20px;
+}
+.noti {
+  background-color: #eee;
+  border-left: 3px solid #222;
+  padding: 1rem;
+  margin: 1rem;
+}

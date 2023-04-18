@@ -46,12 +46,26 @@ btns.forEach((e) => {
   e.addEventListener("click", (e) => {
     if(e.target.id === 'day') {
       btns[0].classList.toggle("active");
-      btns[1].classList.toggle("active2");
+      btns[1].classList.toggle("active");
       night();
     } else if(e.target.id ==='night'){
-      btns[1].classList.toggle("active2");
+      btns[1].classList.toggle("active");
       btns[0].classList.toggle("active")
       day();
     }
   })
 })
+
+// for(let el of btns) {
+//   el.addEventListener("click", function() { 
+//     if(this.id === 'day') {
+//       btns[0].classList.add("active");
+//       btns[1].classList.add("active2");
+//       night();
+//     } else if(this.id ==='night') {
+//       btns[1].classList.remove("active2");
+//       btns[0].classList.remove("active");
+//       day();
+//     }
+//   })
+// }
