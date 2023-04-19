@@ -7,7 +7,7 @@ const projectSection = document.querySelector(".project .wrap");
 const left = document.querySelector(".left_scetion");
 const right = document.querySelector(".Right_page");
 
-// Section Btn
+// ########## Section Btn ##########
 
 intBtn.addEventListener("click", () => {
   profileSection.classList.remove("on2")
@@ -18,17 +18,18 @@ pjBtn.addEventListener("click", () => {
   profileSection.classList.add("on2")
 })
 
-// Dark Btn
+// ########## Dark Btn ##########
+
 const btns = document.querySelectorAll(".dark .bi");
 
 function night() {
-  left.style.color = "bisque"
+  left.style.color = "#fff"
   left.style.backgroundColor = "#000"
-  right.style.color = "bisque"
+  right.style.color = "#fff"
   right.style.backgroundColor = "#000"
-  profileSection.style.color = "bisque"
+  profileSection.style.color = "#fff"
   profileSection.style.backgroundColor = "#222"
-  projectSection.style.color = "bisque"
+  projectSection.style.color = "#fff"
   projectSection.style.backgroundColor = "#222"
 }
 function day() {
@@ -52,20 +53,45 @@ btns.forEach((e) => {
       btns[1].classList.toggle("active");
       btns[0].classList.toggle("active")
       day();
-    }
-  })
-})
+    };
+  });
+});
 
-// for(let el of btns) {
-//   el.addEventListener("click", function() { 
-//     if(this.id === 'day') {
-//       btns[0].classList.add("active");
-//       btns[1].classList.add("active2");
-//       night();
-//     } else if(this.id ==='night') {
-//       btns[1].classList.remove("active2");
-//       btns[0].classList.remove("active");
-//       day();
-//     }
-//   })
-// }
+
+// ########## Modal ##########
+const projects = [
+  {
+    title : "Portfolio Page",
+    desc1 : "설명1", 
+    desc2 : "설명2",
+    images : []
+  },
+
+  {
+    title : "Mobile WebPage",
+    desc1 : "설명1", 
+    desc2 : "설명2",
+    images : []
+  },
+
+  {
+    title : "Responsive Page",
+    desc1 : "설명1", 
+    desc2 : "설명2",
+    images : []
+  }
+]
+
+let show = document.querySelectorAll(".show");
+const modal = document.querySelector(".modal_wrap")
+show.forEach((e)=> {
+  e.addEventListener("click", function() {
+    modal.style.display = "block"
+    const project = projects[this.dataset.modal];
+
+    document.querySelector(".modal_title h2").innerText = project.title;
+    document.querySelector(".modal_title p").innerHTML = project.desc1;
+    // 이미지 넣기 아직 안함 / css스타일도 X
+    console.log(this.dataset.modal)
+  });
+});

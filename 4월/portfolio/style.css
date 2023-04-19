@@ -274,19 +274,32 @@ a {
 }
 
 /* ===== Modal Page ===== */
-.project_group .modal_wrap {
-  border: 2px solid red;
+.project .modal_wrap {
+  border-radius: 20px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 
-  background-color: #ddd;
+  background-color: #eee;
   z-index: 10;
+  display: none;
 }
-.modal_wrap .slider {
-  
+.modal_wrap .modal_top {
+  width: 100%;
+  height: 60%;
+  border-bottom: 2px dashed ;
+}
+.modal_top .slider {
+  border: 2px solid red;
+  width: 60%;
+  height: 80%;
+  position: relative;
+  top: 50%;
+  left: 40%;
+  transform: translate(-60%,-50%);
+
 }
 
 
