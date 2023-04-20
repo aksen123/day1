@@ -4,13 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script  src="https://code.jquery.com/jquery-3.6.4.js"></script>
-  <script  src="https://code.jquery.com/jquery-migrate-1.4.1.js"></script>
-  <script  src="./script.js"></script>
+  <script defer src="./script.js"></script>
   <link rel="stylesheet" href="./style.css">
   <title>Document</title>
 </head>
 <body>
-
+  <div id="container">
+    <h1>당첨자 발표</h1>
+    <form>
+      <label for="seed"><input id="seed" type="text">명 중에서</label>
+      <label for="total"><input id="total" type="text">명 뽑기</label>
+      <button id="raffle" type="submit">추첨</button>
+      <button id="clear" type="reset">지우기</button>
+    </form>
+    <div id="result"></div>
+  </div>
 </body>
 </html>

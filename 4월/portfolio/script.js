@@ -69,14 +69,14 @@ const projects = [
 
   {
     title : "Mobile WebPage",
-    desc1 : "설명1", 
+    desc1 : "설명2", 
     desc2 : "설명2",
     images : []
   },
 
   {
     title : "Responsive Page",
-    desc1 : "설명1", 
+    desc1 : "설명3", 
     desc2 : "설명2",
     images : []
   }
@@ -95,3 +95,11 @@ show.forEach((e)=> {
     console.log(this.dataset.modal)
   });
 });
+
+
+// test 
+
+const btn = document.querySelector("#closeBtn");
+btn.addEventListener("click", () => {
+  modal.style.display = "none"
+})

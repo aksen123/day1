@@ -1,23 +1,18 @@
-let game = prompt("가위, 바위, 보 중 선택하세요", "가위");
-let gameNum ;
-switch (game) {
-  case "가위" :
-    gameNum = 1; break;
-  case "바위" :
-    gameNum = 2; break;
-  case "보" :
-    gameNum = 3; break;
-  default : alert("잘못 작성 했습니다!");
-  location.reload();
-}
+const raffle = document.querySelector("#raffle");
+const clear = document.querySelector("#clear");
 
-let com = Math.ceil(Math.random() * 3)
 
-// document.write("<img src=\"/img/math_img_"+ com +".jpg\">");
-document.write(`<img src="./img/math_img_${com}.jpg">`);
+raffle.addEventListener("click", (e) => {
+  e.preventDefault()
+  const seed = document.querySelector("#seed");
+  const total = document.querySelector("#total");
+  const result = document.querySelector("#result");
+  let winner = '';
+  for(let i = 0; i < total.value; i++) {
+    let picked = Math.ceil(Math.random() * seed.value);
+    winner.includes(picked) ? i-- : (i === total.value - 1) ?  winner += `${picked}번` : winner += `${picked}번,`    
+  }
+  result.innerText = `당첨자 ${winner}`
 
-if(gameNum === com) {
-  document.write("<img src=\"/img/game_1.jpg\">");
-} else {
-  document.write("<img src=\"/img/game_2.jpg\">");
-}
+});
+
