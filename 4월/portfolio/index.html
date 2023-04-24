@@ -24,14 +24,17 @@
       </div>
       <div class="menu_bar">
         <ul>
-
+          <div class="control">            
+            <li><i id="day" class="bi bi-brightness-high-fill"></i></li>
+            <li><i id="night" class="bi bi-moon-fill"></i> </li>
+          </div>
           <li><i id="intBtn" class="bi bi-person-vcard"></i></li>
           <li><i id="pjBtn" class="bi bi-image"></i></li>
         </ul>
       </div>
       <div class="dark">
-        <i id="day" class="bi bi-brightness-high-fill"></i>
-        <i id="night" class="bi bi-moon-fill"></i>       
+        <i class="bi bi-brightness-high-fill"></i>
+        <i class="bi bi-moon-fill"></i>       
       </div>
     </aside>
 
@@ -70,7 +73,7 @@
         </article>
       </div>
       <div class="project">
-        <article class="wrap">
+        <article class="wrap on2">
             <div class="title">
               <h1>Project</h1>
             </div>
@@ -78,7 +81,7 @@
               <div class="project_group">
                 <div class="project_card">
                   <a href="#" class="show" data-modal="0">
-                    자세히 보기
+                    View
                   </a>
                   <div class="project_photo">
                     <img src="./img/mobile_img/02-Login.png" alt="">
@@ -91,7 +94,7 @@
                 </div>
                 <div class="project_card">
                   <a href="#" class="show" data-modal="1">
-                    자세히 보기
+                    View
                   </a>
                   <div class="project_photo">
                     <img src="./img/mobile_img/02-Login.png" alt="">
@@ -102,11 +105,9 @@
                     <p>모바일 웹페이지</p>
                   </div>
                 </div>
-              </div>
-              <div class="project_group">
                 <div class="project_card">
                   <a href="#" class="show" data-modal="2">
-                    자세히 보기
+                    View
                   </a>
                   <div class="project_photo">
                     <img src="./img/mobile_img/02-Login.png" alt="">
@@ -119,7 +120,7 @@
                 </div>
                 <div class="project_card">
                   <a href="#" class="show" data-modal="3">
-                    자세히 보기
+                    View
                   </a>
                   <div class="project_photo">
                     <img src="./img/mobile_img/02-Login.png" alt="">
@@ -130,32 +131,30 @@
                     <p>모바일 웹페이지</p>
                   </div>
                 </div>
-              </div>
-              <div class="project_group">
                 <div class="project_card">
                   <a href="#" class="show" data-modal="4">
-                    자세히 보기
+                    View
                   </a>
                   <div class="project_photo">
                     <img src="" alt="">
                     <img src="" alt="">
                   </div>
                   <div class="project_info">
-                    <h3>준비중</h3>
-                    <p>준비중</p>
+                    <h3>...</h3>
+                    <p>...</p>
                   </div>
                 </div>
                 <div class="project_card">
                   <a href="#" class="show" data-modal="5">
-                    자세히 보기
+                    View
                   </a>
                   <div class="project_photo">
                     <img src="" alt="">
                     <img src="" alt="">
                   </div>
                   <div class="project_info">
-                    <h3>준비중</h3>
-                    <p>준비중</p>
+                    <h3>...</h3>
+                    <p>...</p>
                   </div>
                 </div>
               </div>
@@ -164,12 +163,9 @@
         <!-- Modal page -->
         <div class="modal_wrap">
           <div class="modal_top">
-            <div class="slider">
-              <!-- JS이미지  img태그 추가하기-->
-            </div>
-            
-            <button></button>
-            <button></button>
+            <img src="" alt="" class="slider">
+            </img>
+            <div class="smallPic"></div>
           </div>
           <div class="modal_bottom">
             <div class="modal_title">
@@ -180,7 +176,7 @@
             </div>
           </div>
           <div class="close">
-            <button id="closeBtn">X</button>
+            <button id="closeBtn"><i class="bi bi-x-square"></i></button>
           </div>
         </div>
         <!-- Modal Page -->

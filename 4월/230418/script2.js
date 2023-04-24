@@ -10,7 +10,7 @@ let hello = setInterval(() => {
   show.appendChild(newText)
   count++;
   if(count === 3) clearInterval(hello)
-},1000)
+},500)
 
 
 btn.addEventListener("click", () => {
