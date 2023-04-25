@@ -76,7 +76,7 @@ a {
 .left_scetion .menu_bar ul li:hover {
   transform: scale(1.1);
   transition: 0.3s;
-  color:bisque;
+
 }
 
 
@@ -180,9 +180,10 @@ a {
 
 .profile .on2 {
   transform: translateX(120%);
+
 }
 .project .on2 {
-  transform: translateX(-120%);
+  transform: translateX(120%);
 }
 .Right_page .wrap h1 {
   text-align: center;
@@ -231,7 +232,7 @@ a {
   width: calc(100% - 4vw);
   height: 90vh;
   /* height: calc(100% - 4vw); */
-
+  
   position: absolute;
   top: 50%;
   left: 50%;
@@ -291,6 +292,23 @@ a {
   cursor: pointer;
   display: block;
 }
+.wrap .project_wrap .project_group .project_card .project_photo {
+  height: 250px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.4);
+}
+.wrap .project_wrap .project_group .project_card img {
+  margin: 10px 0;
+  width: 100px;
+}
+.wrap .project_wrap .project_group .project_card .project_info {
+  padding-top: 10px;
+  text-align: center;
+}
+.wrap .project_wrap .project_group .project_card .project_info p {
+  margin-top: 20px;
+}
 
 /* ===== Modal Page ===== */
 .project .modal_wrap {
@@ -307,7 +325,7 @@ a {
   /* display: flex; */
 
   transform: scale(0);
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .modal_wrap .close {
   position: absolute;
@@ -347,7 +365,7 @@ a {
 }
 .smallPic img:hover {
   transform: scale(1.1);
-  border: 3px solid #000;
+  /* border: 3px solid #ccc; */
   cursor: pointer;
 }
 .modal_bottom {
@@ -357,29 +375,13 @@ a {
 }
 .modal_bottom .modal_title {
   position: absolute;
-  width: 100%;
+  width: 90%;
+  left: 50%;
   top: 30%;
+  transform: translateX(-50%);
   border: 2px solid red;
 }
 .modal_bottom .modal_title h2 {
   font-size: 2rem;
   margin-bottom: 50px;
-}
-
-.wrap .project_wrap .project_group .project_card .project_photo {
-  height: 250px;
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 2px solid rgba(128, 128, 128, 0.4);
-}
-.wrap .project_wrap .project_group .project_card img {
-  margin: 10px 0;
-  width: 100px;
-}
-.wrap .project_wrap .project_group .project_card .project_info {
-  padding-top: 10px;
-  text-align: center;
-}
-.wrap .project_wrap .project_group .project_card .project_info p {
-  margin-top: 20px;
 }

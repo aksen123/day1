@@ -7,6 +7,7 @@ const projectSection = document.querySelector(".project .wrap");
 const left = document.querySelector(".left_scetion");
 const right = document.querySelector(".Right_page");
 
+
 // ########## Section Btn ##########
 
 intBtn.addEventListener("click", () => {
@@ -34,8 +35,6 @@ function night() {
   projectSection.style.backgroundColor = "#222"
   modal.style.color = "#fff"
   modal.style.backgroundColor = "#222"
-  // document.querySelector("html").style.color = "#fff"
-  // document.querySelector("html").style.backgroundColor = "#000"
 }
 function day() {
   left.style.color = "#000"
@@ -48,8 +47,6 @@ function day() {
   projectSection.style.backgroundColor = "#fff"
   modal.style.color = "#000"
   modal.style.backgroundColor = "#eee"
-  // document.querySelector("html").style.color = "#000"
-  // document.querySelector("html").style.backgroundColor = "#fff"
 }
 
 remote.forEach((e) => {
@@ -82,7 +79,7 @@ const projects = [
   {
     title : "Mobile WebPage",
     desc1 : "설명2", 
-    images : []
+    images : ["./img/test/bg-1.jpg","./img/test/bg-2.jpg","./img/test/bg-3.jpg","./img/test/bg-4.jpg"]
   },
 
   {
@@ -121,26 +118,28 @@ show.forEach((e)=> {
 
     document.querySelector(".modal_title h2").innerText = project.title;
     document.querySelector(".modal_title p").innerHTML = project.desc1;
-    // console.log(this.dataset.modal)
+    console.log(this.dataset.modal)
 
     const imagesElement = document.querySelector(".smallPic");
     imagesElement.innerHTML = "";
 
     bigPic.src = project.images[0];
+
     project.images.map((image) => {
-      console.log(image);
+      // console.log(image);
       const element = document.createElement("img");
       element.src = image;
       element.width = 150;
       imagesElement.append(element);
       element.addEventListener("click", function() {
-        bigPic.src = this.src; //클릭시 이미지 변경
+        bigPic.src = this.src; 
       })
       });
   });
 });
 
 const modalClose = document.querySelector("#closeBtn");
-modalClose.addEventListener("click", () => {
+modalClose.addEventListener("click", function close(){
   modal.style.transform = "scale(0)"
-})
+});
+
