@@ -15,8 +15,8 @@ intBtn.addEventListener("click", () => {
   projectSection.classList.add("on2")
 })
 pjBtn.addEventListener("click", () => {
-  projectSection.classList.remove("on2")
-  profileSection.classList.add("on2")
+  projectSection.classList.remove("on2");
+  profileSection.classList.add("on2");
 })
 
 // ########## Dark Btn ##########
@@ -110,6 +110,7 @@ const projects = [
 let show = document.querySelectorAll(".show");
 const modal = document.querySelector(".modal_wrap")
 const bigPic = document.querySelector(".slider");
+
 show.forEach((e)=> {
   e.addEventListener("click", function() {
     modal.style.display = "flex"
