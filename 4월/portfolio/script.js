@@ -72,37 +72,37 @@ remote.forEach((e) => {
 const projects = [
   {
     title : "Portfolio Page",
-    desc1 : "설명1 <br> 설명 2", 
+    desc1 : ["설명1", "설명2", "설명3", "설명4"], 
     images : ["./img/test/pic-1.jpg","./img/test/pic-2.jpg","./img/test/pic-3.jpg","./img/test/pic-4.jpg",]
   },
 
   {
     title : "Mobile WebPage",
-    desc1 : "설명2", 
+    desc1 : ["설명2"], 
     images : ["./img/test/bg-1.jpg","./img/test/bg-2.jpg","./img/test/bg-3.jpg","./img/test/bg-4.jpg"]
   },
 
   {
     title : "Responsive Page",
-    desc1 : "설명3", 
+    desc1 : ["설명3"], 
     images : []
   },
 
   {
     title : "...",
-    desc1 : "설명4", 
+    desc1 : ["설명4"], 
     images : []
   },
 
   {
     title : "...",
-    desc1 : "설명5", 
+    desc1 : ["설명5"], 
     images : []
   },
 
   {
     title : "...",
-    desc1 : "설명6", 
+    desc1 : ["설명6"], 
     images : []
   }
 ]
@@ -116,10 +116,17 @@ show.forEach((e)=> {
     modal.style.display = "flex"
     modal.style.transform = "scale(1)"
     const project = projects[this.dataset.modal];
+    console.log(this.dataset.modal)
 
     document.querySelector(".modal_title h2").innerText = project.title;
-    document.querySelector(".modal_title p").innerHTML = project.desc1;
-    console.log(this.dataset.modal)
+    // document.querySelector(".modal_title p").innerHTML = project.desc1;
+
+    document.getElementById("desc").innerHTML = "";
+    project.desc1.map((desc) => {
+      const descElement = document.createElement("p");
+      descElement.innerHTML = desc;
+      document.getElementById("desc").appendChild(descElement);
+    })
 
     const imagesElement = document.querySelector(".smallPic");
     imagesElement.innerHTML = "";

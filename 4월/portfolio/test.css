@@ -3,9 +3,16 @@
   padding: 0;
 }
 #luckWrap {
-  width: 500px;
+  width: 700px;
   margin: 200px auto;
+
   text-align: center;
+}
+form {
+  margin: auto;
+  text-align: center;
+  width: 500px;
+
 }
 input {
   display: none;
@@ -36,8 +43,44 @@ button {
   width: 150px;
 }
 #result {
-text-align: center;
+/* text-align: center; */
 margin-top: 50px;
 font-size: 2em;
 letter-spacing: 5px;
+}
+span {
+  display: inline-block;
+  font-size: 40px;
+  /* border: 1px solid red; */
+  width: 60px;
+  height: 60px;
+
+  line-height: 60px;
+  border-radius: 50%;
+  color: #000;
+  margin: 10px;
+  padding: 2px;
+}
+.color1 {
+  background-color: #f2b720;
+  color: #fff;
+}
+.color2 {
+  background-color: #4072ac;
+  color: #fff;
+
+}
+.color3 {
+  background-color: #de4c0e;
+  color: #fff;
+
+}
+.color4 {
+  background-color: #9195a4;
+  color: #fff;
+
+}
+.color5 {
+  background-color: #13be4b;
+  color: #fff;
 }

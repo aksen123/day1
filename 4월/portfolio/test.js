@@ -25,11 +25,31 @@ originBtn.addEventListener("click", ()=> {
     let i = pickNum[num]
     resultNum.includes(i) ? count-- : resultNum.push(i);
     count++;
-    result.innerHTML = resultNum;
+        //     let ball = document.createElement("span");
+        //     ball.innerHTML = i;
+        //   if(i < 11) {ball.classList.toggle("color1");}
+        //   if(i > 10 && i < 21) {ball.classList.toggle("color2");}
+        //   if(i > 20 && i < 31) {ball.classList.toggle("color3");}
+        //   if(i > 30 && i < 41) {ball.classList.toggle("color4");}
+        //   if(i > 40 && i < 46) {ball.classList.toggle("color5");}
+        // result.appendChild(ball);
+        result.innerHTML = resultNum;
+
     if(count > 6) {
       clearInterval(lotto);
-      
-      result.innerHTML = resultNum.sort((a, b) => a - b);
+      // result.innerHTML = ''
+      // //추첨번호 오름차순 정렬
+      // resultNum.sort((a, b) => a - b).forEach(num => {
+      //   let ball = document.createElement("span");
+      //   ball.innerHTML = num;
+      //   //번호별 색깔 주기
+      //     if(num < 11) {ball.classList.toggle("color1");}
+      //     if(num > 10 && num < 21) {ball.classList.toggle("color2");}
+      //     if(num > 20 && num < 31) {ball.classList.toggle("color3");}
+      //     if(num > 30 && num < 41) {ball.classList.toggle("color4");}
+      //     if(num > 40 && num < 46) {ball.classList.toggle("color5");}
+      //   result.appendChild(ball);
+      // })
     }
   },700)
 })
