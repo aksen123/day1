@@ -11,18 +11,18 @@ const right = document.querySelector(".Right_page");
 // ########## Section Btn ##########
 
 intBtn.addEventListener("click", () => {
-  profileSection.classList.remove("on2")
-  projectSection.classList.add("on2")
-})
+  profileSection.classList.remove("on2");
+  projectSection.classList.add("on2");
+});
 pjBtn.addEventListener("click", () => {
   projectSection.classList.remove("on2");
   profileSection.classList.add("on2");
-})
+});
 
 // ########## Dark Btn ##########
 
 const btns = document.querySelectorAll(".dark .bi");
-const remote = document.querySelectorAll(".control .bi")
+const remote = document.querySelectorAll(".control .bi");
 
 function night() {
   left.style.color = "#fff"
