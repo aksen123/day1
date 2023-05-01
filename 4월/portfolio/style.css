@@ -26,7 +26,7 @@ a {
 
 /* Aside */
 
-.left_scetion {
+.left_section {
 
   width: 30vw;
   /* height: inherit; */
@@ -36,13 +36,13 @@ a {
   overflow: hidden;
   transition: 1s;
 }
-.left_scetion .info {
+.left_section .info {
   width: 25vw;
   height: inherit;
   position: fixed;
 
 }
-.left_scetion .info img {
+.left_section .info img {
   width: 200px;
   height: 200px;
   margin: 7vw 0 0 2vw;
@@ -51,29 +51,29 @@ a {
   border: 2px solid #000;
   border-radius: 50%;
 }
-.left_scetion .info .intro {
+.left_section .info .intro {
   margin-left: 3vw;
   font-size: 1em;
 }
 
 /* Menu bar */
 
-.left_scetion .menu_bar {
+.left_section .menu_bar {
   position: absolute;
   top: 20%;
   right: 5%;
 }
-.left_scetion .menu_bar ul {
+.left_section .menu_bar ul {
   height: 20vh;
   font-size: 2em;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.left_scetion .menu_bar ul i {
+.left_section .menu_bar ul i {
   cursor: pointer;
 }
-.left_scetion .menu_bar ul li:hover {
+.left_section .menu_bar ul li:hover {
   transform: scale(1.1);
   transition: 0.3s;
 

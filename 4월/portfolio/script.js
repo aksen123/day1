@@ -1,11 +1,25 @@
+import { projects } from "./constant/modal-data.js";
+import { textAnimation } from "./js/text-ani.js";
+import { intro } from "./constant/intro.js";
 const intBtn = document.querySelector("#intBtn");
 const pjBtn = document.querySelector("#pjBtn");
 const profileSection = document.querySelector(".profile .wrap");
 const projectSection = document.querySelector(".project .wrap");
 
 
-const left = document.querySelector(".left_scetion");
+const left = document.querySelector(".left_section");
 const right = document.querySelector(".Right_page");
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   textAnimation(".intro #title", intro.title, () => {
+//     textAnimation(".intro #message", intro.message);
+//   });
+// });
+
+
+textAnimation(".intro #title", intro.title, () =>{
+  textAnimation(".intro #message", intro.message)
+});
 
 
 // ########## Section Btn ##########
@@ -13,10 +27,12 @@ const right = document.querySelector(".Right_page");
 intBtn.addEventListener("click", () => {
   profileSection.classList.remove("on2");
   projectSection.classList.add("on2");
+  close()
 });
 pjBtn.addEventListener("click", () => {
   projectSection.classList.remove("on2");
   profileSection.classList.add("on2");
+  close()
 });
 
 // ########## Dark Btn ##########
@@ -24,88 +40,31 @@ pjBtn.addEventListener("click", () => {
 const btns = document.querySelectorAll(".dark .bi");
 const remote = document.querySelectorAll(".control .bi");
 
-function night() {
-  left.style.color = "#fff"
-  left.style.backgroundColor = "#000"
-  right.style.color = "#fff"
-  right.style.backgroundColor = "#000"
-  profileSection.style.color = "#fff"
-  profileSection.style.backgroundColor = "#222"
-  projectSection.style.color = "#fff"
-  projectSection.style.backgroundColor = "#222"
-  modal.style.color = "#fff"
-  modal.style.backgroundColor = "#222"
-}
-function day() {
-  left.style.color = "#000"
-  left.style.backgroundColor = "#fff"
-  right.style.color = "#000"
-  right.style.backgroundColor = "#fff"
-  profileSection.style.color = "#000"
-  profileSection.style.backgroundColor = "#fff"
-  projectSection.style.color = "#000"
-  projectSection.style.backgroundColor = "#fff"
-  modal.style.color = "#000"
-  modal.style.backgroundColor = "#eee"
+function dayAndNight(day) {
+  const white = "#fff";
+  const black = "#000";
+  left.style.color = day ? white : black
+  left.style.backgroundColor = day ? black : white
+  right.style.color = day ? white : black
+  right.style.backgroundColor = day ? black : white
+  profileSection.style.color = day ? white : black
+  profileSection.style.backgroundColor = day ? "#222" : white
+  projectSection.style.color = day ? white : black
+  projectSection.style.backgroundColor = day ? "#222" : white
+  modal.style.color = day ? white : black
+  modal.style.backgroundColor = day ? "#222" : "#eee"
 }
 
 remote.forEach((e) => {
   e.addEventListener("click", (e) => {
-    if(e.target.id === 'day') {
-      btns[0].classList.toggle("active");
-      btns[1].classList.toggle("active");
-      remote[0].classList.toggle("active");
-      remote[1].classList.toggle("active");
-      night();
-    } else if(e.target.id ==='night'){
-      btns[1].classList.toggle("active");
-      btns[0].classList.toggle("active");
-      remote[0].classList.toggle("active");
-      remote[1].classList.toggle("active");
-      day();
-    };
+      [...btns].map(el => el.classList.toggle("active"));
+      [...remote].map(el => el.classList.toggle("active"));
+      dayAndNight(e.target.id === "day")
   });
 });
 
 
-// ########## Modal ##########
-const projects = [
-  {
-    title : "Portfolio Page",
-    desc1 : ["설명1", "설명2", "설명3", "설명4"], 
-    images : ["./img/test/pic-1.jpg","./img/test/pic-2.jpg","./img/test/pic-3.jpg","./img/test/pic-4.jpg",]
-  },
 
-  {
-    title : "Mobile WebPage",
-    desc1 : ["설명2"], 
-    images : ["./img/test/bg-1.jpg","./img/test/bg-2.jpg","./img/test/bg-3.jpg","./img/test/bg-4.jpg"]
-  },
-
-  {
-    title : "Responsive Page",
-    desc1 : ["설명3"], 
-    images : []
-  },
-
-  {
-    title : "...",
-    desc1 : ["설명4"], 
-    images : []
-  },
-
-  {
-    title : "...",
-    desc1 : ["설명5"], 
-    images : []
-  },
-
-  {
-    title : "...",
-    desc1 : ["설명6"], 
-    images : []
-  }
-]
 
 let show = document.querySelectorAll(".show");
 const modal = document.querySelector(".modal_wrap")
@@ -119,25 +78,9 @@ show.forEach((e)=> {
     console.log(this.dataset.modal)
 
     document.querySelector(".modal_title h2").innerText = project.title;
-    // document.querySelector(".modal_title p").innerHTML = project.desc1;
-    let charIndex = 0
-    let descElement = null;
-    document.getElementById("desc").innerHTML = "";
-    project.desc1.map((desc) => {
-      let text = desc.split("");
-      let aniText = setInterval(()=>{
-        if(charIndex === 0) descElement = document.createElement("p");
-        descElement.innerHTML += text[charIndex];
-      document.getElementById("desc").appendChild(descElement);
-        charIndex += 1;
 
-        if(charIndex === text.length) clearInterval(aniText);
-      },1000)
-      console.log(charIndex)
-      // const descElement = document.createElement("p");
-      // descElement.innerHTML = desc;
-      // document.getElementById("desc").appendChild(descElement);
-    })
+
+    textAnimation("#desc", project.desc1);
 
     const imagesElement = document.querySelector(".smallPic");
     imagesElement.innerHTML = "";
@@ -149,6 +92,7 @@ show.forEach((e)=> {
       const element = document.createElement("img");
       element.src = image;
       element.width = 150;
+      element.height = 70;
       imagesElement.append(element);
       element.addEventListener("click", function() {
         bigPic.src = this.src; 
@@ -158,6 +102,10 @@ show.forEach((e)=> {
 });
 
 const modalClose = document.querySelector("#closeBtn");
-modalClose.addEventListener("click", function close(){
+modalClose.addEventListener("click", function (){
   modal.style.transform = "scale(0)"
 });
+
+function close() {
+  modal.style.transform = "scale(0)";
+}
