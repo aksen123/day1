@@ -120,12 +120,23 @@ show.forEach((e)=> {
 
     document.querySelector(".modal_title h2").innerText = project.title;
     // document.querySelector(".modal_title p").innerHTML = project.desc1;
-
+    let charIndex = 0
+    let descElement = null;
     document.getElementById("desc").innerHTML = "";
     project.desc1.map((desc) => {
-      const descElement = document.createElement("p");
-      descElement.innerHTML = desc;
+      let text = desc.split("");
+      let aniText = setInterval(()=>{
+        if(charIndex === 0) descElement = document.createElement("p");
+        descElement.innerHTML += text[charIndex];
       document.getElementById("desc").appendChild(descElement);
+        charIndex += 1;
+
+        if(charIndex === text.length) clearInterval(aniText);
+      },1000)
+      console.log(charIndex)
+      // const descElement = document.createElement("p");
+      // descElement.innerHTML = desc;
+      // document.getElementById("desc").appendChild(descElement);
     })
 
     const imagesElement = document.querySelector(".smallPic");
@@ -150,4 +161,3 @@ const modalClose = document.querySelector("#closeBtn");
 modalClose.addEventListener("click", function close(){
   modal.style.transform = "scale(0)"
 });
-
