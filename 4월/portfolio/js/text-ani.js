@@ -18,7 +18,7 @@ export function textAnimation(selector, object, callBack) {
   function displayText() {
     descText = Array.isArray(object) ? object[descIndex].split("") : object.split("");
 
-    textShow = setInterval(callbackDisplay, 100);
+    textShow = setInterval(callbackDisplay, 50);
   }
 
   function callbackDisplay() {
