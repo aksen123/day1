@@ -1,3 +1,5 @@
+import { modal } from "./modal.js";
+
 /**
  * 
  * @param {*} selector 셀렉터
