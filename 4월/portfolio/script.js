@@ -87,8 +87,8 @@ show.forEach((e)=> {
 
     bigPic.src = project.images[0];
 
-    project.images.map((image) => {
-      // console.log(image);
+    project.images.map((image, i) => {
+      console.log(i);
       const element = document.createElement("img");
       element.src = image;
       element.width = 150;
