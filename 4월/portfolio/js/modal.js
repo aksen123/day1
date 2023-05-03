@@ -15,8 +15,8 @@ show.forEach((e)=> {
     document.querySelector("#desc").innerHTML = "";
 
     document.querySelector(".modal_title h2").innerText = project.title;
-    textAnimation("#desc", project.desc1);
     document.querySelector("#link").href = project.link
+    textAnimation("#desc", project.desc1, 50);
 
 
     const imagesElement = document.querySelector(".smallPic");

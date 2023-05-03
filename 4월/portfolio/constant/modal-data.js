@@ -22,10 +22,10 @@ export const projects = [
       "• jQuery활용 아코디언 메뉴",
     ],
     images: [
-      "./img/test/bg-1.jpg",
-      "./img/test/bg-2.jpg",
-      "./img/test/bg-3.jpg",
-      "./img/test/bg-4.jpg",
+      "./resource/img/project2/1.png",
+      "./resource/img/project2/2.png",
+      "./resource/img/project2/3.png",
+      "./resource/img/project2/4.png",
     ],
   },
 
@@ -48,11 +48,15 @@ export const projects = [
   {
     title: "로또 번호 생성기",
     desc1: [
-      "• HTML / CSS : 화화면 퍼블링싱",
+      "• HTML / CSS : 화면 퍼블링싱",
       "• JS : 배열,수학 메서드 활용 랜덤 값 뽑기",
-      "• 체크된 값 제거 후 추첨 기능",
+      "• 각 버튼 별 추첨 기능 부여",
+      "• 캔버스 활용 애니메이션 효과"
     ],
-    images: [],
+    images: [
+      "./resource/img/project4/1.jpg",
+      "./resource/img/project4/2.jpg"
+    ],
     link: "./project/lotto/index.html",
   },
 

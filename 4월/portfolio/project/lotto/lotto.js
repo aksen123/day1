@@ -1,10 +1,9 @@
 const originBtn = document.querySelector("#originBtn");
 const selecBtn = document.querySelector("#selecBtn");
 const result = document.querySelector("#result");
-
+const lottoText = document.querySelector("#luckWrap h1");
 let numbers = document.querySelectorAll("input");
 let luckNum = [...Array(45).keys()].map(el => el +1); //1 ~ 45 담은곳  
-
 
 
 originBtn.addEventListener("click", () =>{
@@ -18,6 +17,8 @@ originBtn.addEventListener("click", () =>{
   })
   // console.log(luckNum);
 
+  canvas.style.display = "block";
+  document.querySelector("form").style.display = "none"
   let count = 0;
 
   const pickNum = setInterval(() => {
@@ -38,61 +39,128 @@ originBtn.addEventListener("click", () =>{
     );
 
     result.appendChild(ball);
+
     [...document.querySelectorAll(".ball")]
     .sort((a, b) => 
       Number(a.innerHTML) - Number(b.innerHTML)
     )
     .forEach(el => result.appendChild(el))
 
-    if(count === 6) clearInterval(pickNum);
+    if(count === 6) {
+      clearInterval(pickNum);
+      canvas.style.display = "none";
+      document.querySelector("form").style.display = "block"
+    }
   },500)
+
 })
 
 
 
+selecBtn.addEventListener("click", () => {
+  result.innerHTML = "";
+  let selecNum = document.querySelectorAll(":checked");
+  selecNum = [...selecNum].map(el => Number(el.value));
 
-// originBtn.addEventListener("click", ()=> {
-//   const removeNum = document.querySelectorAll(":checked");
-//   let removeNum = []; //체크된 input value 담은곳
-//   remove.forEach(number => removeNum.push(number.value));
 
-//   let pickNum = []; //전체 숫자에서 체크된 숫자 제외 해서 담은곳
-//   luckNum.filter(x =>{if(!removeNum.includes(x)) {pickNum.push(x);}})
-  
-//   document.querySelector("form").style.display = "none"
-//   //pickNum 중에서 6개 뽑기
-//   let count = 1;
-//   let resultNum = []; //최종숫자들
-//   const lotto = setInterval(() => {
-//     let num = Math.floor(Math.random() * pickNum.length);
-//     let i = pickNum[num]
-//     resultNum.includes(i) ? count-- : resultNum.push(i);
-//     count++;
-//         //     let ball = document.createElement("span");
-//         //     ball.innerHTML = i;
-//         //   if(i < 11) {ball.classList.toggle("color1");}
-//         //   if(i > 10 && i < 21) {ball.classList.toggle("color2");}
-//         //   if(i > 20 && i < 31) {ball.classList.toggle("color3");}
-//         //   if(i > 30 && i < 41) {ball.classList.toggle("color4");}
-//         //   if(i > 40 && i < 46) {ball.classList.toggle("color5");}
-//         // result.appendChild(ball);
-//         result.innerHTML = resultNum;
+  if(selecNum.length <= 6) {
+    alert("7개 이상 선택해 주세요");
+  }else {
 
-//     if(count > 6) {
-//       clearInterval(lotto);
-//       // result.innerHTML = ''
-//       // //추첨번호 오름차순 정렬
-//       // resultNum.sort((a, b) => a - b).forEach(num => {
-//       //   let ball = document.createElement("span");
-//       //   ball.innerHTML = num;
-//       //   //번호별 색깔 주기
-//       //     if(num < 11) {ball.classList.toggle("color1");}
-//       //     if(num > 10 && num < 21) {ball.classList.toggle("color2");}
-//       //     if(num > 20 && num < 31) {ball.classList.toggle("color3");}
-//       //     if(num > 30 && num < 41) {ball.classList.toggle("color4");}
-//       //     if(num > 40 && num < 46) {ball.classList.toggle("color5");}
-//       //   result.appendChild(ball);
-//       // })
-//     }
-//   },700)
-// })
+
+    canvas.style.display = "block";
+    document.querySelector("form").style.display = "none"
+    let count = 0;
+    const pickNum = setInterval(() => {
+    let index = Math.floor(Math.random() * selecNum.length);
+    
+    const num = selecNum[index];
+    selecNum[index] = undefined;
+    selecNum = selecNum.filter((value) => value !== undefined);
+    count += 1;
+    
+    let ball = document.createElement("span");
+    ball.className = "ball";
+    ball.innerHTML = num;
+    ball.classList.toggle(
+      num <= 10  ? "color1"
+      : num <= 20 ? "color2"
+      : num <= 30 ? "color3"
+      : num <= 40 ? "color4" : "color5"
+      );
+      
+      result.appendChild(ball);
+      //추첨번호 오름차순 정렬
+      [...document.querySelectorAll(".ball")]
+      .sort((a, b) => 
+      Number(a.innerHTML) - Number(b.innerHTML)
+      )
+      .forEach(el => result.appendChild(el))
+      
+      if(count === 6) {
+        clearInterval(pickNum)
+        canvas.style.display = "none";
+        document.querySelector("form").style.display = "block";
+      }
+    },500)
+  }
+});
+
+
+
+
+
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
+function circle(x, y ,radius, color) {
+  this.x = x;
+  this.y = y;
+  this.radius = radius;
+  this.color = color;
+
+  this.dx = Math.floor(Math.random() * 4) + 1;
+  this.dy = Math.floor(Math.random() * 4) + 1;
+
+  this.draw = function() {
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+    ctx.fill();
+  };
+
+  this.animate = function() {
+    this.x += this.dx;
+    this.y += this.dy;
+
+    if(this.x + this.radius > canvas.width || this.x - this.radius < 0) {
+      this.dx = -this.dx
+    }
+    if(this.y + this.radius > canvas.height || this.y - this.radius < 0) {
+      this.dy = -this.dy
+    }
+
+    this.draw();
+  }
+};
+
+const objs = [];
+
+for(let i = 0; i < 20; i++){
+  const radius = 20
+  const x = Math.random() * (canvas.width - radius * 2) + radius;
+  const y = Math.random() * (canvas.height - radius * 2) + radius;
+  const color = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`
+
+  objs.push(new circle(x, y, radius, color));
+};
+
+function update() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for(let el of objs) {
+    // let obj = el;
+    el.animate();
+  }
+  requestAnimationFrame(update);
+}
+
+update();

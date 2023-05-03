@@ -9,8 +9,8 @@ li {
 }
 a {
   text-decoration: none;
-  color: black;
-  background-color: #fff;
+  color: inherit;
+  background-color: transparent;
 }
 
 
@@ -54,6 +54,13 @@ a {
 .left_section .info .intro {
   margin-left: 3vw;
   font-size: 1em;
+}
+.left_section .info .intro #title {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+.left_section .info .intro #message {
+  font-size: 20px;
 }
 
 /* Menu bar */
@@ -180,7 +187,6 @@ a {
 
 .profile .on2 {
   transform: translateX(120%);
-
 }
 .project .on2 {
   transform: translateX(120%);
@@ -191,29 +197,37 @@ a {
   color: #999;
   margin: 5vh auto;
 }
-.Right_page .wrap .profile_wrap ul {
-  height: 20vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+.Right_page .wrap .profile_wrap {
   border-top: 2px solid rgba(211, 211, 211, 0.1);
   box-shadow: 0px 5px 3px -4px rgba(128, 128, 128, 0.4);
+  text-align: center;
+  height: 20vh;
+}
+.Right_page .wrap .profile_wrap ul {
+  height: 50%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
   
-
 }
 .Right_page .wrap .profile_wrap ul li {
   position: relative;
-
+  text-align: left;
+  width: 200px;
 }
 .Right_page .wrap .profile_wrap ul i {
   position: absolute;
   left: -50px;
+  top: 0;
   font-size: 2em;
-  display: inline-block;
+
 }
 .Right_page .wrap .profile_wrap ul span {
   font-weight: bold;
 }
+
 .Right_page .wrap .learn {
   text-align: center;
   width: 100%;
@@ -223,6 +237,8 @@ a {
   margin-bottom: 5vh;
 }
 .Right_page .wrap .learn p {
+  font-size: 1.2em;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
@@ -237,6 +253,7 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* z-index:  -1; */
 }
 
 .Right_page .wrap .project_wrap {
@@ -353,15 +370,19 @@ a {
   border: 2px solid #ccc;
   border-radius: 10px;
   box-shadow: 2px 2px 5px #ccc;
+  background-size: cover;
 }
 .modal_top .smallPic {
   height: 300px;
   margin-top: 50px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .smallPic img {
   display: inline-block;
-  margin: 10px;
+  /* margin: 10px; */
 }
 .smallPic img:hover {
   transform: scale(1.1);
@@ -382,10 +403,20 @@ a {
 }
 .modal_bottom .modal_title h2 {
   font-size: 2rem;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 #desc p {
   margin-bottom: 15px;
   font-weight: bold;
   font-size: 20px;
+}
+#link {
+  display: block;
+  margin-bottom: 50px;
+  width: 60px;
+  height: 40px;
+  background: transparent;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #ccc;
 }

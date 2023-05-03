@@ -5,7 +5,7 @@ import { modal } from "./modal.js";
  * @param {*} selector 셀렉터
  * @param {*} object 문자열 || 문자열 배열
  */
-export function textAnimation(selector, object, callBack) {
+export function textAnimation(selector, object, delay=100, callBack) {
   const element = document.querySelector(selector);
   element.innerHTML = "";
 
@@ -20,7 +20,7 @@ export function textAnimation(selector, object, callBack) {
   function displayText() {
     descText = Array.isArray(object) ? object[descIndex].split("") : object.split("");
 
-    textShow = setInterval(callbackDisplay, 50);
+    textShow = setInterval(callbackDisplay, delay);
   }
 
   function callbackDisplay() {
