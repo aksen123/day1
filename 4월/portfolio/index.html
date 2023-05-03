@@ -11,16 +11,27 @@
   <!-- Custom -->
   <script defer type="module" src="./js/dark-mode.js"></script>
   <script defer type="module" src="./js/modal.js"></script>
+  <!-- <script defer type="module" src="./js/modal2.js"></script> -->
   <script defer type="module" src="./script.js"></script>
   <link rel="stylesheet" href="./css/style.css">
   <title>M_W Page</title>
 </head>
 <body>
   <div class="container">
+    <div id="desc_modal">
+      
+      <div class="desc_modal_img">
+        <img src="" alt="">
+      </div>
+      <div class="desc_modal_small">
+        <button>닫기</button>
+        <div class="smallImg"></div>
+      </div>
+    </div>
     <!-- Left Aside & Menu bar -->
     <aside class="left_section">
       <div class="info">
-        <img src="http://placehold.co/150X150 " alt="" class="info_photo" >
+        <img src="./resource/modal_img/me.png" alt="" class="info_photo" >
         <div class="intro">
           <h2 id="title"></h2>
           <div id="message"></div>
@@ -72,7 +83,7 @@
                   <i class="bi bi-phone"></i>
                   <div>
                     <span>전화번호</span>
-                    <p>010.8623.2348</p>
+                    <p id="phone">010.8623.2348</p>
                   </div>
                 </li>
                 <li>
@@ -107,8 +118,7 @@
                     View
                   </a>
                   <div class="project_photo">
-                    <img src="" alt="">
-                    <img src="" alt="">
+                    <img src="./resource/modal_img/profile.png" alt="">
                   </div>
                   <div class="project_info">
                     <h3>Portfolio Page</h3>
@@ -120,8 +130,8 @@
                     View
                   </a>
                   <div class="project_photo">
-                    <img src="" alt="">
-                    <img src="" alt="">
+                    <img src="./resource/modal_img/mobile_1.png" alt="">
+                    <img src="./resource/modal_img/mobile_2.png" alt="">
                   </div>
                   <div class="project_info">
                     <h3>Mobile page</h3>
@@ -146,7 +156,7 @@
                     View
                   </a>
                   <div class="project_photo">
-                    <img src="./resource/lotto.png" alt="">
+                    <img src="./resource/modal_img/lotto.png" alt="">
                   </div>
                   <div class="project_info">
                     <h3>로또 번호 생성기</h3>

@@ -27,6 +27,7 @@ export const projects = [
       "./resource/img/project2/3.png",
       "./resource/img/project2/4.png",
     ],
+    link: "./project/mobile_webpage/index.html",
   },
 
   {
@@ -51,24 +52,21 @@ export const projects = [
       "• HTML / CSS : 화면 퍼블링싱",
       "• JS : 배열,수학 메서드 활용 랜덤 값 뽑기",
       "• 각 버튼 별 추첨 기능 부여",
-      "• 캔버스 활용 애니메이션 효과"
+      "• 캔버스 활용 애니메이션 효과",
     ],
-    images: [
-      "./resource/img/project4/1.jpg",
-      "./resource/img/project4/2.jpg"
-    ],
+    images: ["./resource/img/project4/1.jpg", "./resource/img/project4/2.jpg"],
     link: "./project/lotto/index.html",
   },
 
   {
     title: "...",
     desc1: ["설명5"],
-    images: [],
+    images: ["./resource/modal_img/Untitled.png"],
   },
 
   {
     title: "...",
     desc1: ["설명6"],
-    images: [],
+    images: ["./resource/modal_img/Untitled.png"],
   },
 ];

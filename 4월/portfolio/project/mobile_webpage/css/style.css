@@ -1,6 +1,6 @@
 /* Import Local CSS */
-@import url('/css/reset.css');
-@import url('/css/variables.css');
+@import url('./css/reset.css');
+@import url('./css/variables.css');
 
 
 
@@ -29,7 +29,7 @@ body {
 }
 .preloading-inner {
   height: inherit;
-  background: url('/img/01-Preloading-01.jpg') no-repeat -110px center;
+  background: url('../img/01-Preloading-01.jpg') no-repeat -110px center;
   background-size: cover;
 }
 .heading-preloading-inner {
@@ -54,7 +54,7 @@ body {
   margin: 0 auto;
 }
 .signin-photo {
-  background: url('/img/02-Login-01.jpg') no-repeat;
+  background: url('../img/02-Login-01.jpg') no-repeat;
   height: 250px; 
 }
 

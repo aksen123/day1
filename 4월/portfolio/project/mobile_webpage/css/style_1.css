@@ -1,6 +1,6 @@
 /* Import Local CSS */
-@import url('/css/reset.css');
-@import url('/css/variables.css');
+@import url('../css/reset.css');
+@import url('../css/variables.css');
 
 /* Common CSS */
 * {
@@ -161,7 +161,7 @@ body {
   height: 750px;
 }
 .signin-photo {
-  background: url('/img/02-Login-01.jpg') no-repeat;
+  background: url('../img/02-Login-01.jpg') no-repeat;
   height: 250px;
 }
 .signin-header {
@@ -903,7 +903,7 @@ input[id=food-type-tab5]:checked ~ .food-type-tabs .tab5 {
   border-radius: 30px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 
-  background: url('/img/search.svg') no-repeat center left 15px;
+  background: url('../img/search.svg') no-repeat center left 15px;
   padding-left: 40px;
 }
 .search-recent {
@@ -1207,7 +1207,7 @@ text-align: center;
   /* border: 1px solid var(--cloudy-gray);
   width: 70px;
   text-align: center;
-  background: url('/img/') no-repeat center right 5px;
+  background: url('../img/') no-repeat center right 5px;
   appearance: none;
   padding: 3px;
   background-size: 10px; */

@@ -1,4 +1,4 @@
-import { projects } from "../constant/modal-data.js";
+// import { projects } from "../constant/modal-data.js";
 import { textAnimation } from "./text-ani.js";
 import { intro } from "../constant/intro.js";
 import { modal } from "./modal.js";

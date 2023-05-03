@@ -13,13 +13,62 @@ a {
   background-color: transparent;
 }
 
-
 /*===== Container =====*/
 .container {
   width: 100vw;
   height: 100vh;
   display: flex;
+  overflow: hidden;
+}
 
+/* ===== Description Modal ===== */
+#desc_modal {
+  position: absolute;
+  background-color: #333;
+  width: 80%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -100;
+  display: none;
+}
+#desc_modal.on {
+  z-index: 100;
+}
+#desc_modal > .desc_modal_img {
+  width: 70%;
+  height: 100%;
+}
+#desc_modal > .desc_modal_img > img {
+  display: block;
+  width: 90%;
+  height: 90%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 2px 2px 15px #000;
+}
+#desc_modal > .desc_modal_small {
+  width: 30%;
+  height: 100%;
+}
+#desc_modal > .desc_modal_small button {
+  display: block;
+  float: right;
+  margin: 5%;
+  padding: 5px;
+}
+#desc_modal > .desc_modal_small > .smallImg {
+  width: 100%;
+  height: 90%;
+  position: relative;
+  bottom: 0;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 /*===== Left section =====*/
@@ -27,7 +76,6 @@ a {
 /* Aside */
 
 .left_section {
-
   width: 30vw;
   /* height: inherit; */
   position: relative;
@@ -40,7 +88,6 @@ a {
   width: 25vw;
   height: inherit;
   position: fixed;
-
 }
 .left_section .info img {
   width: 200px;
@@ -83,9 +130,7 @@ a {
 .left_section .menu_bar ul li:hover {
   transform: scale(1.1);
   transition: 0.3s;
-
 }
-
 
 /* Dark mode */
 .dark {
@@ -145,10 +190,7 @@ a {
   z-index: 100;
 }
 
-
-
 /*===== Right section =====*/
-
 
 .Right_page {
   width: 70vw;
@@ -171,10 +213,10 @@ a {
 }
 .Right_page .wrap {
   height: inherit;
-  
+
   border: 2px solid #000;
   border-radius: 20px;
-  box-shadow:5px 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 
   background-color: #fff;
   transition: 0.7s ease-in-out;
@@ -210,7 +252,6 @@ a {
   align-items: center;
   justify-content: center;
   gap: 5vw;
-  
 }
 .Right_page .wrap .profile_wrap ul li {
   position: relative;
@@ -222,16 +263,20 @@ a {
   left: -50px;
   top: 0;
   font-size: 2em;
-
 }
 .Right_page .wrap .profile_wrap ul span {
   font-weight: bold;
 }
-
+#phone {
+  filter: blur(3px);
+  transition: 0.5s;
+}
+#phone:hover {
+  filter: none;
+}
 .Right_page .wrap .learn {
   text-align: center;
   width: 100%;
-
 }
 .Right_page .wrap .learn h2 {
   margin-bottom: 5vh;
@@ -242,18 +287,17 @@ a {
   margin-bottom: 10px;
 }
 
-
 /* Project Page */
 .Right_page .project {
   width: calc(100% - 4vw);
   height: 90vh;
   /* height: calc(100% - 4vw); */
-  
+
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* z-index:  -1; */
+  z-index: -1;
 }
 
 .Right_page .wrap .project_wrap {
@@ -263,9 +307,8 @@ a {
   flex-direction: column;
   justify-content: space-around;
   gap: 100px;
-  
-  /* border: 2px solid red; */
 
+  /* border: 2px solid red; */
 }
 .Right_page .wrap .project_wrap .project_group {
   width: 100%;
@@ -295,17 +338,17 @@ a {
   left: 50%;
   top: 40%;
   transform: translate(-50%);
-  
+
   /* background-color: aqua; */
   font-weight: bold;
   padding: 5px;
   border: 2px solid #000;
   display: none;
 }
-.wrap .project_wrap .project_group  .project_card:hover {
+.wrap .project_wrap .project_group .project_card:hover {
   transform: scale(1.1);
 }
-.wrap .project_wrap .project_group  .project_card:hover .show {
+.wrap .project_wrap .project_group .project_card:hover .show {
   cursor: pointer;
   display: block;
 }
@@ -392,7 +435,6 @@ a {
 .modal_bottom {
   width: 50%;
   position: relative;
-
 }
 .modal_bottom .modal_title {
   position: absolute;

@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -9,22 +9,21 @@
   text-align: center;
 }
 #luckWrap h1 {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   transform-origin: bottom;
   animation: text 2s infinite linear;
 }
 @keyframes text {
   0% {
-    transform: translateY(0)
+    transform: translateY(0);
   }
   50% {
     transform: translateY(-50px);
   }
   100% {
-    transform: translateY(0)
+    transform: translateY(0);
   }
 }
-
 
 form {
   margin: auto;
@@ -34,7 +33,7 @@ form {
 input {
   display: none;
 }
-input:checked +label{
+input:checked + label {
   background-color: red;
 }
 label {
@@ -45,13 +44,13 @@ label {
   line-height: 40px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
-  margin:2px;
+  margin: 2px;
   text-align: center;
 }
 label:hover {
   cursor: pointer;
 }
-#btns{
+#btns {
   text-align: center;
   margin-top: 10px;
 }
@@ -60,10 +59,10 @@ button {
   width: 150px;
 }
 #result {
-/* text-align: center; */
-margin-top: 50px;
-font-size: 2em;
-letter-spacing: 5px;
+  /* text-align: center; */
+  margin-top: 50px;
+  font-size: 2em;
+  letter-spacing: 5px;
 }
 span {
   display: inline-block;
@@ -85,17 +84,14 @@ span {
 .color2 {
   background-color: #4072ac;
   color: #fff;
-
 }
 .color3 {
   background-color: #de4c0e;
   color: #fff;
-
 }
 .color4 {
   background-color: #9195a4;
   color: #fff;
-
 }
 .color5 {
   background-color: #13be4b;
