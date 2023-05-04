@@ -36,11 +36,6 @@ show.forEach((e) => {
   });
 });
 
-const modalClose = document.querySelector("#closeBtn");
-modalClose.addEventListener("click", function () {
-  modal.style.transform = "scale(0)";
-  document.querySelector("#desc").innerHTML = "";
-});
 
 
 

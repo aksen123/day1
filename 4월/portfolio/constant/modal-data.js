@@ -19,7 +19,8 @@ export const projects = [
       "• 모바일 웹페이지",
       "• 피그마 활용 와이어 프레임 / 박스구조화 ",
       "• HTML / CSS : 화면 퍼블링싱",
-      "• jQuery활용 아코디언 메뉴",
+      "• jQuery :  아코디언 메뉴",
+      "• jQuery :  이미지 슬라이더",
     ],
     images: [
       "./resource/img/project2/1.png",
@@ -51,6 +52,7 @@ export const projects = [
     desc1: [
       "• HTML / CSS : 화면 퍼블링싱",
       "• JS : 배열,수학 메서드 활용 랜덤 값 뽑기",
+      "• filter 메서드 활용 중복값 제거",
       "• 각 버튼 별 추첨 기능 부여",
       "• 캔버스 활용 애니메이션 효과",
     ],

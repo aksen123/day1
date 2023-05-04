@@ -118,8 +118,8 @@ function circle(x, y ,radius, color) {
   this.radius = radius;
   this.color = color;
 
-  this.dx = Math.floor(Math.random() * 4) + 1;
-  this.dy = Math.floor(Math.random() * 4) + 1;
+  this.dx = Math.floor(Math.random() * 7) + 1;
+  this.dy = Math.floor(Math.random() * 7) + 1;
 
   this.draw = function() {
     ctx.fillStyle = this.color;

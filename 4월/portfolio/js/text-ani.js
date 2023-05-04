@@ -42,6 +42,13 @@ export function textAnimation(selector, object, delay=100, callBack) {
       if(callBack) callBack();
     };
   };
+  const modalClose = document.querySelector("#closeBtn");
+modalClose.addEventListener("click", function () {
+  modal.style.transform = "scale(0)";
+  document.querySelector("#desc").innerHTML = "";
+  clearInterval(textShow);
+});
+
 };
 
 
