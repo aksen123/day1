@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+#container {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  width: 100%;
+  text-align: center;
+}
+.main-header {
+  display: flex;
+  height: 15vh;
+}
+.header-search {
+  flex-grow: 1.5;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.header-search a {
+  font-size: 2.5em;
+  color: #03c75a;
+  font-weight: bold;
+}
+.header-search form {
+
+}
+.header-search form input {
+  padding: 10px;
+  font-size: 1.5em;
+  width: 500px;
+  float: left;
+  border: 1px solid #03c75a;
+  border-right: none;
+  outline: none;
+}
+.header-search form button {
+  padding: 10px;
+  font-size: 1.5em;
+  border: 1px solid #03c75a;
+  border-left: none;
+  color: #fff;
+  background-color: #03c75a;
+}
+.header-contents {
+
+  flex-grow: 1;
+  font-size: 13px;
+  margin-top: 10px;
+}
+.header-contents a {
+  float: left;
+  margin-left: 15px;
+}
+.header-contents > a > i {
+  margin-left: 5px;
+}
+.header-contents > a > i::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  background-color: #888;
+  margin-left: 5px;
+}
+.header-contents ul > li {
+  color: #ccc;
+  font-weight: bold;
+}
+.header-contents ul > li:hover {
+  color: #03c75a;
+}
+
+/* Navi */
+nav {
+  /* border: 2px solid blue; */
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid #ccc;
+  box-shadow: 1px 1px 2px #ccc;
+}
+nav .nav-content1 {
+  display: flex;
+  gap: 10px;
+  color: #03c75a;
+  font-weight: bold;
+}
+nav .nav-content2 {
+  display: flex;
+  gap: 10px ;
+  font-weight: bold;
+}
+nav img { 
+  margin-left: 50px;
+}
+
+/* Contents */
+#contents {
+
+  width: calc(100% - 30vw);
+  display: flex;
+  margin-top: 20px;
+}
+#contents  .main-section {
+  padding: 10px;
+}
+#contents .news-head {
+  margin-top: 15px;
+  display: flex;
+  font-size: 15px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+#contents .news-head > a {
+  font-weight: bold;
+}
+#contents .news-head > a span {
+  font-weight: normal;
+}
+#contents .news-head > a span:hover {
+  text-decoration: underline;
+}
+#contents .news-head ul li {
+  float: left;
+  margin-left: 5px;
+  font-weight: bold;
+}
+#contents .news-head ul li:first-child {
+  color: blue;
+}
+#contents aside {
+  padding: 10px;
+  width: 100%;
+}
