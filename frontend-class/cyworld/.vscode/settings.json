@@ -1,4 +1,5 @@
 {
-  "powermode.presets":"fireworks",
-  "powermode.shake.enabled": false
+  "powermode.presets":"particles",
+  "powermode.shake.enabled": false,
+  "liveServer.settings.port": 5501
 }

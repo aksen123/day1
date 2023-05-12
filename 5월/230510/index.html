@@ -5,10 +5,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
-  <script src="./script.js"></script>
+  <script defer src="./script.js"></script>
   <title>Document</title>
 </head>
 <body>
-
+  <div class="container">
+    <h1> <회원가입 페이지> </h1>
+    <div class="phone">
+      <input class="num1" type="text"  maxlength='3' oninput="check1()">
+      <span>-</span>
+      <input class="num2" type="text" maxlength='4' oninput="check2()">
+      <span>-</span>
+      <input class="num3" type="text" maxlength='4' oninput="check3()">
+      <button id="btn" disabled="true">인증번호 전송</button>
+    </div>
+    <div class="top">
+      <span id="num">000000</span>
+      <!-- <button onclick="number()">인증번호 전송1</button> -->
+      <div class="time">3:00</div>
+    </div>
+    <div class="bottom">
+      <input type="text" placeholder="인증번호입력">
+      <button id="btn2">인증완료</button>
+    </div>
+  </div>
+  <!-- <input type="text" id="email" placeholder="이메일을 입력하세요" oninput="check()"><br />
+  <input type="text" id="pw1" placeholder="비밀번호를 입력하세요" oninput="check()"><br />
+  <input type="text" id="pw2" placeholder="비밀번호를 확인하세요" oninput="check()"><br />
+  <button id="submit" disabled="true">회원가임</button> -->
 </body>
 </html>

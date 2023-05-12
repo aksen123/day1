@@ -1,0 +1,69 @@
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  width: 500px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  font-size: 20px;
+}
+h1 {
+  margin-bottom: 100px;
+}
+.phone input{
+  width: 50px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  margin-right: 12px;
+  text-align: center;
+}
+.phone #btn {
+  background-color: transparent;
+  width: 100px;
+  height: 30px;
+}
+.top {
+  width: 70%;
+  display: flex;
+  gap: 10px ;
+  align-items: center;
+  justify-content: space-between;
+}
+.top span {
+  width: 100%;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.top .time {
+  border: 1px solid #ccc;
+  width: 100px;
+}
+.time {
+  font-size: 20px;
+  width: 200px;
+  text-align: center;
+}
+.bottom {
+  align-items: center;
+}
+.bottom input {
+  height: 30px;
+  text-align: center;
+}
+#btn2 {
+  width: 160px;
+  height: 35px;
+}
+.wrap2 input {
+  width: 80px;
+}
