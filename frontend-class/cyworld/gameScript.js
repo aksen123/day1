@@ -1,7 +1,7 @@
 const startWord = () => {
   let myword = document.querySelector("#myword").value;
   let word = document.querySelector("#word").innerText;
-
+  
   let lastword = word[word.length - 1]
   let firstwrod = myword[0];
 

@@ -22,17 +22,18 @@ let timer;
 
 
 const check1 = function() {
-  let num1 = document.querySelector(".num1").value
+  let num1 = document.querySelector(".num1").value;
   num1.length === 3 ? document.querySelector(".num2").focus() : false
+  console.log(num1)
 }
 const check2 = function() {
-  let num2 = document.querySelector(".num2").value
+  let num2 = document.querySelector(".num2").value;
   num2.length === 4 ? document.querySelector(".num3").focus() : false
 }
 const check3 = function() {
-  let num1 = document.querySelector(".num1").value
-  let num2 = document.querySelector(".num2").value
-  let num3 = document.querySelector(".num3").value
+  let num1 = document.querySelector(".num1").value;
+  let num2 = document.querySelector(".num2").value;
+  let num3 = document.querySelector(".num3").value;
 
   if(num1  &&  num2  && num3 ) {
     if(num3.length === 4) btn.disabled = false;
