@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <!-- <script defer src="./script.js"></script> -->
+  <script defer src="./script2.js"></script>
+  <title>Document2</title>
+</head>
+<body>
+  <div id="wrap">
+    <h1>GMA 회원가입</h1>
+    <div class="idPasswrod">  
+      <input type="text" class="email" placeholder="이메일을 입력해주세요" />
+      <div class="err erremail"></div>
+      <input type="text" class="name" placeholder="이름을 입력해주세요"/>
+      <div class="err errname"></div>
+      <input type="password" class="pw1" placeholder="비밀번호를 입력해주세요"/>
+      <div class="err errpw1"></div>
+      <input type="password" class="pw2" placeholder="비밀번호를 다시 입력해 주세요"/>
+      <div class="err errpw2"></div>
+    </div>
+    <div class="phone_wrap">
+      <input class="num1" type="text"  maxlength='3' onchange="check1()" onkeyup="onchange()">
+
+      <span>-</span>
+      <input class="num2" type="text" maxlength='4' onchange="check2()"onkeyup="onchange()">
+      <span>-</span>
+      <input class="num3" type="text"  maxlength='4' onchange="check3()" onkeyup="onchange()">
+    </div>
+    <div class="timebox">
+      <div class="numberBox">
+        <span class="number">000000</span>
+        <button class="send_btn" disabled="true" onclick="getToken()">인증번호 전송</button>        
+      </div>
+      <div class="timerBox">
+        <span class="timer">3:00</span>
+        <button class="complete_btn" disabled="true" onclick="getTokenTimerConfirm()">인증 완료</button>
+      </div>
+    </div>
+    <div class="local">
+      <select id="location">
+        <option value="none">지역을 선택해주세요</option>
+        <option value="">서울</option>
+        <option value="">경기</option>
+        <option value="">인천</option>
+      </select>
+      <div class="err errlocation"></div>
+      <div class="genderBox">
+        <input type="radio" name="gender" id="female">
+        <label for="female">여성</label>
+        <input type="radio" name="gender" id="male">
+        <label for="male">남성</label>
+        <div class="err errgender"></div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <button class="join_btn" disabled="true" onclick="signup()">가입하기</button>
+  </div>
+</body>
+</html>

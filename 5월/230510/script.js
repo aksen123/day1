@@ -17,9 +17,6 @@ const result = document.querySelector("#num");
 const timebox = document.querySelector(".time");
 
 
-let isStarted = false;
-let timer;
-
 
 const check1 = function() {
   let num1 = document.querySelector(".num1").value;
@@ -43,6 +40,9 @@ const check3 = function() {
 }
 
 
+
+let isStarted = false;
+let timer;
 
 
 // 버튼 이벤트

@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#wrap {
+  width: 540px;
+  height: 900px;
+  border: 1px solid #0068ff;
+  border-radius: 20px;
+  padding: 70px;
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+#wrap h1 {
+  font-weight: bold;
+  color: #0068ff;
+}
+#wrap .idPasswrod {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;;
+}
+#wrap .idPasswrod  input {
+  padding: 10px;
+  outline: none;
+  border: 1px solid #797979;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+.err {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: red;
+  font-weight: bold;
+}
+#wrap .phone_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#wrap .phone_wrap input {
+  width: 100px;
+  padding: 10px;
+  border: 1px solid #797979;
+  border-radius: 5px;
+  outline: none;
+  text-align: center;
+}
+.timebox {
+  display: flex;
+  flex-direction: column;
+  align-items:end;
+}
+.timebox span {
+  color: #0068ff;
+}
+.timebox button {
+  width: 110px;
+  padding: 7px;
+  margin-left: 10px;
+  border: 1px solid #797979;
+  border-radius: 5px;
+
+}
+.timebox .numberBox {
+  margin-bottom: 20px;
+}
+.timebox .timerBox {
+  margin-bottom: 20px;
+}
+.local {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px ;
+}
+.local select {
+  width: 100%;
+  padding: 20px;
+  font-size: 20px;
+  color: #797979;
+  border: 1px solid #797979;
+
+  outline: none;
+}
+.line {
+  border-top: 1px solid #797979;
+  margin: 10px 0 10px 0;
+}
+.join_btn{
+  padding: 20px;
+  font-size: 20px;
+  border: 1px solid #797979;
+  border-radius: 10px;
+}
