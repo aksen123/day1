@@ -1,25 +1,27 @@
-// 사용자로 부터 받은 문자열에 A,a가 있다면 #로 변환해서 출력 
+// 오늘 날짜 / 차번호를 받아서 차번호가 10부제에 걸리면 운행불가 출력
 
-let str = String(prompt("대소문자를 섞어서 입력해주세요"));
+let date = prompt("오늘 날짜를 입력해주세요","숫자만입력");
+let car = prompt("자동차 번호를 입력해주세요", "숫자만입력");
 
-function solution(e) {
-  let result = "";
-  for(let el of e) {
-    el === "a" || el === "A" ? result += "#" :  result += el
-  }
+// function solution(a, b) {
+//   let result ="";
+//   let date = a[a.length -1];
+//   let car = b[b.length -1];
+//   date === car ? result = "오늘은 차량운행 불가입니다" : result = "안전운전 하세요"
+//   return result
+// }
 
-  return console.log(result)
+// console.log(solution(date, car));
+
+
+function solution2(a, b) {
+  let result ="";
+  let date = a % 10;
+  let car = b % 10;
+
+    date === car ? result = "오늘은 차량운행 불가입니다" : result = "안전운전 하세요"
+
+  return result
 }
 
-solution(str);
-
-
-
-function solution2(e) {
-  let answer = e;
-  answer = answer.replace(/A/gi, "#");
-  // answer = answer.replace(/a/g, "#");
-  return answer;
-}
-
-console.log(solution2(str))
+console.log(solution2(date, car));
