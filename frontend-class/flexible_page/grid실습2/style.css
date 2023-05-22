@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 250px 1fr 250px;
+  grid-template-rows: 10% 40% 40% 10%;
+  grid-template-areas: 
+  'header header header'
+  'top top top'
+  'banner main aside'
+  'footer footer footer';
+  
+}
+.container div {
+  text-align: center;
+  border: 2px solid #000;
+}
+.header {
+  grid-area: header;
+  background-color: darkkhaki;
+  line-height: 100px;
+}
+.top {
+  grid-area: top;
+  background: url('./img/welcome-image.jpg')no-repeat center center;
+  background-size: cover;
+}
+.banner {
+  grid-area: banner;
+  display: grid;
+  align-items: center;
+}
+.main {
+  grid-area: main;
+  overflow: scroll;
+  padding: 10px;
+  display: grid;
+  align-items: center;
+}
+.main::-webkit-scrollbar  {
+  display: none;
+
+}
+
+.main h2, 
+.main p {
+  text-align: left;
+}
+.aside {
+  grid-area: aside;
+  display: grid;
+  align-items: center;
+}
+.footer {
+  grid-area: footer;
+  background-color: darkkhaki;
+  display: grid;
+  align-items: center;
+}
+
+@media all and (max-width:768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 600px 100px 500px 100px 100px;
+    grid-template-areas: 
+      'header' 'top' 'banner' 'main' 'aside' ' footer';
+  }
+}
