@@ -1,15 +1,15 @@
-// 배열안 문자열중 길이가 가장긴 문자열 출력하기
+// 배열 객체에서 중복된 단어를 제거 해 콘솔창에 출력
 
-const arr = ["teacher", "time", "student", "beautiful", "good"];
+const arr = ["good", "time", "good", "time", "student"];
 
-function solution(arr) {
-  let first = arr[0];
 
-  arr.forEach(el => {
-    el.length > first.length ? first = el : false
+function solution(e) {
+  let answer = '';
+  answer = e.filter((v, i) => {
+    return e.indexOf(v) === i
   })
-
-  return first
+  return answer
 }
+console.log(solution(arr));
 
-console.log(solution(arr))
+

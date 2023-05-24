@@ -1,0 +1,122 @@
+@import "reset";
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+  background-color: #c9d6df;
+}
+.container {
+  width: 500px;
+  position: relative;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 30px);
+  height: 100%;
+  top: 0;
+  left: 15px;
+  background-color: transparent;
+  box-shadow: 0 20px 40px #52616b;
+  z-index: -1;
+  opacity: 0.2;
+  transition: 0.6s;
+}
+.container:hover::before {
+  opacity: 1;
+}
+ul {
+  background-color: #fff;
+  border-radius: 3px;
+}
+.title {
+  padding: 20px;
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  color: #52616b;
+  transition: 0.3s;
+  display: flex;
+  justify-content: space-between;
+}
+.title:hover {
+  padding-left: 25px;
+}
+.title::before,
+.title::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  transition: 0.6s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  bottom: 0;
+  border-radius: 50px;
+}
+.title::before {
+  width: 100%;
+  background-color: #c9d6df;
+}
+.title::after {
+  width: 0;
+  background-image: linear-gradient(90deg, #52616b,#c9d6df);
+}
+.title:hover::after {
+  width: 100%;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  margin-top: -3px;
+  justify-content: center;
+  align-items: center;
+}
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  background-color: #c9d6df;
+  transition: 0.3s;
+  border-radius: 50px;
+}
+.icon::before {
+  width: 2px;
+  height: 20px;
+}
+.icon::after  {
+  width: 20px;
+  height: 2px;  
+}
+.title:hover .icon::before,
+.title:hover .icon::after {
+  background-color: #52616b;
+}
+.icon.anime::before {
+  transform: rotate(90deg);
+}
+.accordion {
+  .item {
+    .text {
+      opacity: 0;
+      height: 0;
+      background-color: #f0f5f9;
+      font-size: 16px;
+      padding: 0 20px;
+      &.show {
+        opacity: 1;
+        background-color: #f0f5f9;
+        font-size: 16px;
+        padding: 20px;
+        height: auto;
+      }
+    }
+  }
+}

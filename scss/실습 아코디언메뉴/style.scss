@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+li {
+  list-style: none;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.city_wrap {
+  width: 300px;
+  border: 1px solid #ccc;
+  li a {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    border-bottom: 2px solid #eee;
+    &::after {
+      content: "+";
+      float: right;
+    }
+  }
+  li a.on {
+    &::after {
+      content: "-";
+      float: right;
+    }
+  }
+  .city {
+
+    border-bottom: 1px solid #eee;
+    max-height: 0;
+    overflow: hidden;
+    &.on {
+      max-height: 500px;
+      padding: 10px 15px;
+    }
+  }
+}
