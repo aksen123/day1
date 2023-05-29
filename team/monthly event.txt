@@ -1,0 +1,23 @@
+#monthlyEvent-content
+	.article-title
+		h4
+		p
+	.monthlyEvent-calendar
+		.calendar-title
+			span
+			a>i
+		.calendar-control
+			span.month
+			p.year
+			button.calendar-prev-btn
+			button.calendar-next-btn
+			table.calendar
+	.monthlyEvent-slide
+		.slide-display
+			.slide-items
+				.event-item  * n
+					img.item-img
+					h4.item-title	
+					p.itme-desc
+					span.itme-period
+					button.view-more

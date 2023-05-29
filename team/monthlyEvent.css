@@ -1,0 +1,358 @@
+@import url("./reset.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/*      Monthly Event      */
+#monthlyEvent-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+/*      Calendar      */
+.monthlyEvent-calendar {
+  border: 1px solid var(--main-color-yellow);
+  width: 100%;
+  height: 9rem;
+
+  display: flex;
+  border-radius: 7rem;
+  justify-content: flex-start;
+  align-items: center;
+  /* overflow: hidden; */
+}
+.monthlyEvent-calendar .calendar-title {
+  flex: 2;
+  min-width: 20rem;
+  height: 100%;
+  border-radius: 7rem 0 0 7rem;
+  text-align: center;
+  background-color: var(--main-color-yellow);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.monthlyEvent-calendar .calendar-title span,
+.monthlyEvent-calendar .calendar-title a {
+  color: #fff;
+  font-size: var(--font-size-subDesc);
+  font-weight: bold;
+}
+.monthlyEvent-calendar .calendar-control {
+  flex: 1;
+  min-width: 10rem;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 1rem;
+  position: relative;
+}
+.monthlyEvent-calendar .calendar-control::after {
+  content: "";
+  display: inline-block;
+  width: 0.1rem;
+  height: 2rem;
+  background-color: var(--font-color-subTitle);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+.monthlyEvent-calendar .calendar-control button {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.monthlyEvent-calendar .calendar-control .year-wrap {
+  text-align: center;
+}
+.monthlyEvent-calendar .calendar-control .year-wrap .month {
+  font-size: var(--font-size-subDesc);
+  font-weight: bold;
+  color: var(--main-color-yellow);
+  padding: 0;
+  margin: 0;
+}
+.monthlyEvent-calendar .calendar-control .year-wrap .year {
+  padding: 0;
+  margin: 0;
+}
+.monthlyEvent-calendar .calendar {
+  width: 100%;
+  flex: 8;
+  height: 100%;
+}
+.monthlyEvent-calendar .calendar tbody a {
+  font-size: var(--font-size-smallText);
+  font-weight: 500;
+}
+.today {
+  /* display: inline-block; */
+  padding: 1rem;
+
+  text-align: center;
+  line-height: 2rem;
+  background-color: var(--sub-color-blue);
+  border-radius: 50%;
+  position: relative;
+}
+.today a {
+  color: #fff;
+}
+.monthlyEvent-calendar .calendar thead {
+  display: none;
+}
+.monthlyEvent-calendar .calendar .mobile-calendar {
+  display: none;
+}
+
+/* PC calendar */
+
+.monthlyEvent-calendar .calendar .pc-calendar tr{
+  margin-left: 3rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap:1rem;
+  flex-wrap: wrap;
+}
+.monthlyEvent-calendar .calendar .pc-calendar tr td {
+  text-align: center;
+  display: inline-block;
+}
+
+
+/*      Monthly Event slide      */
+.monthlyEvent-slide {
+  width: 100%;
+  position: relative;
+}
+.slide-wrap {
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem;
+}
+.slide-items {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem 0;
+  position: relative;
+  left: 0;
+  top: 0;
+  flex-wrap: wrap;
+}
+.slide-items.move {
+  transition: 0.5s ease-out;
+}
+
+.slide-items .event-item {
+  overflow: hidden;
+  margin-right: var(--gap-size-normal);
+  border-radius: 2rem;
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+.slide-items .event-item:first-child {
+  /* margin-left: 0.4rem; */
+}
+.slide-items .event-item img {
+  width: 100%;
+  height: 300px;
+}
+.slide-items .event-item h3,
+.slide-items .event-item p,
+.slide-items .event-item span, 
+.slide-items .event-item button {
+  display: block;
+  width: 70%;
+}
+.slide-items .event-item span i {
+  margin-right: 1rem;
+}
+.slide-items .event-item .view-more {
+  padding: 2rem;
+  border-radius: 3rem;
+  background-color: var(--main-color-yellow);
+  border: 1px solid var(--main-color-yellow);
+  font-size: var(--font-size-subDesc);
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+.slide-items .event-item .view-more a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+.item-control {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+.item-control button {
+  font-size: 3rem;
+  background:none;
+  border: none;
+  border-radius: 50%;
+  padding: 3rem;
+}
+.item-control button i {
+  font-size: var(--font-color-subTitle);
+  padding: 3rem;  
+  border: 3px solid var(--font-color-subDesc);
+  background-color: transparent;
+  border-radius: 50%;
+  color: var(--font-color-subDesc);
+}
+.item-control .item-prev-btn {
+  position: absolute;
+  left: -12rem;
+}
+.item-control .item-next-btn {
+  position: absolute;
+  right: -12rem;
+}
+
+
+
+
+@media all and (max-width:1040px) {
+  
+  /*      Calendar      */
+  
+  .monthlyEvent-calendar {
+    width: calc(100% - 3rem);
+    flex-direction: column;
+    border-radius: 0;
+    gap: 2rem;
+    height: auto;
+  }
+  .monthlyEvent-calendar .calendar-title {
+    flex:auto;
+    width: 100%;
+    border-radius: 0;
+    height: 6rem;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .monthlyEvent-calendar .calendar-control {
+    padding: 2rem 3rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .monthlyEvent-calendar .calendar-control::after {
+    background: none;
+  }
+  .monthlyEvent-calendar .calendar-control .year-wrap {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
+  .monthlyEvent-calendar .calendar-control .year-wrap .year {
+    position: relative;
+  }
+  .monthlyEvent-calendar .calendar-control .year-wrap .year::after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 100%;
+    background-color: var(--main-color-yellow);
+    position: absolute;
+    right: -1rem;
+  }
+  .monthlyEvent-calendar .calendar {
+    width: 100%;
+    height: 100%;
+  }
+
+  .monthlyEvent-calendar .calendar thead {
+    display: block;
+  }
+  .monthlyEvent-calendar .calendar thead tr {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .monthlyEvent-calendar .calendar thead tr td {
+    text-align: center;
+  }
+
+  .monthlyEvent-calendar .calendar thead th,
+  .monthlyEvent-calendar .calendar .mobile-calendar td {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+  }
+  .monthlyEvent-calendar .calendar .mobile-calendar {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .monthlyEvent-calendar .calendar .mobile-calendar tr {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
+  .monthlyEvent-calendar .calendar .mobile-calendar tr td:first-child a {
+    color: red;
+  }
+  .monthlyEvent-calendar .calendar .mobile-calendar tr td:last-child a {
+    color: blue;
+  }
+  .monthlyEvent-calendar .calendar .pc-calendar {
+    display: none;
+  }
+
+  /*      Monthly Event slide      */
+
+  .monthlyEvent-slide {
+    width: calc(100% - 3rem);
+    margin-top: 6rem;
+  }
+  .item-control  {
+    top: -10rem;
+  }
+  .item-control .item-prev-btn {
+    left: 0;
+  }
+  .item-control .item-next-btn {
+    right: 0;
+  }
+}
