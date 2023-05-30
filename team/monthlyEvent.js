@@ -52,12 +52,12 @@ function changeYearMonth(year, month) {
     pc_Calendar(arr_calendar);
 
     let calendar_link = document.querySelectorAll(".calendar a");
-    calendar_link.forEach(el => {
-      el.href = "./test.html"
-      el.dataset.i = "a"
+    calendar_link.forEach((el,i) => {
+      el.href = "./test.html";
     });
-    test();
+    today();
 };
+
 
 function pc_Calendar(data) {
 
@@ -76,6 +76,8 @@ function pc_Calendar(data) {
 
   document.querySelector(".calendar .pc-calendar").innerHTML = pc_display;
 }
+
+
 
 function mobile_Calendar(data) {
 
@@ -97,7 +99,7 @@ function mobile_Calendar(data) {
 
 
 
-
+//달력 월 바꾸기
 function changeMonth(e) {
   current_month = current_month + e;
 
@@ -116,12 +118,11 @@ function changeMonth(e) {
 
 }
 
-
 changeYearMonth(current_year,current_month);
 
 
-
-function test() {
+// 오늘 날짜 표시 해주기
+function today() {
   let mobile = document.querySelectorAll(".mobile-calendar a");
   let pc = document.querySelectorAll(".pc-calendar a");
   let today = new Date();
@@ -185,7 +186,9 @@ let slides = document.querySelector(".slide-items"),
     let newWidth = slideWidth * newSlideCount + 'px';
     let translateValue = - slideWidth * slideCount
     console.log(newWidth);
-
+    currentSlide.forEach(el => {
+      // el.style.width = slideWidth * newSlideCount / 
+    })
     slides.style.width = newWidth;
     slides.style.transform = `translateX(${translateValue}px)`
   }
@@ -214,3 +217,4 @@ let slides = document.querySelector(".slide-items"),
       },600)
     }
   }
+

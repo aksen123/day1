@@ -110,27 +110,38 @@ section {
   font-size: var(--font-size-smallText);
   font-weight: 500;
 }
-.today {
-  /* display: inline-block; */
-  padding: 1rem;
 
+.today {
   text-align: center;
-  line-height: 2rem;
-  background-color: var(--sub-color-blue);
-  border-radius: 50%;
+
   position: relative;
+}
+.today::before {
+  content: "";
+  width: 3rem;
+  height: 3rem;
+  display: block;
+  background-color: var(--sub-color-blue);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  z-index: -1;
 }
 .today a {
   color: #fff;
 }
+
+
+/* PC calendar */
+
 .monthlyEvent-calendar .calendar thead {
   display: none;
 }
 .monthlyEvent-calendar .calendar .mobile-calendar {
   display: none;
 }
-
-/* PC calendar */
 
 .monthlyEvent-calendar .calendar .pc-calendar tr{
   margin-left: 3rem;
@@ -144,6 +155,7 @@ section {
 .monthlyEvent-calendar .calendar .pc-calendar tr td {
   text-align: center;
   display: inline-block;
+  margin-right: 0.3rem;
 }
 
 
@@ -151,6 +163,8 @@ section {
 .monthlyEvent-slide {
   width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .slide-wrap {
   width: 100%;
@@ -165,17 +179,23 @@ section {
   position: relative;
   left: 0;
   top: 0;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  gap: 3rem;
 }
 .slide-items.move {
   transition: 0.5s ease-out;
 }
-
+.slide-items li {
+  flex: 1;
+  /* width: calc(100%); */
+}
 .slide-items .event-item {
   overflow: hidden;
-  margin-right: var(--gap-size-normal);
+  /* margin-right: var(--gap-size-normal); */
   border-radius: 2rem;
-  width: 375px;
+  /* flex: 1; */
+  /* width: 375px; */
+  /* width: calc((100% - 3rem)/); */
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -223,29 +243,35 @@ section {
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
+  /* justify-content: space-around; */
 }
 .item-control button {
   font-size: 3rem;
   background:none;
   border: none;
   border-radius: 50%;
-  padding: 3rem;
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  border: 3px solid var(--font-color-subDesc);
+  position: relative;
 }
 .item-control button i {
-  font-size: var(--font-color-subTitle);
-  padding: 3rem;  
-  border: 3px solid var(--font-color-subDesc);
   background-color: transparent;
   border-radius: 50%;
   color: var(--font-color-subDesc);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .item-control .item-prev-btn {
   position: absolute;
-  left: -12rem;
+  left: -5rem;
 }
 .item-control .item-next-btn {
   position: absolute;
-  right: -12rem;
+  right: -5rem;
 }
 
 
@@ -254,7 +280,7 @@ section {
 @media all and (max-width:1040px) {
   
   /*      Calendar      */
-  
+
   .monthlyEvent-calendar {
     width: calc(100% - 3rem);
     flex-direction: column;
@@ -339,20 +365,46 @@ section {
   .monthlyEvent-calendar .calendar .pc-calendar {
     display: none;
   }
-
+  .today::before {
+    top: 30%;
+  }
   /*      Monthly Event slide      */
 
   .monthlyEvent-slide {
     width: calc(100% - 3rem);
     margin-top: 6rem;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .slide-wrap {
+    overflow:hidden;
+  }
+  .slide-items {
+    width: calc(100% - 3rem);
+  }
+  .slide-items li {
+    width: 400px;
+  }
+  .slide-items .event-item {
+    width: 100%;
   }
   .item-control  {
-    top: -10rem;
+    position: static;
+    justify-content: space-around;
+  }
+  .item-control button i {
+    position: relative;
+    top:0;
+    left: 0;
+    transform: translate(0%, 0%);
   }
   .item-control .item-prev-btn {
-    left: 0;
+    position: static;
+
   }
   .item-control .item-next-btn {
-    right: 0;
+    position: static;
+
   }
 }
