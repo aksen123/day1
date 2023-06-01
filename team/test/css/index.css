@@ -20,7 +20,7 @@ section {
 /*      Monthly Event      */
 #monthlyEvent-content {
   width: 100%;
-  max-width: 1200px;
+  max-width: 70vw;
   display: flex;
   flex-direction: column;
   gap: 6rem;
@@ -33,7 +33,7 @@ section {
 .monthlyEvent-calendar {
   border: 1px solid var(--main-color-yellow);
   width: 100%;
-  height: 9rem;
+  height: 10rem;
 
   display: flex;
   border-radius: 7rem;
@@ -147,15 +147,17 @@ section {
   margin-left: 3rem;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items:center;
   justify-content: flex-start;
-  gap:1rem;
+  gap:1.3rem;
   flex-wrap: wrap;
+  align-content: center;
 }
 .monthlyEvent-calendar .calendar .pc-calendar tr td {
   text-align: center;
   display: inline-block;
-  margin-right: 0.3rem;
+  margin: auto 0;
+  /* margin-right: 0.3rem; */
 }
 
 
@@ -186,18 +188,15 @@ section {
 }
 .slide-items li {
   overflow: hidden;
-
   margin-right: var(--gap-size-normal);
-  width: 375px;
+  /* width: 20vw; */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   border-radius: 2rem;
-
+  width: 100%;
+  height: auto;
+  transition: 0.5s;
 }
 .slide-items .event-item {
-
-  /* flex: 1; */
-  /* width: 375px; */
-  /* width: calc((100% - 3rem)/); */
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -210,8 +209,16 @@ section {
 }
 .slide-items .event-item img {
   width: 100%;
-  height: 300px;
+  height: 23vh;
+  object-fit: cover;
 }
+.slide-items .event-item h3{
+  font-size: 2rem;
+}
+.slide-items .event-item p,
+.slide-items .event-item span {
+  font-size: 1.6rem;
+} 
 .slide-items .event-item h3,
 .slide-items .event-item p,
 .slide-items .event-item span, 
@@ -232,10 +239,11 @@ section {
   margin-bottom: 2rem;
 }
 .slide-items .event-item .view-more a{
-  display: block;
   width: 100%;
   height: 100%;
+  font-size: 1.6rem;
   color: #fff;
+  display: block;
 }
 .item-control {
   width: 100%;
@@ -268,18 +276,20 @@ section {
 }
 .item-control .item-prev-btn {
   position: absolute;
-  left: -5rem;
+  left: -7rem;
 }
 .item-control .item-next-btn {
   position: absolute;
-  right: -5rem;
+  right: -7rem;
 }
 
 
 
 
-@media all and (max-width:1040px) {
-  
+@media all and (max-width:1024px) {
+  #monthlyEvent-content  {
+    max-width: 95vw;
+  }
   /*      Calendar      */
 
   .monthlyEvent-calendar {
@@ -379,20 +389,27 @@ section {
   }
 
   .slide-wrap {
+    position: relative;
+    top: -5rem;
     overflow:hidden;
   }
   .slide-items {
     width: calc(100% - 3rem);
   }
   .slide-items li {
-    width: 400px;
+    height: auto;
   }
   .slide-items .event-item {
     width: 100%;
   }
   .item-control  {
-    position: static;
-    justify-content: space-around;
+    position: relative;
+    justify-content: center;
+    gap: 3rem;
+    top: -5rem;
+  }
+  .item-control button {
+    border-radius: 0;
   }
   .item-control button i {
     position: relative;
@@ -406,6 +423,46 @@ section {
   }
   .item-control .item-next-btn {
     position: static;
+    /* width: calc(100% - 30px); */
+  }
+}
 
+
+@media all and (max-width:768px){
+  .monthlyEvent-calendar .calendar thead th,
+  .monthlyEvent-calendar .calendar .mobile-calendar td {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+  }
+  .today::before {
+    top: 50%;
+  }
+  .slide-items {
+    top: ;
+  }
+  .slide-items li {
+    height: auto;
+  }
+  .slide-items .event-item {
+    height: inherit;
+    gap: 2.5rem;
+    justify-content: flex-start;
+  }
+  .slide-items .event-item h3 {
+    font-size: var(--font-size-mainText)
+  }
+  .slide-items .event-item p,
+  .slide-items .event-item span, 
+  .slide-items .event-item button {
+  font-size: var(--font-size-smallText);
+  }
+.slide-items .event-item .view-more {
+  padding: 1.5rem;
+  }
+  .slide-items .event-item img {
+    width: 100%;
+    object-fit:cover;
+    height: 25vh;
   }
 }

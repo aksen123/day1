@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <style>
+    한복규정 스타일
+    table, tr, th, td {
+      border: 1px solid #ddd;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    th {
+      background-color: #ffc011;
+      height: 40px;
+    }
+    th:first-child {
+      width: 300px;
+      height: 40px;
+    }
+    th:last-child {
+      width: 600px;
+    }
+    tr td {
+      height: 40px;
+      width: 120px;
+      text-align: center;
+      background-color: #eee;
+    }
+    tr td:last-child {
+      text-align: left;
+      line-height: 2;
+      background-color: transparent;
+    }
+  </style> -->
+  <style>
+    table, tr, th, td {
+      border: 1px solid #ddd;
+      border-collapse: collapse;
+    }
+    .qq {
+      background-color: #ffc011;
+      color: #fff;
+    }
+    .aa {
+      background-color: #eee;
+    }
+    th {
+      padding: 10px;
+    }
+    td {
+      padding: 10px 10px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tbody>
+      <tr class="qq">
+        <th class="q">Q</th>
+        <td>한복의 범위는 어디까지 인가요?</td>
+      </tr>
+      <tr class="aa">
+        <th class="a">A</th>
+        <td>전통한복과 생활한복 모두 한복으로 인정합니다.</td>
+      </tr>
+      <tr class="qq">
+        <th class="q">Q</th>
+        <td>한저고리에 고름이 없는 경우도 한복으로 보나요?</td>
+      </tr>
+      <tr class="aa">
+        <th class="a">A</th>
+        <td>네, 맞습니다.<br />
+          여미는 깃 형태의 저고리는 고름이 없더라도 한복 저고리로 인정합니다.</td>
+      </tr>
+      <tr class="qq">
+        <th class="q">Q</th>
+        <td>티셔츠 형태의 생활한복 저고리는 한복으로 인정하나요?</td>
+      </tr>
+      <tr class="aa">
+        <th class="a">A</th>
+        <td>아닙니다. <br />
+          티셔츠처럼 입는 형태의 생활한복 저고리는 한복 저고리로 인정하지 않습니다.</td>
+      </tr>
+      <tr class="qq">
+        <th class="q">Q</th>
+        <td>한복바지 허리춤 마감은 지퍼형태, 발목부분 대님이 없는데, 한복인가요?</td>
+      </tr>
+      <tr class="aa">
+        <th class="a">A</th>
+        <td>네, 맞습니다. <br />
+          한복바지의 경우, 형태를 기준으로 한복바지에 준하면(사폭바지 형태) 한복으로 인정합니다.</td>
+      </tr>
+      <tr class="qq">
+        <th class="q">Q</th>
+        <td>청바지에 저고리만 착용하거나, 한복 하의에 티셔츠를 입은 경우는 한복으로 인정하나요?</td>
+      </tr>
+      <tr class="aa">
+        <th class="a">A</th>
+        <td>아닙니다. <br />
+          여미는 깃의 저고리와 하의(치마, 바지)를 갖춘 경우 한복으로 인정합니다.</td>
+      </tr>
+      <tr class="qq">
+        <th class="q">Q</th>
+        <td>관람객이 저고리 없이 원피스형 한복을 입고 왔는데, 한복으로 인정하나요?</td>
+      </tr>
+      <tr class="aa">
+        <th class="a">A</th>
+        <td>아닙니다. <br />
+          여미는 깃의 저고리와 치마를 착용한 경우 한복으로 인정합니다.</td>
+      </tr>
+      <tr class="qq">
+        <th class="q">Q</th>
+        <td>한복의 범위는 어디까지 인가요?</td>
+      </tr>
+      <tr class="aa">
+        <th class="a">A</th>
+        <td>전통한복과 생활한복 모두 한복으로 인정합니다.</td>
+      </tr>
+      <tr class="qq">
+        <th class="q">Q</th>
+        <td>관람객이 저고리에 허리치마를 입고 왔는데, 이것도 한복으로 인정하나요?</td>
+      </tr>
+      <tr class="aa">
+        <th class="a">A</th>
+        <td>네. 맞습니다. <br>
+          여미는 깃의 저고리와 치마를 착용한 경우 한복으로 인정합니다. <br>
+          단, 저고리가 허리까지 내려와야 합니다.</td>
+      </tr>
+      <tr class="qq">
+        <th class="q">Q</th>
+        <td>여름에 어르신들이 착용하는 모시옷도 한복인가요?</td>
+      </tr>
+      <tr class="aa">
+        <th class="a">A</th>
+        <td>네. 맞습니다. <br>
+          가이드라인에 준하는 경우 한복으로 인정합니다.</td>
+      </tr>
+      <tr class="qq">
+        <th class="q">Q</th>
+        <td>외국인이 한복을 착용한 경우, 무료관람 대상인가요?</td>
+      </tr>
+      <tr class="aa">
+        <th class="a">A</th>
+        <td>네, 맞습니다. <br />
+          한복착용자 무료관람의 취지는 한복의 대중화 및 세계화이므로 내·외국인에 관계없이 <br />
+          무료관람 대상으로 인정합니다.</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <table>
+    <thead>
+      <tr>
+        <th colspan="2">구분</th>
+        <th>내용</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="2">일반</td>
+        <td>
+          <ol>
+            <li>전통한복,생활한복 모두 무료관람 대상 포함</li>
+            <li>상의(저고리)와 하의(치마,바지)를 기본으로 함 단, 두루마기만 걸친 경우에는 한복으로 인정하지 않으며, 상하의를 갖춰 입어야함</li>
+          </ol>
+          <p>&nbsp ＊궁궐의 품격에 어울리는 한복 착용 권장 (과도한 노출 금지)</p>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="3">세부</td>
+        <td>저고리</td>
+        <td>
+          <ol start="3">
+            <li>
+              여미는 깃 형태 유지 <br />
+               (고름·매듭 방식은 관계 없음)
+            </li>
+          </ol>
+        </td>
+      </tr>
+      <tr>
+        <td>바지</td>
+        <td>
+          <ol start="4">
+            <li>사폭바지 형태에 준하는 바지</li>
+            <li style="list-style: none;">
+              <a href="./4_big.gif" target="_blank">
+                <img src="./4_big.gif" alt="" width="200">
+              </a>
+            </li>
+          </ol>
+        </td>
+      </tr>
+      <tr>
+        <td>치마</td>
+        <td>
+          <ol start="5">
+            <li>
+              통치마·풀치마 등 형식 제한 없음
+            </li>
+          </ol>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    ※개정 2021.4.21. 문화재청 궁능유적본부 훈령 제20호
+  </p> -->
+</body>
+</html>
