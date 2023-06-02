@@ -29,6 +29,7 @@ function changeYearMonth(year, month) {
   }
   // 1일의 요일 구하기
   let first_day = new Date(`${year}-${month}-01`).getDay();
+  
   let arr_calendar = [];
 
 
@@ -51,6 +52,7 @@ function changeYearMonth(year, month) {
     mobile_Calendar(arr_calendar);
     pc_Calendar(arr_calendar);
 
+      // 나중에 링크 넣기~~~~~~
     let calendar_link = document.querySelectorAll(".calendar a");
     calendar_link.forEach((el,i) => {
       el.href = "./test.html";
@@ -146,6 +148,7 @@ function today() {
 
 
 
+
 /*##### 슬라이드 ##### */
 
 
@@ -185,10 +188,20 @@ function makeClone() {
 
 
 window.addEventListener("resize", () => {
-  updateWidthTrasnform()
+
+  updateWidthTrasnform();
+
+
+  // PC 달력 정렬
+  if (window.matchMedia("all and (min-width: 1600px)").matches) {
+    document.querySelector(".calendar .pc-calendar tr").style.justifyContent = "space-between"
+  } else {
+    document.querySelector(".calendar .pc-calendar tr").style.justifyContent = "flex-start"
+  }
 })
 
 
+//화면 너비별 슬라이드 위치, 크기 함수
 function updateWidthTrasnform() {
   current_slide = document.querySelectorAll(".slide-items li");
   let newSlide_count = current_slide.length;
@@ -199,13 +212,13 @@ function updateWidthTrasnform() {
   //  1024px 이상
   slideWidth = (slidesWrap - slideMargin*2) / 3 
   settingSlide(slideWidth, slideMargin, newSlide_count);
+  
   // 1024px 이하
   if(window.innerWidth < 1024) {
-        
+
     if(window.innerWidth < 768) {
       slideWidth = slidesWrap ;
       settingSlide(slideWidth, responsiveMargin, newSlide_count);
-
     }else {
       slideWidth = (slidesWrap - responsiveMargin) / 2 ;
       settingSlide(slideWidth, responsiveMargin, newSlide_count);
@@ -213,7 +226,7 @@ function updateWidthTrasnform() {
   }
 }
 
-// 슬라이드 위치 크기 셋팅
+// 슬라이드 위치 크기 셋팅 함수
 function settingSlide(width, margin, count) {
   let slideTransform = -(width + margin) * slideCount;
   
@@ -242,10 +255,9 @@ nextBtn.addEventListener("click", (e)=>{
     moveSlide(currentIdx + 1, slideMargin) 
   }else if(window.innerWidth < 1024) {
     moveSlide(currentIdx + 1, responsiveMargin)
-  } 
-
-})
-
+  } ;
+});
+//슬라이드 이동 함수
 function moveSlide(num, margin) {
   slides.style.left = -num*(slideWidth + margin) + 'px';
   currentIdx = num;

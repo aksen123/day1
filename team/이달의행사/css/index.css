@@ -1,15 +1,5 @@
 @import url("./reset.css");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-a {
-  text-decoration: none;
-}
-li {
-  list-style: none;
-}
+
 
 section {
   height: 100vh;
@@ -19,13 +9,13 @@ section {
 
 /*      Monthly Event      */
 #monthlyEvent-content {
-  width: 100%;
-  max-width: 70vw;
   display: flex;
   flex-direction: column;
   gap: 6rem;
   align-items: center;
   justify-content: flex-start;
+  width: 100%;
+  max-width: 70vw;
 }
 
 
@@ -39,14 +29,13 @@ section {
   border-radius: 7rem;
   justify-content: flex-start;
   align-items: center;
-  /* overflow: hidden; */
 }
 .monthlyEvent-calendar .calendar-title {
   flex: 2;
   min-width: 20rem;
   height: 100%;
-  border-radius: 7rem 0 0 7rem;
   text-align: center;
+  border-radius: 7rem 0 0 7rem;
   background-color: var(--main-color-yellow);
 
   display: flex;
@@ -56,30 +45,31 @@ section {
 }
 .monthlyEvent-calendar .calendar-title span,
 .monthlyEvent-calendar .calendar-title a {
-  color: #fff;
-  font-size: var(--font-size-subDesc);
   font-weight: bold;
+  font-size: var(--font-size-subDesc);
+  color: #fff;
 }
+
+          /* 달력 버튼 */
 .monthlyEvent-calendar .calendar-control {
+  position: relative;
   flex: 1;
-  min-width: 10rem;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  min-width: 10rem;
   gap: 1rem;
-  position: relative;
 }
 .monthlyEvent-calendar .calendar-control::after {
   content: "";
-  display: inline-block;
-  width: 0.1rem;
-  height: 2rem;
-  background-color: var(--font-color-subTitle);
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  width: 0.1rem;
+  height: 2rem;
   opacity: 0.5;
+  background-color: var(--font-color-subTitle);
+  display: inline-block;
 }
 .monthlyEvent-calendar .calendar-control button {
   background: transparent;
@@ -87,6 +77,7 @@ section {
   border: none;
   cursor: pointer;
 }
+          /* 년, 월 표시 */
 .monthlyEvent-calendar .calendar-control .year-wrap {
   text-align: center;
 }
@@ -111,6 +102,7 @@ section {
   font-weight: 500;
 }
 
+        /* 오늘 날짜 표시 */
 .today {
   text-align: center;
 
@@ -118,14 +110,14 @@ section {
 }
 .today::before {
   content: "";
-  width: 3rem;
-  height: 3rem;
+  width: 2.2rem;
+  height: 2.2rem;
   display: block;
   background-color: var(--sub-color-blue);
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,-45%);
   border-radius: 50%;
   z-index: -1;
 }
@@ -144,11 +136,11 @@ section {
 }
 
 .monthlyEvent-calendar .calendar .pc-calendar tr{
-  margin-left: 3rem;
+  padding: 0 2rem;
   height: 100%;
   display: flex;
   align-items:center;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap:1.3rem;
   flex-wrap: wrap;
   align-content: center;
@@ -157,11 +149,11 @@ section {
   text-align: center;
   display: inline-block;
   margin: auto 0;
-  /* margin-right: 0.3rem; */
 }
 
 
 /*      Monthly Event slide      */
+
 .monthlyEvent-slide {
   width: 100%;
   position: relative;
@@ -181,7 +173,6 @@ section {
   position: relative;
   left: 0;
   top: 0;
-  /* flex-wrap: wrap; */
 }
 .slide-items.move {
   transition: 0.5s ease-out;
@@ -189,7 +180,6 @@ section {
 .slide-items li {
   overflow: hidden;
   margin-right: var(--gap-size-normal);
-  /* width: 20vw; */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   border-radius: 2rem;
   width: 100%;
@@ -203,9 +193,6 @@ section {
   align-items: center;
   justify-content: center;
 
-}
-.slide-items .event-item:first-child {
-  /* margin-left: 0.4rem; */
 }
 .slide-items .event-item img {
   width: 100%;
@@ -230,7 +217,7 @@ section {
   margin-right: 1rem;
 }
 .slide-items .event-item .view-more {
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 3rem;
   background-color: var(--main-color-yellow);
   border: 1px solid var(--main-color-yellow);
@@ -255,24 +242,23 @@ section {
   /* justify-content: space-around; */
 }
 .item-control button {
-  font-size: 3rem;
-  background:none;
-  border: none;
-  border-radius: 50%;
-  display: inline-block;
+  position: relative;
   width: 5rem;
   height: 5rem;
+  font-size: 3rem;
+  background:none;
   border: 3px solid var(--font-color-subDesc);
-  position: relative;
+  border-radius: 50%;
+  display: inline-block;
 }
 .item-control button i {
-  background-color: transparent;
-  border-radius: 50%;
-  color: var(--font-color-subDesc);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: var(--font-color-subDesc);
+  border-radius: 50%;
 }
 .item-control .item-prev-btn {
   position: absolute;
@@ -283,15 +269,21 @@ section {
   right: -7rem;
 }
 
+  /* PC 달력 정렬  space-between  >>> flex-start*/
+@media all and (max-width:1600px) {
+  .monthlyEvent-calendar .calendar .pc-calendar tr {
+    justify-content: flex-start;
+  }
+}
+  /* PC 달력 정렬  space-between  >>> flex-start*/
 
 
-
+      /* ##### Tablet Size #####  */
 @media all and (max-width:1024px) {
   #monthlyEvent-content  {
     max-width: 95vw;
   }
   /*      Calendar      */
-
   .monthlyEvent-calendar {
     width: calc(100% - 3rem);
     flex-direction: column;
@@ -377,10 +369,13 @@ section {
     display: none;
   }
   .today::before {
-    top: 30%;
+    width: 4rem;
+    height: 4rem;
+    transform: translate(-50%,-65%);
   }
-  /*      Monthly Event slide      */
 
+
+  /*     Event slide      */
   .monthlyEvent-slide {
     width: calc(100% - 3rem);
     margin-top: 6rem;
@@ -427,19 +422,16 @@ section {
   }
 }
 
-
+      /* ##### Mobile Size #####  */
 @media all and (max-width:768px){
   .monthlyEvent-calendar .calendar thead th,
   .monthlyEvent-calendar .calendar .mobile-calendar td {
     display: inline-block;
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
   }
   .today::before {
     top: 50%;
-  }
-  .slide-items {
-    top: ;
   }
   .slide-items li {
     height: auto;

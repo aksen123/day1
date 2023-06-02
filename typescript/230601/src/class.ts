@@ -7,8 +7,8 @@
 // protected >>> 외부에선 수정이 불가하지만 확장클래스에선 제한적으로 수정이 가능하도록 해주는 필드 속성
 class Employee {
   //필드
-   name: string = "";
-   age: number = 0;
+  name: string = "";
+  age: number = 0;
   position: string = "";
   // 생성자
   constructor(name: string, age: number, position: string) {
