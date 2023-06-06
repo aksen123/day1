@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@5.3.8/css/swiper.min.css">
+  <script src="https://unpkg.com/swiper@5.3.8/js/swiper.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/df4f7d9123.js" crossorigin="anonymous"></script>
+  <!-- Custom JS & CSS -->
+  <script defer src="./js/include.js"></script>
+  <script defer src="./js/script.js"></script>
+
+  <link rel="stylesheet" href="./css/style.css">
+  <title>경복궁 관리소</title>
+</head>
+<body>
+  <!-- Main Navigation -->
+  <div class="main-nav-include"></div>
+  <section id="wrap">
+    <!-- Main Slide -->
+    <div id="main-slide-content">
+      <div class="main-slide">
+        <img src="./imgaes/mainImg (1).png" alt="main slide1" class="show">
+        <img src="./imgaes/mainImg (2).jpg" alt="main slide2">
+        <img src="./imgaes/mainImg (3).jpg" alt="main slide3">
+        <img src="./imgaes/mainImg (4).jpg" alt="main slide4">
+      </div>
+    </div>
+    <!-- Mid Nav -->
+    <div id="mid-nav-content">
+      <div class="mid-nav">
+        <ul>
+          <li>
+            <a href="#">
+              <div class="mid-nav-icon">
+                <img src="./imgaes/01_midNav (1).png" alt="midNav">
+              </div>
+              <p>패키지</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="mid-nav-icon">
+                <img src="./imgaes/01_midNav (2).png" alt="midNav">
+              </div>
+              <p>예약하기</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="mid-nav-icon">
+                <img src="./imgaes/01_midNav (3).png" alt="midNav">
+              </div>
+              <p>예약확인</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="mid-nav-icon">
+                <img src="./imgaes/01_midNav (4).png" alt="midNav">
+              </div>
+              <p>오시는길</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="mid-nav-icon">
+                <img src="./imgaes/01_midNav (5).png" alt="midNav">
+              </div>
+              <p>이용정보</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="mid-nav-icon">
+                <img src="./imgaes/01_midNav (6).png" alt="midNav">
+              </div>
+              <p>이벤트</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Gbg Event -->
+    <div id="gbg-event-content">
+      <div class="gbg-event-inner">
+        <div class="articleTitle">
+          <h4>경복궁 행사</h4>
+          <p>아름다운 경복궁을 시간대 별로 즐겨보세요!</p>
+        </div>
+        <div class="gbg-event-box">
+          <div class="gbg-event-day">
+            <img src="./imgaes/02_gbgEvent_day.png" alt="" class="pc">
+            <img src="./imgaes/02_gbgEvent_day_mo.png" alt="" class="mo">
+            <div class="gbg-event-title">
+              <h5>낮의 경복궁</h5>
+              <p>
+                해와 함께 떠오르는<br />
+                찬란한 조선의 역사와 문화
+              </p>
+            </div>
+            <a href="#" class="gbg-event-moreView">
+              더보기
+              <i class="fa fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="gbg-event-night">
+            <img src="./imgaes/02_gbgEvent_night.png" alt="" class="pc">
+            <img src="./imgaes/02_gbgEvent_night_mo.png" alt="" class="mo">
+            <div class="gbg-event-title">
+              <h5>밤의 경복궁</h5>
+              <p>
+                달와 함께 차오르는<br />
+                아름다운 조선의 아경과 풍류
+              </p>
+            </div>
+            <a href="#" class="gbg-event-moreView">
+              더보기
+              <i class="fa fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Monthly Event -->
+    <div id="monthlyEvent-content">
+      <div class="articleTitle">
+        <h4>이달의 행사</h4>
+        <p>타임라인을 좌우로 움직이거나 스크롤해 이달의 축제와 행사를 경험해보세요!</p>
+      </div>
+          <!-- == Calendar == -->
+        <div class="monthlyEvent-calendar">
+          <div class="calendar-title">
+            <span>이달의 일정</span>
+            <a href="#"><i class="fa-solid fa-plus"></i></a>
+          </div>
+          <div class="calendar-control">
+            <button class="calendar-prev-button" onclick="changeMonth(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="year-wrap">
+              <span class="month"></span>
+              <p class="year"></p>
+            </div>
+            <button class="calendar-next-button" onclick="changeMonth(1)"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+          <table class="calendar">
+            <thead>
+              <tr>
+                <th style="color:red">일</th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+                <th style="color:blue">토</th>
+              </tr>
+              <tbody class="pc-calendar link">
+
+              </tbody>
+              <tbody class="mobile-calendar link">
+                
+              </tbody>
+            </thead>
+          </table>
+        </div>
+          <!-- ##### Slide ##### -->
+      <div class="monthlyEvent-slide">
+        <div class="slide-wrap">
+          <ul class="slide-items">
+            <li>
+              <div class="event-item">
+                <img src="./imgaes/03_monthlyEvent (1).jpg" alt="">
+                <h3 class="item-title">가정의 달, 푸르른 5월의 궁</h3>
+                <p class="item-desc">가정의 달을 맞이하여 온 가족이 즐길 수 있는 아름다운 정원 나들이</p>
+                <span class="item-period"><i class="fa-solid fa-calendar-days"></i> 2023-05-17 ~ 06-17</span>
+                <button class="view-more"><a href="#">더보기</a></button>
+              </div>
+            </li>
+            <li>
+              <div class="event-item">
+                <img src="./imgaes/03_monthlyEvent (2).jpg" alt="">
+                <h3 class="item-title">가정의 달, 푸르른 6월의 궁</h3>
+                <p class="item-desc">가정의 달을 맞이하여 온 가족이 즐길 수 있는 아름다운 정원 나들이</p>
+                <span class="item-period"><i class="fa-solid fa-calendar-days"></i> 2023-05-17 ~ 06-17</span>
+                <button class="view-more"><a href="#">더보기</a></button>
+              </div>
+            </li>
+            <li>
+              <div class="event-item">
+                <img src="./imgaes/03_monthlyEvent (3).jpg" alt="">
+                <h3 class="item-title">가정의 달, 푸르른 7월의 궁</h3>
+                <p class="item-desc">가정의 달을 맞이하여 온 가족이 즐길 수 있는 아름다운 정원 나들이</p>
+                <span class="item-period"><i class="fa-solid fa-calendar-days"></i> 2023-05-17 ~ 06-17</span>
+                <button class="view-more"><a href="#">더보기</a></button>
+              </div>
+            </li>
+            <li>
+              <div class="event-item">
+                <img src="./imgaes/03_monthlyEvent (4).jpg" alt="">
+                <h3 class="item-title">가정의 달, 푸르른 5월의 궁</h3>
+                <p class="item-desc">가정의 달을 맞이하여 온 가족이 즐길 수 있는 아름다운 정원 나들이</p>
+                <span class="item-period"><i class="fa-solid fa-calendar-days"></i> 2023-05-17 ~ 06-17</span>
+                <button class="view-more"><a href="#">더보기</a></button>
+              </div>
+            </li>
+            <li>
+              <div class="event-item">
+                <img src="./imgaes/03_monthlyEvent (5).jpg" alt="">
+                <h3 class="item-title">가정의 달, 푸르른 5월의 궁</h3>
+                <p class="item-desc">가정의 달을 맞이하여 온 가족이 즐길 수 있는 아름다운 정원 나들이</p>
+                <span class="item-period"><i class="fa-solid fa-calendar-days"></i> 2023-05-17 ~ 06-17</span>
+                <button class="view-more"><a href="#">더보기</a></button>
+              </div>
+            </li>
+            <li>
+              <div class="event-item">
+                <img src="./imgaes/03_monthlyEvent (6).jpg" alt="">
+                <h3 class="item-title">가정의 달, 푸르른 5월의 궁</h3>
+                <p class="item-desc">가정의 달을 맞이하여 온 가족이 즐길 수 있는 아름다운 정원 나들이</p>
+                <span class="item-period"><i class="fa-solid fa-calendar-days"></i> 2023-05-17 ~ 06-17</span>
+                <button class="view-more"><a href="#">더보기</a></button>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="item-control">
+          <button class="item-prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="item-next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Slide -->
+    <div id="footerSlide-content">
+      <div class="footerSlide-inner">
+        <div class="swiper-container">
+          <div class="swiper" dir="ltr">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (1).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (2).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (3).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (4).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (5).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (6).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (7).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (8).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (9).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (10).jpg" alt=""></div>
+            </div>
+          </div>
+          <div class="swiper" dir="rtl">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (11).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (12).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (13).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (14).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (15).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (16).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (17).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (18).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (19).jpg" alt=""></div>
+              <div class="swiper-slide"><img src="./imgaes/04_fotterSlide (20).jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Footer -->
+    <div class="main-footer-include"></div>
+  </section>
+</body>
+
+</html>
