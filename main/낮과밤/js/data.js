@@ -1,5 +1,7 @@
 export { dayEvent, nightEvent }
 
+
+// 낮 행사
 const dayEvent = [
   {
     src: "./img/01.jpg",
@@ -44,6 +46,10 @@ const dayEvent = [
     desc : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima in sit incidunt enim excepturi asperiores minus ipsam nobis necessitatibus quam."
   },
 ]
+
+
+
+//  밤 행사
 const nightEvent = [
   {
     src: "./img/01.jpg",
