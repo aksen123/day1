@@ -21,7 +21,7 @@ let current_month = new Date().getMonth()+1;
 document.querySelector(".year").innerText = current_year
 document.querySelector(".month").innerText = current_month < 10 ? "0" +current_month : current_month;
 
-
+// export { checkLeapYear, changeYearMonth, mobile_Calendar, }
 // 윤년 계산
 function checkLeapYear(year) {
   if (year % 400 == 0) {
@@ -155,6 +155,8 @@ function today() {
   }
 }
 
+
+
 // 슬라이드 
 let slides = document.querySelector(".slide-items"),
     slide = document.querySelectorAll(".slide-items li"),
@@ -274,6 +276,7 @@ function moveSlide(num, margin) {
 // === Footer Slide ===
 $('.swiper').each(function(index) {
   t = $(this);
+  console.log(t)
   t.addClass('swiepr-' + index);
 
   let swiper = new Swiper( t, {

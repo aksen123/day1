@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/df4f7d9123.js" crossorigin="anonymous"></script>
+  <!-- Custom JS & CSS -->
+  <script defer src="./js/script.js"></script>
+  <link rel="stylesheet" href="./css/reservation.css">
+  <title>예약 확인/취소</title>
+</head>
+<body>
+  <!-- Main Navigation -->
+  <nav id="main-nav-content">
+    <!-- pc nav -->
+    <div class="main-nav">
+      <div class="nav-top">
+        <div class="nav-top-inner">
+          <a href="#" class="sns twiter">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="#" class="sns insta">
+            <i class="fa fa-instagram"></i>
+          </a>
+          <div class="lang-menu-wrap">
+            <div class="lang-menu">
+              KOR<span><i class="fa fa-chevron-down"></i></span>
+            </div>
+            <ul class="lang-menu-list">
+              <li><a href="#">ENG</a></li>
+              <li><a href="#">JAP</a></li>
+              <li><a href="#">CHN</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav-bottom">
+        <div class="nav-bottom-inner">
+          <div class="nav-left">
+            <a href="./index.html" class="nav-logo">
+              <img src="./imgaes/logo.png" alt="로고">
+            </a>
+            <ul class="nav-menu">
+              <li>
+                <a href="#">이용정보</a>
+                <div class="submenu-dot"></div>
+                <ul class="sub-menu">
+                  <li><a href="#">경복궁 이야기</a></li>
+                  <li><a href="#">오시는 길</a></li>
+                  <li><a href="#">한복 규정</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">행사</a>
+                <ul class="sub-menu">
+                  <li><a href="#">낮의 경복궁</a></li>
+                  <li><a href="#">밤의 경복궁</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">이벤트</a>
+                <ul class="sub-menu">
+                  <li><a href="#">지난 이벤트</a></li>
+                  <li><a href="#">진행중인 이벤트</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">예약</a>
+                <ul class="sub-menu">
+                  <li><a href="#">예약 하기</a></li>
+                  <li><a href="#">예약 확인</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">패키지 예약</a>
+                <ul class="sub-menu">
+                  <li><a href="#">패키지 예약 하기</a></li>
+                  <li><a href="#">예약 확인</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="nav-right">
+            <div class="search">
+              <input type="text" placeholder="Search">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sub-menu-bg">
+        <div class="sub-menu-bg-pattern"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Reservation -->
+  <div id="reservation-content">
+    <div class="reservation-inner reservation-confirm">
+      <div class="reservation-confirm-bookbtn">
+        <button>
+          <i class="bi bi-check-circle"></i>
+          예약하기
+        </button>
+      </div>
+      <div class="reservation-confirm-main">
+        <div class="reservation-confirm-topnav">
+          <input type="radio" name="confirm" id="confirm-mobile" checked>
+          <label for="confirm-mobile">휴대폰 번호로 확인하기</label>
+          <input type="radio" name="confirm" id="confirm-email">
+          <label for="confirm-email">이메일로 확인하기</label>
+          <div class="confirm-mobile-content">
+            <form class="confirm-mobile-form">
+              <h1>휴대폰 - 예약 확인/취소</h1>
+              <input type="tel" id="confirm-mobile-tel" placeholder="휴대폰 번호를 입력해주세요.">
+              <input type="password" id="confirm-mobile-password"  placeholder="비밀번호를 입력해주세요.">
+              <input type="submit" value="예약 확인하기">
+              <div class="forgot-password">
+                <p>비밀번호가 기억나지 않으세요?</p>
+                <a href="#">비밀번호 재발급</a>
+              </div>
+            </form>
+          </div>
+          <div class="confirm-email-content">
+            <form class="confirm-email-form">
+              <h1>이메일 - 예약 확인/취소</h1>
+              <input type="email" id="confirm-email-tel" placeholder="휴대폰 번호를 입력해주세요." checked>
+              <input type="password" id="confirm-email-password"  placeholder="비밀번호를 입력해주세요.">
+              <input type="submit" value="예약 확인하기">
+              <div class="forgot-password">
+                <div>비밀번호가 기억나지 않으세요?</div>
+                <a href="#">비밀번호 재발급</a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr />
+        <ul class="confirm-info">
+          <li>- 비회원으로 예매를 하신 고객님은 예매내역 확인/취소를 위해 예매 시, 입력하신 휴대폰 번호 혹은 이메일 주소로 로그인 가능합니다.</li>
+          <li>- 이메일 주소는 예매 시, 선택 항목이기 때문에 입력한 예매자에 한하여 로그인 가능합니다.</li>
+          <li>- 비밀번호는 예매 시, 입력한 4자리입니다.</li>
+          <li>- 비밀번호가 생각나지 않으시면 [비밀번호 재발급]을 통해 새로운 비밀번호를 발급받아 로그인 해주시기 바랍니다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* Font Icon(Bootstrap) */
+/* font family 아래 넣지 않게.. */
+
+/* Font Family */
+/* 한국어 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* font-family: 'Noto Sans KR', sans-serif; */
+@font-face {
+  font-family: 'yg-jalnan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 62.5%;
+  /* 1rem = 10px */
+  /* 10rem 100px */
+  /* rem으로 단위 맞춰서~~ */
+}
+body {
+  font-size: var(--font-size-mainText);
+  color: #333;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* articleTitle */
+.articleTitle {
+  margin: 0 auto 5rem;
+  text-align: center;
+}
+.articleTitle h4 {
+  font-size: var(--font-size-subTitle);
+  color: var(--font-color-subTitle);
+}
+.articleTitle p {
+  font-size: var(--font-size-subDesc);
+  color: var(--font-color-subDesc);
+}
+
+:root {
+  /* === Font Family === */
+  --primary-kr: 'Noto Sans KR', sans-serif;
+  /* --primary-en: 'Roboto', sans-serif; */
+
+  /* === Font Color === */
+  /* ex. 경복궁행사, 이달의 행사 */
+  --font-color-subTitle: #333;
+  /* sub title 아래 작은 글자 */
+  --font-color-subDesc: #666;
+  --font-color-mainText: #333333;
+
+  --main-color-yellow: #FFC011;
+  --sub-color-blue: #364F99;
+
+
+  /* === Background Color === */
+  --bg-color-white: #fff;
+  --bg-color-gray: #F1F2F5;
+
+
+  /* === Font Size === */
+  /* ex. 경복궁행사, 이달의 행사 */
+  /* --font-size-subTitle: 45px; */
+  --font-size-subTitle: 4.5rem;
+  /* sub title 아래 작은 글자 */
+  /* --font-size-subDesc: 20px; */
+  --font-size-subDesc: 2rem;
+
+  /* 일반 글자 */
+  /* --font-size-mainText: 16px; */
+  --font-size-mainText: 1.6rem;
+  /* --font-size-smallText: 14px; */
+  --font-size-smallText: 1.4rem;
+
+
+  /* === Gap Size(블록 사이의 공간) === */
+  /* 3rem = 30px */
+  --gap-size-normal: 3rem;
+
+
+  /* For Big Size Mobile & Tablet Device */
+  /* table max-width: 1024px */
+  /* mobile max-width: 768px */
+  /* 폰트 크기와 박스 안쪽 여백(padding)값은 rem으로 주는거롤 합시다! */
+}
+
+/* 이거 반응형 맨 위에 넣기 */
+/* @media all and (max-width: 1024px) {
+  html {
+    font-size: 55%;
+  }
+} */
+

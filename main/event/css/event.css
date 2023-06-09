@@ -1,0 +1,215 @@
+@import url("./reset.css");
+
+
+#dayNightEvent-wrap {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* button */
+.dayNight-btns {
+  width: 100%;
+  max-width: 1200px;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dayNight-btns input {
+  display: none;
+}
+.dayNight-btns input:checked + .btns {
+  /* background-color: var(--main-color-yellow);
+  background-image: url('/imgaes/00_nav_pattern.png'); */
+  background: url(/imgaes/00_nav_pattern.png) var(--main-color-yellow);
+  color: #fff;
+}
+.dayNight-btns .btns {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 8rem;
+  color: #ccc;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 1px solid #ccc;
+}
+.dayNight-btns .btns.day {
+  border-radius: 20px 0 0 0 ;
+}
+.dayNight-btns .btns.night {
+  border-radius: 0 20px 0 0 ;
+}
+
+
+        /* banner */
+
+.event-banner {
+  width: 100%;
+  max-width: 1200px;
+}
+.event-banner img {
+  width: 100%;
+}
+
+
+        /* Event Card */
+
+.event-cards {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.event-cards .event-card {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  display: flex;
+}
+.event-cards .event-card img {
+  /* flex: 1; */
+  width: 50%;
+  height: inherit;
+}
+.event-cards .event-card .card-desc {
+  /* flex: 1; */
+  width: 50%;
+  height: inherit;
+  padding: 8rem;
+  display:  flex;
+  flex-direction:  column;
+  gap: 2rem;
+}
+
+.event-cards .event-card .card-desc h2 {
+  padding: 0 0 1rem 0;
+  border-bottom: 1px solid #ccc;
+}
+.event-cards .event-card .card-desc .time-wrap p {
+  margin-bottom: 1rem;
+  font-size: var(--font-size-smallText);
+  color: #8d8d8d;
+  /* color: var(--font-color-subDesc); */
+}
+.event-cards .event-card .card-desc .time-wrap p i  {
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+  line-height: 2.5rem;
+  color: #fff;
+  background-color: var(--main-color-yellow);
+  border-radius: 50%;
+}
+.event-cards .event-card .card-desc .time-wrap p span {
+  border-left: 2px solid #ccc;
+  padding: 0 0 0 1rem;
+  margin-left: 1rem;
+}
+.event-cards .event-card .card-desc .desc p {
+  margin-top: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.event-cards .event-card .view-wrap .view-more {
+  /* display: block; */
+  width: 15rem;
+  height: 4rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--sub-color-blue);
+  border: none;
+  border-radius: 50px;
+
+  cursor: pointer;
+}
+.page-number {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.page-number a {
+  display: inline-block; 
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+}
+.page-number a.on {
+  background-color: var(--main-color-yellow);
+  color: #fff;
+}
+/* 모달 */
+.modal-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4)
+}
+
+
+
+@media all and (max-width:1024px) {
+  #dayNightEvent-wrap {
+    /* width: calc(100% - 5rem); */
+  }
+  .dayNight-btns {
+    width: calc(100% - 5rem);
+  }
+  .event-banner {
+    width: calc(100% - 5rem);
+  }
+  .event-cards {
+    width: calc(100% - 5rem);
+  }
+}
+
+@media all and (max-width:768px) {
+  #dayNightEvent-wrap {
+    width: 100%;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .dayNight-btns {
+    width: calc(100% - 3rem);
+  }
+  .event-banner {
+    width: calc(100% - 3rem);
+  }
+  .event-cards {
+    width: calc(100% - 3rem);
+    align-items: center;
+    justify-content: center;
+  }
+  .event-cards .event-card {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 100%;
+  }
+  .event-cards .event-card img {
+    width: 100%;
+    height: 50%;
+    object-fit:fill;
+  }
+  .event-cards .event-card .card-desc {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    display:  flex;
+    flex-direction:  column;
+    gap: 1rem;
+  }
+}
