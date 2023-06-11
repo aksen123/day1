@@ -9,6 +9,7 @@
   <!-- Fontawesome -->
   <script src="https://kit.fontawesome.com/df4f7d9123.js" crossorigin="anonymous"></script>
   <!-- Custom JS & CSS -->
+  <script defer src="./js/eventData.js"></script>
   <script defer src="./js/script.js"></script>
   <link rel="stylesheet" href="./css/reservation.css">
   <title>예약하기</title>
@@ -71,17 +72,27 @@
               <div class="reservation-item-heading">
                 <i class="fa-regular fa-square-plus"></i>
                 <p>행사 선택</p>
+                
               </div>
               <hr />
-              <div class="reservation-item-content">
+              <div class="desc">
+                <p>날짜를 선택해 주세요</p>
+              </div>
+              <div class="reservation-item-content select-box">
                 <select name="select-event" id="select-event">
+                  <option value="" disabled selected>행사를 선택해 주세요</option>
                   <option value="">낮의 경복궁</option>
                   <option value="">밤의 경복궁</option>
                 </select>
                 <i class="fas fa-chevron-right"></i>
-                <select name="select-event" id="select-event">
+                <select name="select-event-day" id="select-event-day" class="select-event day">
+                  <option value="" disabled selected>행사를 선택해 주세요</option>
                   <option value="">가정의 달, 푸르른 5월의 궁</option>
                 </select>
+                <!-- <select name="select-event-night" id="select-event-night" class="select-event night">
+                  <option value="" disabled selected>행사를 선택해 주세요</option>
+                  <option value="">별 가득한 5월의 밤, 경복궁 별빛야행</option>
+                </select> -->
               </div>
             </div>
             <div class="reservation-item item3">
@@ -90,12 +101,15 @@
                 <p>시간 선택</p>
               </div>
               <hr />
-              <div class="reservation-item-content">
+              <div class="desc">
+                <p>날짜를 선택해 주세요</p>
+              </div>
+              <div class="reservation-item-content select-box">
                 <select name="select-time" id="select-time">
-                  <option value="">1회차(10:00 ~ 10:30) [잔여:2]</option>
-                  <option value="">2회차(10:30 ~ 11:00) [잔여:1]</option>
-                  <option value="">3회차(11:00 ~ 11:30) [잔여:6]</option>
-                  <option value="">4회차(11:30 ~ 12:00) [잔여:7]</option>
+                  <option value="" disabled selected>회차를 선택해 주세요</option>
+                  <option value="20000">1회차(10:00 ~ 12:00) [잔여:2]</option>
+                  <option value="10000">2회차(12:00 ~ 14:00) [잔여:1]</option>
+                  <option value="">3회차(14:00 ~ 16:00) [잔여:6]</option>
                 </select>
               </div>
             </div>
@@ -107,13 +121,13 @@
                 <p>예약자 정보</p>
               </div>
               <hr />
-              <div class="reservation-item-content">
+              <div class="reservation-item-content user-inpo">
                 <div class="reservation-info">
                   <label for="name">
                     <i class="bi bi-person-fill"></i>
                     <p>예매자 이름</p>
                   </label>
-                  <input type="text" id="name">
+                  <input type="text" id="name" required>
                 </div>
                 <div class="reservation-info">
                   <label for="phone1">
@@ -121,9 +135,9 @@
                     <p>휴대폰 번호</p>
                   </label>
                   <div class="phone">
-                    <input id="phone1" class="phoneNum" type="text" onchange="changePhone1()" onkeyup="onchange()" maxlength="3"/>
-                    <input id="phone2" class="phoneNum" type="text" onchange="changePhone2()" onkeyup="onchange()" maxlength="4"/>
-                    <input id="phone3" class="phoneNum" type="text" onchange="changePhone3()" onkeyup="onchange()" maxlength="4"/>
+                    <input id="phone1" class="phoneNum" type="text" onchange="changePhone1()" onkeyup="onchange()" maxlength="3" required/>
+                    <input id="phone2" class="phoneNum" type="text" onchange="changePhone2()" onkeyup="onchange()" maxlength="4" required/>
+                    <input id="phone3" class="phoneNum" type="text" onchange="changePhone3()" onkeyup="onchange()" maxlength="4" required/>
                   </div>
                 </div>
                 <div class="reservation-info">
@@ -131,14 +145,14 @@
                     <i class="bi bi-envelope"></i>
                     <p>이메일</p>
                   </label>
-                  <input type="email" id="email">
+                  <input type="email" id="email" required>
                 </div>
                 <div class="reservation-info">
                   <label for="name">
                     <i class="bi bi-key-fill"></i>
                     <p>비밀번호</p>
                   </label>
-                  <input type="password" id="password">
+                  <input type="password" id="password" required>
                 </div>
               </div>
             </div>

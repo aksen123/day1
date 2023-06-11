@@ -1,13 +1,33 @@
+// === Reservation ===
 
-// Reservation-confirm
+// === Item4 Input Auto ===
 
+
+function changePhone1() {
+  const phone1 = document.querySelector("#phone1").value;
+  if(phone1.length === 3) {
+    document.querySelector("#phone2").focus();
+  }
+}
+function changePhone2() {
+  const phone2 = document.querySelector("#phone2").value;
+  if(phone2.length === 4) {
+    document.querySelector("#phone3").focus();
+  }
+}
+function changePhone3() {
+  const phone3 = document.querySelector("#phone3").value;
+  if(phone3.length === 4) {
+    document.querySelector("#email").focus();
+  }
+}
 
           //  ### calender  ###
 
 let current_year = new Date().getFullYear();
 let current_month = new Date().getMonth()+1;
 
-document.querySelector(".year").innerText = current_year
+document.querySelector(".year").innerText = current_year;
 document.querySelector(".month").innerText = current_month < 10 ? "0" +current_month : current_month;
 
 // 윤년 계산
@@ -59,24 +79,25 @@ function changeYearMonth(year, month) {
 
 function Calendar(data) {
 
-  let mobile_display = "";
+  let display = "";
   for(let i = 0; i < data.length; i++){
     if(i === 0) {
-      mobile_display += "<tr>"
+      display += "<tr>"
     } else if(i % 7 === 0) {
-      mobile_display += "</tr>"
-      mobile_display += "<tr>"
+      display += "</tr>"
+      display += "<tr>"
     }
 
-    mobile_display +=`<td><a href="#">${data[i]}</a></td>`
+    display +=`<td><a href="#">${data[i]}</a></td>`
   }
-  mobile_display += "</tr>";
+  display += "</tr>";
 
-  document.querySelector("#calendar-table tbody").innerHTML = mobile_display;
+  document.querySelector("#calendar-table tbody").innerHTML = display;
 }
 
 //달력 월 바꾸기
 function changeMonth(e) {
+  e.preventDefault()
   current_month = current_month + e;
 
   if(current_month == 0) {
@@ -90,45 +111,95 @@ function changeMonth(e) {
   document.querySelector(".year").innerText = current_year
   document.querySelector(".month").innerText = current_month < 10 ? "0" + current_month : current_month;
 
-  changeYearMonth(current_year, current_month);
 
+  select_event.selectedIndex = 0
+  timeBox.selectedIndex = 0;
+  select_item.selectedIndex = 0
+  paymentText()
+  
+  changeYearMonth(current_year, current_month);
 }
 
 changeYearMonth(current_year,current_month);
 
+
+
+
 // 이전 날짜 색 & 선택 날짜 표시 
 function select() {
-  let mobile = document.querySelectorAll("#calendar-table td a");
+  let days = document.querySelectorAll("#calendar-table td a");
   let today = new Date();
 
   if(today.getFullYear() === current_year && today.getMonth() + 1 == current_month) {
-    mobile.forEach(el => {
+    days.forEach(el => {
       if(el.innerText < today.getDate()) {
         el.style.color = "#ccc";
         el.style.pointerEvents = "none"
       }
     })
   }
-  for(let el of mobile) {
+  for(let el of days) {
+  
     let tds = document.querySelectorAll("#calendar-table td")
-    el.addEventListener("click", ()=> {
-      tds.forEach(td => {
-        td.classList.remove('select')
-      })
+    el.addEventListener("click", (e)=> {
+      e.preventDefault()
+      tds.forEach(td =>  td.classList.remove('select'));
       el.parentElement.classList.add('select');
+
+      document.querySelectorAll('.reservation-item-content.select-box').forEach(el => {
+        document.querySelector(".item2 .desc").style.display = "none";
+        document.querySelector(".item3 .desc").style.display = "none";
+        el.style.display = "flex";
+        select_event.selectedIndex = 0;
+        timeBox.selectedIndex = 0;
+        select_item.selectedIndex = 0
+      });
+      paymentText();
     })
   }
 }
+// 낮, 밤선택시 행사 선택
+let select_event = document.querySelector("#select-event");
+const select_item = document.querySelector('#select-event-day');
+function display() {
+
+  select_item.innerHTML = ""
+
+  if(select_event.selectedIndex !== 0) {
+
+    events[select_event.selectedIndex - 1].forEach(el =>{
+      let option = document.createElement("option");
+      option.innerText = el.title;
+      option.value = el.value;
+      select_item.appendChild(option); 
+    });
+    select_item.options[0].disabled = true;
+    console.log(select_item.options[0]);
+    
+  }
+}
+select_event.addEventListener('change', display)
+
+//행사 회차 선택시 결제금액 표시
+let timeBox = document.querySelector("#select-time");
+function paymentText(){
+  let value = +timeBox[timeBox.selectedIndex].value;
+  document.querySelector(".reservation-item-heading span").innerText =
+  value === '' ? "0원" : value.toLocaleString() + "원"
+}
+
+timeBox.addEventListener("change",paymentText);
 
 
+// ####### 필수동의 #######
 
-      // 필수동의 
-//약관동의 박스
+//전체동의 박스
 const agree = document.getElementById('agree');
-// 전체 체크박스들
+
+// 체크박스들
 const checkboxes = document.querySelectorAll('.item input[type=checkbox]');
 
-
+//전체동의
 agree.addEventListener("click", ()=> {
   if(agree.checked === true){
     checkboxes.forEach(el =>{
@@ -156,6 +227,6 @@ function checkSelectAll()  {
 }
 
 
-      // 결제 버튼 함수
+// ####### 결제 버튼 #######
 
 const paymentBtn = document.getElementById('reservation-button-submit');

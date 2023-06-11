@@ -158,6 +158,10 @@
   text-align: center;
   line-height: 50px;
 }
+#calendar-table tr td:first-child.select a,
+#calendar-table tr td:last-child.select a {
+  color: #fff;
+}
 #calendar-table td.select a {
   color: #fff;
   background-color: var(--sub-color-blue);
@@ -166,18 +170,32 @@
 
 
 /* Reservation - Item2 */
+.item2 .desc, 
+.item3 .desc {
+  padding: 2rem;
+  align-items: center;
+  gap: 0.5rem;
+}
 .item2 .reservation-item-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#select-event {
+.reservation-item-content.select-box {
+  display: none;
+}
+#select-event,
+.select-event {
   height: 4rem;
-  width: 25rem;
+  width: 100%;
   border-radius: 5px;
   cursor: pointer;
   padding-left: 1rem;
 }
+#select-event-night {
+  display: none;
+}
+
 .reservation-item-content i {
   padding: 0 1rem;
 }
@@ -199,7 +217,7 @@
 }
 .reservation-info label {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   flex: 2;
   gap: 1rem;
   margin-right: 2rem;
@@ -396,9 +414,10 @@
     align-items: center;
     gap: 2rem;
   }
-  #select-event {
+  /* #select-event,
+  .select-event {
     width: 100%;
-  }
+  } */
   .item2 .reservation-item-content i {
     transform: rotate(90deg);
   }

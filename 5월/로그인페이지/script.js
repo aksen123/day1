@@ -41,8 +41,8 @@ send_btn.addEventListener('click', ()=> {
   document.querySelector('.number').innerText = num2;
   complete_btn.disabled = false;
 
-  let time = 5;
-
+  let time = 180;
+  clearInterval(timer)
   timer = setInterval(() => {
     let min = Math.floor(time / 60);
     let sec = String(time % 60).padStart(2, "0");
