@@ -230,6 +230,9 @@
   border: 1px solid #ddd;
   border-radius: 5px;
 }
+.reservation-info input::placeholder {
+  color: red;
+}
 .phone {
   flex: 5;
   display: flex;

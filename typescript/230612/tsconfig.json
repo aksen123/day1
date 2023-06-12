@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target" : "ESNext",
+    "module": "CommonJS",
+    "moduleDetection": "force",
+    "esModuleInterop": true,
+    "strict": true,
+    "strictNullChecks": false,
+    "allowJs": true,
+    "outDir": "dist",
+    "downlevelIteration": true
+  },
+  "ts-node": {
+    "esm" : true
+  },
+  "include" : ["src"]
+}

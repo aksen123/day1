@@ -97,7 +97,6 @@ function Calendar(data) {
 
 //달력 월 바꾸기
 function changeMonth(e) {
-  e.preventDefault()
   current_month = current_month + e;
 
   if(current_month == 0) {
@@ -112,9 +111,9 @@ function changeMonth(e) {
   document.querySelector(".month").innerText = current_month < 10 ? "0" + current_month : current_month;
 
 
-  select_event.selectedIndex = 0
+  select_event.selectedIndex = 0;
+  select_item.selectedIndex = 0;
   timeBox.selectedIndex = 0;
-  select_item.selectedIndex = 0
   paymentText()
   
   changeYearMonth(current_year, current_month);
@@ -164,6 +163,7 @@ const select_item = document.querySelector('#select-event-day');
 function display() {
 
   select_item.innerHTML = ""
+  timeBox.innerHTML = ""
 
   if(select_event.selectedIndex !== 0) {
 
@@ -173,7 +173,14 @@ function display() {
       option.value = el.value;
       select_item.appendChild(option); 
     });
+    event_time[select_event.selectedIndex - 1].forEach(el =>{
+      let option = document.createElement("option");
+      option.innerText = el.title;
+      option.value = el.value;
+      timeBox.appendChild(option); 
+    });
     select_item.options[0].disabled = true;
+    timeBox.options[0].disabled = true;
     console.log(select_item.options[0]);
     
   }
@@ -181,6 +188,7 @@ function display() {
 select_event.addEventListener('change', display)
 
 //행사 회차 선택시 결제금액 표시
+//회차선택
 let timeBox = document.querySelector("#select-time");
 function paymentText(){
   let value = +timeBox[timeBox.selectedIndex].value;
@@ -230,3 +238,22 @@ function checkSelectAll()  {
 // ####### 결제 버튼 #######
 
 const paymentBtn = document.getElementById('reservation-button-submit');
+
+const userName = document.querySelector("#name");
+const phone1 = document.querySelector("#phone1");
+const phone2 = document.querySelector("#phone2");
+const phone3 = document.querySelector("#phone3");
+const email = document.querySelector("#email");
+const password = document.querySelector("#password");
+
+paymentBtn.addEventListener("click", (e)=>{
+  e.preventDefault()
+  payment()
+})
+function payment() {
+  const checkedBox = document.querySelectorAll('input[type=checkbox]:checked')
+
+
+  if(userName.value === "a") userName.placeholder = "이름을 입력해주세요"
+
+}
