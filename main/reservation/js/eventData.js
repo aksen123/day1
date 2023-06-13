@@ -54,7 +54,7 @@ const events = [
 
 
 const event_time = [
-[
+[ //day
   {
     value : "",
     title : "회차를 선택해 주세요"
@@ -72,7 +72,7 @@ const event_time = [
     title : "3회차(14:00 ~ 16:00) [잔여:6]"
   },
 ],
-[
+[ //night
   {
     value : "",
     title : "회차를 선택해 주세요"

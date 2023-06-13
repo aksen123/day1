@@ -88,10 +88,6 @@
                 <select name="select-event-day" id="select-event-day" class="select-event day">
                   <option value="" disabled selected>행사를 선택해 주세요</option>
                 </select>
-                <!-- <select name="select-event-night" id="select-event-night" class="select-event night">
-                  <option value="" disabled selected>행사를 선택해 주세요</option>
-                  <option value="">별 가득한 5월의 밤, 경복궁 별빛야행</option>
-                </select> -->
               </div>
             </div>
             <div class="reservation-item item3">
@@ -106,9 +102,18 @@
               <div class="reservation-item-content select-box">
                 <select name="select-time" id="select-time">
                   <option value="" disabled selected>회차를 선택해 주세요</option>
-                  <!-- <option value="">1회차(10:00 ~ 12:00) [잔여:2]</option>
-                  <option value="">2회차(12:00 ~ 14:00) [잔여:1]</option>
-                  <option value="">3회차(14:00 ~ 16:00) [잔여:6]</option> -->
+                </select>
+              </div>
+            </div>
+            <div class="reservation-item item3">
+              <div class="reservation-item-heading">
+                <i class="fas fa-plus"></i>
+                <p>인원 선택</p>
+              </div>
+              <hr />
+              <div class="reservation-item-content">
+                <select name="select-time" id="select-time">
+                  <option value="" disabled selected>회차를 선택해 주세요</option>
                 </select>
               </div>
             </div>
@@ -126,7 +131,7 @@
                     <i class="bi bi-person-fill"></i>
                     <p>예매자 이름</p>
                   </label>
-                  <input type="text" id="name" required>
+                  <input type="text" id="name">
                 </div>
                 <div class="reservation-info">
                   <label for="phone1">
@@ -198,7 +203,7 @@
             </div>
             <div class="reservation-item item6">
               <div class="reservation-item-heading">
-                <input type="checkbox" id="cancel">
+                <input type="checkbox" id="cancel" onclick="payBtnDisabled()">
                 <label for="cancel">취소 / 환불규정 동의</label>
               </div>
               <hr />
@@ -260,7 +265,7 @@
                 </select>
               </div>
             </div>
-            <button id="reservation-button-submit" class="reservation-item item10" >결제하기</button>
+            <button id="reservation-button-submit" class="reservation-item item10" disabled>결제하기</button>
           </div>
         </div>
       </div>

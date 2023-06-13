@@ -160,7 +160,8 @@ function select() {
 // 낮, 밤선택시 행사 선택
 let select_event = document.querySelector("#select-event");
 const select_item = document.querySelector('#select-event-day');
-function display() {
+let timeBox = document.querySelector("#select-time");
+function display(selector1, selector2) {
 
   select_item.innerHTML = ""
   timeBox.innerHTML = ""
@@ -189,7 +190,7 @@ select_event.addEventListener('change', display)
 
 //행사 회차 선택시 결제금액 표시
 //회차선택
-let timeBox = document.querySelector("#select-time");
+
 function paymentText(){
   let value = +timeBox[timeBox.selectedIndex].value;
   document.querySelector(".reservation-item-heading span").innerText =
@@ -218,6 +219,7 @@ agree.addEventListener("click", ()=> {
       el.checked = false
     })
   }
+  payBtnDisabled()
 });
 
 
@@ -226,19 +228,19 @@ function checkSelectAll()  {
   // 선택된 체크박스
   const checked 
     = document.querySelectorAll('.item input[type=checkbox]:checked');
-
   if(checkboxes.length === checked.length)  {
     agree.checked = true;
   }else {
     agree.checked = false;
   }
+  payBtnDisabled()
 }
 
 
 // ####### 결제 버튼 #######
-
 const paymentBtn = document.getElementById('reservation-button-submit');
 
+//input
 const userName = document.querySelector("#name");
 const phone1 = document.querySelector("#phone1");
 const phone2 = document.querySelector("#phone2");
@@ -246,14 +248,50 @@ const phone3 = document.querySelector("#phone3");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 
+
+const phones = document.querySelectorAll(".phoneNum")
+userName.addEventListener("focusout",checkValue);
+email.addEventListener("focusout",checkValue);
+password.addEventListener("focusout",checkValue);
+phones.forEach(phone =>{
+  phone.addEventListener("focusout",checkValue)
+})
+
+function checkValue(element) {
+  if(this.value === "") {
+    this.placeholder = "내용을 입력해주세요"
+  }
+  if(element.value === "") element.placeholder = "내용을 입력해주세요"
+}
+
+
+//결제버튼 눌렀을때!!
 paymentBtn.addEventListener("click", (e)=>{
   e.preventDefault()
   payment()
 })
+
 function payment() {
+  const allInput = document.querySelectorAll(".reservation-info input")
+
+  if(timeBox.selectedIndex < 1) alert("회차를 선택해주세요");
+  if(userName.value == "" || phone1.value =="" || phone2.value =="" 
+  ||phone3.value =="" || password.value =="" || email.value =="")
+    alert("......") ;
+  if(email.value != "" ||email.value.includes("@") === false) alert("이메일 양식이 올바르지 않습니다")
+  
+
+  
+  console.log("1")
+}
+// 체크박스 눌렀을때 결제버튼 활성화
+function payBtnDisabled() {
   const checkedBox = document.querySelectorAll('input[type=checkbox]:checked')
+  checkedBox.length === 5 ? paymentBtn.disabled = false : paymentBtn.disabled = true
+  console.log(checkboxes)
+}
 
 
-  if(userName.value === "a") userName.placeholder = "이름을 입력해주세요"
-
+function test() {
+  alert("aa")
 }

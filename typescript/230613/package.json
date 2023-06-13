@@ -1,17 +1,15 @@
 {
-  "name": "230612",
+  "name": "230613",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",  
     "start": "ts-node src/index.ts"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^20.3.1"
-  },
-  "description": ""
+  }
 }
