@@ -15,8 +15,10 @@
   <title>예약하기</title>
 </head>
 <body>
+
   <!-- Reservation -->
   <div id="reservation-content">
+
     <div class="reservation-inner">
       <div class="reservation-inner-heading">
         <h1>행사 예약하기</h1>
@@ -72,7 +74,6 @@
               <div class="reservation-item-heading">
                 <i class="fa-regular fa-square-plus"></i>
                 <p>행사 선택</p>
-                
               </div>
               <hr />
               <div class="desc">
@@ -105,16 +106,68 @@
                 </select>
               </div>
             </div>
-            <div class="reservation-item item3">
+            <div class="reservation-item add-item">
               <div class="reservation-item-heading">
                 <i class="fas fa-plus"></i>
                 <p>인원 선택</p>
               </div>
               <hr />
+              <div class="desc">
+                <p>시간을 선택해 주세요</p>
+              </div>
               <div class="reservation-item-content">
-                <select name="select-time" id="select-time">
-                  <option value="" disabled selected>회차를 선택해 주세요</option>
-                </select>
+                <div class="reservation-ticket">
+                  <div class="number-ticket public">
+                    <span>일반인</span>
+                    <div class="price-wrap">
+                      <span class="price">원</span>
+                      <span class="number-box">
+                        <button>
+                          <i class="fas fa-minus"></i>
+                        </button>
+                        <span class="count">0</span>
+                        <button>
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="number-ticket discount">
+                    <span>할인 대상자</span>
+                    <div class="price-wrap">
+                      <span class="price">원</span>
+                      <span class="number-box">
+                        <button>
+                          <i class="fas fa-minus"></i>
+                        </button>
+                        <span class="count">0</span>
+                        <button>
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="reservation-info">
+                  <ul>
+                    <li>
+                      - 할인정보 : 장애인 50%할인(1~3급: 본인 포함 2인 / 4급이하:본인 한정), 국가유공자 본인
+                      한정 50% 할인
+                    </li>
+                    <li>
+                      - 현장에서 증빙자료를 확인할 예정이오니 신분증(국가유공자증, 장애인 복지카드 등)을
+                      반드시 지참하여 주시기 바랍니다.
+                    </li>
+                    <li>
+                      - 현장에서 증빙서류를 지참하지 않거나 할인기준과 다른 경우 별빛야행의 참가가 취소
+                      조치되며, 별도의 환불이 불가함을 알려드립니다.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="reservation-total-price">
+                <p>총: <span>명</span></p>
+                <span>0원</span>
               </div>
             </div>
           </div>
@@ -248,7 +301,7 @@
                 <p>- 36개월 미만은 무료입니다.</p>
               </div>
             </div>
-            <div class="reservation-item item8">
+            <!-- <div class="reservation-item item8">
               <div class="reservation-item-heading">
                 <p>총 결제금액</p>
                 <span>0원</span>
@@ -257,7 +310,7 @@
               <div class="reservation-item-content">
                 
               </div>
-            </div>
+            </div> -->
             <div class="reservation-item item9">
               <div class="reservation-item-heading">
                 <select name="" id="select-payment">
@@ -270,6 +323,46 @@
         </div>
       </div>
     </div>
+          <!-- Modal -->
+  <div class="modal-wrap">
+    <div class="modal-page">
+      <div class="modal-content">
+        <div class="top">
+          <div class="icon">
+            <i class="fa-regular fa-circle-check"></i>
+          </div>
+          <h1>예약 완료</h1>
+          <span>예약이 완료되었습니다. 예약 내용을 다시 한번 확인해주시길 바랍니다.</span>
+        </div>
+        <div class="modal-info">
+          <div>
+            <span>예매자</span>
+            <span class="reserved-name">ddd</span>
+          </div>
+          <div>
+            <span>행사 정보</span>
+            <span class="reserved-event">ddd</span>
+          </div>
+          <div>
+            <span>행사 일시</span>
+            <span class="reserved-event-date">ddd</span>
+          </div>
+          <div>
+            <span>총 인원</span>
+            <span class="reserved-personnel">ddd</span>
+          </div>
+          <div>
+            <span>예매 번호</span>
+            <span class="reserved-number">ddd</span>
+          </div>
+        </div>
+        <div class="modal-buttons">
+          <button class="Ticketing-check">예매내역 조회</button>
+          <button class="close">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 </body>
 </html>

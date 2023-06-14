@@ -146,8 +146,8 @@ function select() {
       el.parentElement.classList.add('select');
 
       document.querySelectorAll('.reservation-item-content.select-box').forEach(el => {
-        document.querySelector(".item2 .desc").style.display = "none";
-        document.querySelector(".item3 .desc").style.display = "none";
+
+        el.previousElementSibling.style.display = "none"
         el.style.display = "flex";
         select_event.selectedIndex = 0;
         timeBox.selectedIndex = 0;
@@ -161,6 +161,7 @@ function select() {
 let select_event = document.querySelector("#select-event");
 const select_item = document.querySelector('#select-event-day');
 let timeBox = document.querySelector("#select-time");
+
 function display(selector1, selector2) {
 
   select_item.innerHTML = ""
@@ -287,8 +288,8 @@ function payment() {
 // 체크박스 눌렀을때 결제버튼 활성화
 function payBtnDisabled() {
   const checkedBox = document.querySelectorAll('input[type=checkbox]:checked')
-  checkedBox.length === 5 ? paymentBtn.disabled = false : paymentBtn.disabled = true
-  console.log(checkboxes)
+  if(checkedBox.length === 5 ) {
+    paymentBtn.disabled = false}
 }
 
 

@@ -1,6 +1,73 @@
 @import url('./reset.css');
 @import url('./style.css');
 
+/* === Modal === */
+
+.modal-wrap {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  display: none;
+}
+.modal-wrap .modal-page {
+  width: 70rem;
+  height: auto;
+  margin: 30rem auto;
+  background-color: #fff;
+  padding: 5rem 10rem;
+}
+
+
+/* Content Top */
+.modal-page .modal-content .top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.modal-page .modal-content .top i {
+  font-size: 8rem;
+  color: var(--sub-color-blue);
+}
+.modal-page .modal-content .top h1 {
+  font-size: 3.5rem;
+  color: var(--sub-color-blue);
+}
+.modal-page .modal-content .top  span {
+  font-size: 1.4rem;
+  color: #666;
+}
+
+/* Content Info */
+.modal-page .modal-content .modal-info {
+  border-top: 3px solid var(--sub-color-blue);
+  border-bottom: 3px solid var(--sub-color-blue);
+  margin-bottom: 3rem;
+}
+.modal-page .modal-content .modal-info div {
+  padding: 1rem 0;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #ddd;
+}
+.modal-page .modal-content .modal-info div span:first-child {
+  color: #666;
+  display: inline-block;
+  width: 10rem;
+}
+
+/* Modal Button */
+.modal-page .modal-content .modal-buttons {
+  text-align: center;
+}
+
+
+
+
+
 /* === Reservation === */
 #reservation-content {
   width: 100vw;
@@ -60,7 +127,7 @@
 }
 .reservation-item {
   background-color: #fff;
-}
+}on-item
 .reservation-item hr {
   border: 1px solid #efefef;
 }
@@ -170,8 +237,7 @@
 
 
 /* Reservation - Item2 */
-.item2 .desc, 
-.item3 .desc {
+.reservation-item  .desc {
   padding: 2rem;
   align-items: center;
   gap: 0.5rem;
@@ -195,6 +261,7 @@
 .reservation-item-content i {
   padding: 0 1rem;
 }
+
 /* Reservation - Item3 */
 #select-time {
   height: 4rem;
@@ -204,6 +271,73 @@
   padding-left: 1rem;
 }
 
+/* Reservation - add-Item */
+.add-item .reservation-item-content .reservation-ticket {
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+}
+.add-item .reservation-item-content .number-ticket {
+  padding: 1.5rem;
+  display:  flex;
+  justify-content: space-between;
+  font-size: 1.8rem;
+}
+.add-item .reservation-item-content .number-ticket:first-child {
+  border-bottom: 1px solid #ddd;
+}
+.number-ticket .price-wrap .number-box {
+  border: 1px solid var(--sub-color-blue);
+  border-radius: 0.5rem;
+  margin-left: 1rem;
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.number-ticket .price-wrap .number-box button,
+.number-ticket .price-wrap .number-box .count {
+  display: inline-block;
+  border:  none;
+  background: none;
+  width: 3rem;
+  height: 100%;
+  text-align: center;
+} 
+.number-ticket .price-wrap .number-box  input {
+  width: 3rem;
+  text-align: center;
+  border:  none;
+  outline: none;
+  margin: 0;
+  font-size: 1.8rem;
+  height: 100%;
+}
+.number-ticket .price-wrap .number-box .count {
+  border-left: 1px solid var(--sub-color-blue);
+  border-right: 1px solid var(--sub-color-blue);
+}
+.number-ticket .price-wrap .number-box input {
+  border-left: 1px solid var(--sub-color-blue);
+  border-right: 1px solid var(--sub-color-blue);
+}
+.add-item .reservation-item-content .reservation-info {
+  margin-right: 0;
+  margin-left: 0;
+  font-size: 1.4rem;
+  color: #bbb;
+}
+.add-item .reservation-item-content .reservation-info li {
+  margin-bottom: 1rem;
+}
+.reservation-total-price {
+  height: 6rem;
+  background-color: var(--sub-color-blue);
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /* Reservation - Item4 */
 .reservation-info {
   margin: 2rem;
