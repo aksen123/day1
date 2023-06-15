@@ -1,32 +1,29 @@
 import React from "react";
 import { useState } from "react";
 import "./Body.css"
-
-
-interface numTake {
-  num: number
-}
-
-function Viewer({num}: numTake) {
-  return num % 2 === 0 ? <h3>짝수</h3> : <h3>홀수</h3>
-}
+import { useRef } from "react";
+ 
 
 function Body() {
-  const [num, setNum] = useState(0);
-  const onIncrease = () => {
-    setNum(num + 1)
-  }
-  const onDecrease = () => {
-    setNum(num - 1)
-  }
+  const [text, setText] = useState("");
+  const textRef = useRef<any>(null);
+  const handleOnChange = (e: any) => {
+    setText(e.target.value);
+  };
+  const handleOnClick = () => {
+    if(text.length < 5) {
+      textRef.current.focus()
+    }else {
+      alert(text)
+      textRef.current.value = ""
+    }
+  };
+
   return (
     <div>
-      <h2>{num}</h2>
-      <Viewer num = {num}/>     
-      <div>
-        <button onClick={onDecrease}>-</button>
-        <button onClick={onIncrease}>+</button>
-      </div>
+      <input ref={textRef}  type="text" value={text}  onChange={handleOnChange}/>
+      {/* input 태그에 value를 인자로 받음 */}
+      <button onClick={handleOnClick}>작성완료</button>
     </div>
   )
 }

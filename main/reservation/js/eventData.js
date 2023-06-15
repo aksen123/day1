@@ -56,7 +56,7 @@ const events = [
 const event_time = [
 [ //day
   {
-    value : "",
+    value : "0",
     title : "회차를 선택해 주세요"
   },
   {
@@ -74,7 +74,7 @@ const event_time = [
 ],
 [ //night
   {
-    value : "",
+    value : "0",
     title : "회차를 선택해 주세요"
   },
   {
@@ -125,3 +125,34 @@ const event_time = [
   //   document.querySelector("#select-event-day").selectedIndex = 0;
   //   document.querySelector("#select-event-night").style.display = "none";
   // }
+
+
+  
+
+//   // 낮, 밤선택시 행사 선택
+// let select_event = document.querySelector("#select-event"); //낮,밤 선택
+// const select_item = document.querySelector('#select-event-day'); //행사
+// let timeBox = document.querySelector("#select-time");//회차
+
+
+
+  // function displayEvent(select1,variable) {
+
+  //   select1.innerHTML = ""
+
+  
+  //   if(select_event.selectedIndex !== 0) {
+  
+  //     variable[select_event.selectedIndex - 1].forEach(el =>{
+  //       let option = document.createElement("option");
+  //       option.innerText = el.title;
+  //       option.value = el.value;
+  //       select1.appendChild(option); 
+  //     });
+
+  //     select1.options[0].disabled = true;
+      
+  //   }
+  //   console.log(1);
+  // }
+

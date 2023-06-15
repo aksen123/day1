@@ -115,14 +115,14 @@
               <div class="desc">
                 <p>시간을 선택해 주세요</p>
               </div>
-              <div class="reservation-item-content">
+              <div class="reservation-item-content select-box2">
                 <div class="reservation-ticket">
                   <div class="number-ticket">
                     <span>일반인</span>
                     <div class="price-wrap">
                       <span class="public-price">원</span>
                       <span class="number-box">
-                        <button class="decrease" onclick="addTicket(-1,event)">
+                        <button class="decrease" value="-1" onclick="addTicket(-1,event)">
                           <i class="fas fa-minus"></i>
                         </button>
                         <span class="public count">0</span>
@@ -166,7 +166,7 @@
                 </div>
               </div>
               <div class="reservation-total-price">
-                <p>총: <span class="">명</span></p>
+                <p>총: <span class="total-person">0</span>명</p>
                 <span class="total-price">0원</span>
               </div>
             </div>
@@ -315,6 +315,8 @@
               <div class="reservation-item-heading">
                 <select name="" id="select-payment">
                   <option value="">결제수단을 선택해주세요</option>
+                  <option value="">신용카드</option>
+                  <option value="">계좌이체</option>
                 </select>
               </div>
             </div>
