@@ -154,7 +154,6 @@ function select() {
       el.parentElement.classList.add('select');
 
       document.querySelectorAll('.reservation-item-content.select-box').forEach(el => {
-
         el.previousElementSibling.style.display = "none"
         el.style.display = "flex";
         select_event.selectedIndex = 0;
@@ -187,28 +186,37 @@ function displayEvent(select1,variable) {
         option.value = el.value;
         select1.appendChild(option); 
       });
-
+      public.innerText = 0
+      discount.innerText = 0 
       select1.options[0].disabled = true;
     }
-    hidingBox()
+    payBtnDisabled()
   }
-
-
+      // 셀렉트 이벤트
+//낮 ,밤
 select_event.addEventListener('change',()=>{
   displayEvent(select_item,events)
+  let time_option =  `<option value="0" disabled selected>회차를 선택해 주세요</option>`
+  timeBox.innerHTML = time_option
+  ticketBox.style.display ="none"
+  ticketBox.previousElementSibling.style.display = 'block'
+
+  totalPrice();
 })
 
+//낮, 밤 행사선택
 select_item.addEventListener('change',()=>{
   displayEvent(timeBox,event_time)
+  paymentText()
 })
 
+//회차선택
 timeBox.addEventListener("change",paymentText);
+
 
 //행사 회차 선택시, 금액표시
 function paymentText(){
-
   let value = +timeBox[timeBox.selectedIndex].value;
-  console.log(value)
 
   //일반
   document.querySelector(".public-price").innerText = value.toLocaleString() + "원";
@@ -230,15 +238,16 @@ function addTicket(num,event) {
 
 
   count.innerText = text
-  console.log(event.currentTarget)
+ // console.log(event.currentTarget)
   totalPrice()
+  payBtnDisabled()
 }
 
-
-//총 인원, 가격 뿌려주기
-function totalPrice() {
   let public = document.querySelector(".public.count");
   let discount = document.querySelector(".discount.count");
+function totalPrice() {
+  //총 인원, 가격 뿌려주기
+
 
 
   //가격 계산
@@ -248,14 +257,14 @@ function totalPrice() {
 
   const total_price = public_price + discount_price
 
-  console.log(origin_price,public_price,discount_price,total_price);
-  console.log(timeBox.selectedIndex)
+  //console.log(origin_price,public_price,discount_price,total_price);
+  //console.log(timeBox.selectedIndex)
   
   if(timeBox.selectedIndex === 0) {
     public.innerText = 0
     discount.innerText = 0 
   }
-
+  
   document.querySelector(".total-person").innerText = +public.innerText + +discount.innerText
   //결제금액
   document.querySelector(".total-price").innerText =  total_price.toLocaleString() + "원";
@@ -263,20 +272,23 @@ function totalPrice() {
 
 
 
-
+// 날짜 , 월 변경시 티켓박스 감추기
 function hidingBox() {
   if(timeBox.selectedIndex === 0) {
-    let option = select_item.children[0];
+    let item_option = `<option value="0" disabled selected>행사를 선택해 주세요</option>`
+    let time_option =  `<option value="0" disabled selected>회차를 선택해 주세요</option>`
     
-    // select_item.innerHTML =""
-    // timeBox.innerHTML =""
-    select_event.appendChild(option)
-    timeBox.appendChild(option)
+    select_item.innerHTML = item_option
+    timeBox.innerHTML = time_option
+
+    public.innerText = 0
+    discount.innerText = 0 
 
 
     ticketBox.style.display ="none"
     ticketBox.previousElementSibling.style.display = 'block'
     totalPrice()
+    payBtnDisabled()
   }
 }
 
@@ -311,9 +323,8 @@ agree.addEventListener("click", ()=> {
       el.checked = false
     })
   }
-  payBtnDisabled()
-});
 
+});
 
 //체크박스중 하나 해제되면 약관동의 박스 해제 
 function checkSelectAll()  {
@@ -325,13 +336,28 @@ function checkSelectAll()  {
   }else {
     agree.checked = false;
   }
-  payBtnDisabled()
+
 }
 // 체크박스 눌렀을때 결제버튼 활성화
 function payBtnDisabled() {
-  const checkedBox = document.querySelectorAll('input[type=checkbox]:checked')
-  if(checkedBox.length === 5 ) {
-    paymentBtn.disabled = false}
+  let check_bool = true;
+  let public = document.querySelector(".public.count");
+  let discount = document.querySelector(".discount.count");
+  const checked 
+  = document.querySelectorAll('input[type=checkbox]:checked')
+  const payment =  document.querySelector("#select-payment");
+
+  if(public.innerText < 1 && discount.innerText < 1) check_bool = false;
+  if(userName.value === "") check_bool = false;
+  if(phone1.value =="" || phone2.value =="" || phone3.value =="") check_bool = false
+  if(email.value === "") check_bool = false;
+  if(password.value ==="") check_bool = false;
+  if(checked.length < 5) check_bool = false;
+  if(payment.selectedIndex < 1) check_bool = false;
+
+check_bool === true ? paymentBtn.disabled = false : paymentBtn.disabled = true
+
+ console.log(check_bool,public.innerText, discount.innerText)
 }
 
 
@@ -348,19 +374,19 @@ const password = document.querySelector("#password");
 
 
 const phones = document.querySelectorAll(".phoneNum")
-userName.addEventListener("focusout",checkValue);
-email.addEventListener("focusout",checkValue);
-password.addEventListener("focusout",checkValue);
+userName.addEventListener("focusout",payBtnDisabled);
+email.addEventListener("focusout",payBtnDisabled);
+password.addEventListener("focusout",payBtnDisabled);
 phones.forEach(phone =>{
-  phone.addEventListener("focusout",checkValue)
+  phone.addEventListener("focusout",payBtnDisabled)
 })
 
-function checkValue(element) {
-  if(this.value === "") {
-    this.placeholder = "내용을 입력해주세요"
-  }
-  if(element.value === "") element.placeholder = "내용을 입력해주세요"
-}
+// function checkValue(element) {
+//   if(this.value === "") {
+//     this.placeholder = "내용을 입력해주세요"
+//   }
+//   if(element.value === "") element.placeholder = "내용을 입력해주세요"
+// }
 
 
 //결제버튼 눌렀을때

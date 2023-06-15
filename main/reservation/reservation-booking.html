@@ -215,7 +215,7 @@
             </div>
             <div class="reservation-item item5">
               <div class="reservation-item-heading">
-                <input type="checkbox" id="agree" >
+                <input type="checkbox" id="agree" onchange="payBtnDisabled()">
                 <label for="agree">이용자 약관동의</label>
               </div>
               <hr />
@@ -223,7 +223,7 @@
                 <ul class="agreement">
                   <li class="item">
                     <div class="agreement-item">
-                      <input type="checkbox" id="agreement-checkbox1" onclick="checkSelectAll()">
+                      <input type="checkbox" id="agreement-checkbox1" onclick="checkSelectAll()" onchange="payBtnDisabled()">
                       <label for="agreement-checkbox1">
                         개인정보 수집, 이용 동의 <span>(필수)</span>
                       </label>
@@ -233,7 +233,7 @@
                   </li>
                   <li class="item">
                     <div class="agreement-item">
-                      <input type="checkbox" id="agreement-checkbox2" onclick="checkSelectAll()">
+                      <input type="checkbox" id="agreement-checkbox2" onclick="checkSelectAll()" onchange="payBtnDisabled()">
                       <label for="agreement-checkbox2">
                         개인정보 제3자 제공 동의 <span>(필수)</span>
                       </label>
@@ -243,7 +243,7 @@
                   </li>
                   <li class="item">
                     <div class="agreement-item">
-                      <input type="checkbox" id="agreement-checkbox3" onclick="checkSelectAll()">
+                      <input type="checkbox" id="agreement-checkbox3" onclick="checkSelectAll()" onchange="payBtnDisabled()">
                       <label for="agreement-checkbox3">
                         만 14세 이상에 동의 <span>(필수)</span>
                       </label>
@@ -256,7 +256,7 @@
             </div>
             <div class="reservation-item item6">
               <div class="reservation-item-heading">
-                <input type="checkbox" id="cancel" onclick="payBtnDisabled()">
+                <input type="checkbox" id="cancel" onclick="payBtnDisabled()" onchange="payBtnDisabled()">
                 <label for="cancel">취소 / 환불규정 동의</label>
               </div>
               <hr />
@@ -313,7 +313,7 @@
             </div> -->
             <div class="reservation-item item9">
               <div class="reservation-item-heading">
-                <select name="" id="select-payment">
+                <select name="" id="select-payment" onchange="payBtnDisabled()">
                   <option value="">결제수단을 선택해주세요</option>
                   <option value="">신용카드</option>
                   <option value="">계좌이체</option>
