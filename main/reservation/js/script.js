@@ -136,7 +136,14 @@ function select() {
         el.style.pointerEvents = "none"
       }
     })
+  }else if((today.getFullYear() > current_year) ||
+          (today.getFullYear() === current_year && today.getMonth() + 1 > current_month)) {
+      days.forEach(el =>{
+      el.style.color = "#ccc";
+      el.style.pointerEvents = "none"
+    })
   }
+
   for(let el of days) {
   
     let tds = document.querySelectorAll("#calendar-table td")
@@ -189,13 +196,17 @@ function display(selector1, selector2) {
 }
 select_event.addEventListener('change', display)
 
-//행사 회차 선택시 결제금액 표시
+//행사 회차 선택시 금액표시
 //회차선택
-
+//티켓선택 추가하기
 function paymentText(){
   let value = +timeBox[timeBox.selectedIndex].value;
-  document.querySelector(".reservation-item-heading span").innerText =
-  value === '' ? "0원" : value.toLocaleString() + "원"
+  console.log(value)
+  document.querySelector(".public-price").innerText =
+  value === '' ? "0원" : value.toLocaleString() + "원";
+  document.querySelector(".discount-price").innerText =
+  value === '' ? "0원" : (value / 2).toLocaleString() + "원";
+
 }
 
 timeBox.addEventListener("change",paymentText);
@@ -235,6 +246,12 @@ function checkSelectAll()  {
     agree.checked = false;
   }
   payBtnDisabled()
+}
+// 체크박스 눌렀을때 결제버튼 활성화
+function payBtnDisabled() {
+  const checkedBox = document.querySelectorAll('input[type=checkbox]:checked')
+  if(checkedBox.length === 5 ) {
+    paymentBtn.disabled = false}
 }
 
 
@@ -285,14 +302,33 @@ function payment() {
   
   console.log("1")
 }
-// 체크박스 눌렀을때 결제버튼 활성화
-function payBtnDisabled() {
-  const checkedBox = document.querySelectorAll('input[type=checkbox]:checked')
-  if(checkedBox.length === 5 ) {
-    paymentBtn.disabled = false}
+
+
+function addTicket(num,event) {
+  let count = event.currentTarget.parentNode.children[1]
+  const text = +count.innerText + num
+  text < 0 || text > 4 ? text = text  : false
+
+  count.innerText = text
+
+  // console.log(num);  
+  // console.log(count);  
+  totalPrice()
 }
 
 
-function test() {
-  alert("aa")
+//총 인원 가격 뿌려주기 하셈 
+function totalPrice() {
+  const public = document.querySelector(".public.count").innerText;
+  const discount = document.querySelector(".discount.count").innerText;
+
+
+  //가격 계산
+  const origin_price =+timeBox[timeBox.selectedIndex].value
+  const public_price = origin_price * +public
+  const discount_price = (origin_price / 2) * +discount
+
+  const total_price = public_price + discount_price
+
+  console.log(origin_price)
 }

@@ -117,31 +117,31 @@
               </div>
               <div class="reservation-item-content">
                 <div class="reservation-ticket">
-                  <div class="number-ticket public">
+                  <div class="number-ticket">
                     <span>일반인</span>
                     <div class="price-wrap">
-                      <span class="price">원</span>
+                      <span class="public-price">원</span>
                       <span class="number-box">
-                        <button>
+                        <button class="decrease" onclick="addTicket(-1,event)">
                           <i class="fas fa-minus"></i>
                         </button>
-                        <span class="count">0</span>
-                        <button>
+                        <span class="public count">0</span>
+                        <button  onclick="addTicket(1,event)">
                           <i class="fas fa-plus"></i>
                         </button>
                       </span>
                     </div>
                   </div>
-                  <div class="number-ticket discount">
+                  <div class="number-ticket">
                     <span>할인 대상자</span>
                     <div class="price-wrap">
-                      <span class="price">원</span>
+                      <span class="discount-price">원</span>
                       <span class="number-box">
-                        <button>
+                        <button class="decrease" onclick="addTicket(-1,event)">
                           <i class="fas fa-minus"></i>
                         </button>
-                        <span class="count">0</span>
-                        <button>
+                        <span class="discount count">0</span>
+                        <button  onclick="addTicket(1,event)">
                           <i class="fas fa-plus"></i>
                         </button>
                       </span>
@@ -166,8 +166,8 @@
                 </div>
               </div>
               <div class="reservation-total-price">
-                <p>총: <span>명</span></p>
-                <span>0원</span>
+                <p>총: <span class="">명</span></p>
+                <span class="total-price">0원</span>
               </div>
             </div>
           </div>

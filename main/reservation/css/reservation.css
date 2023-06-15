@@ -303,20 +303,11 @@
   height: 100%;
   text-align: center;
 } 
-.number-ticket .price-wrap .number-box  input {
-  width: 3rem;
-  text-align: center;
-  border:  none;
-  outline: none;
-  margin: 0;
-  font-size: 1.8rem;
-  height: 100%;
+.number-ticket .price-wrap .number-box button {
+  cursor: pointer;
 }
+
 .number-ticket .price-wrap .number-box .count {
-  border-left: 1px solid var(--sub-color-blue);
-  border-right: 1px solid var(--sub-color-blue);
-}
-.number-ticket .price-wrap .number-box input {
   border-left: 1px solid var(--sub-color-blue);
   border-right: 1px solid var(--sub-color-blue);
 }
