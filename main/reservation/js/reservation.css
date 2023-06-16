@@ -1,6 +1,73 @@
 @import url('./reset.css');
 @import url('./style.css');
 
+/* === Modal === */
+
+.modal-wrap {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  display: none;
+}
+.modal-wrap .modal-page {
+  width: 70rem;
+  height: auto;
+  margin: 30rem auto;
+  background-color: #fff;
+  padding: 5rem 10rem;
+}
+
+
+/* Content Top */
+.modal-page .modal-content .top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.modal-page .modal-content .top i {
+  font-size: 8rem;
+  color: var(--sub-color-blue);
+}
+.modal-page .modal-content .top h1 {
+  font-size: 3.5rem;
+  color: var(--sub-color-blue);
+}
+.modal-page .modal-content .top  span {
+  font-size: 1.4rem;
+  color: #666;
+}
+
+/* Content Info */
+.modal-page .modal-content .modal-info {
+  border-top: 3px solid var(--sub-color-blue);
+  border-bottom: 3px solid var(--sub-color-blue);
+  margin-bottom: 3rem;
+}
+.modal-page .modal-content .modal-info div {
+  padding: 1rem 0;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #ddd;
+}
+.modal-page .modal-content .modal-info div span:first-child {
+  color: #666;
+  display: inline-block;
+  width: 10rem;
+}
+
+/* Modal Button */
+.modal-page .modal-content .modal-buttons {
+  text-align: center;
+}
+
+
+
+
+
 /* === Reservation === */
 #reservation-content {
   width: 100vw;
@@ -10,7 +77,6 @@
   /* border: 3px solid red; */
   max-width: 1300px;
   padding: 0 50px;
-  padding-bottom: 50px;
   margin: 0px auto;
 }
 .reservation-inner-heading {
@@ -26,7 +92,7 @@
 .reservation-inner-heading a {
   background-color: #aaa;
   color: #fff;
-  border: 1px solid #aaa;
+  border: none;
   border-radius: 50px;
   width: 20rem;
   height: 5rem;
@@ -74,20 +140,36 @@
   align-items: center;
   gap: 0.5rem;
 }
-.reservation-item-heading i {
+.reservation-item-heading input[type=checkbox] {
   font-size: 2rem;
   color: var(--font-color-subDesc);
+
+  display: none;
 }
-.reservation-item-heading p {
+.reservation-item-heading label {
   display: inline-block;
   padding-left: 0.2rem;
   font-size: var(--font-size-subDesc);
   font-weight: 600;
 }
+.reservation-item-heading label:hover {
+  cursor: pointer;
+}
+.reservation-item-heading label::before {
+  content: "\F26B";
+  font-family: bootstrap-icons;
+  display: inline-block;
+  margin-right: 1rem;
+  transform: translateY(3px);
+}
+.reservation-item-heading input[type=checkbox]:checked + label::before {
+  content: "\F26A";
+  font-family: bootstrap-icons;
+  color: var(--sub-color-blue);
+}
 .reservation-item-content {
   padding: 2rem;
 }
-
 
 /* Reservation - Item1 */
 #reservation-calendar {
@@ -129,30 +211,53 @@
 #calendar-table td a {
   font-weight: 400;
   font-size: var(--font-size-smallText);
-  color: #aaa;
+  color: black;
 }
-#calendar-table th:first-child {
-  color: crimson;
-}
-#calendar-table th:last-child {
-  color: var(--sub-color-blue);
-}
+#calendar-table th:first-child,
 #calendar-table tr td:first-child a {
   color: crimson;
 }
+#calendar-table th:last-child,
 #calendar-table tr td:last-child a {
-  color: var(--sub-color-blue);
+  color: blue;
+}
+#calendar-table td a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+#calendar-table tr td:first-child.select a,
+#calendar-table tr td:last-child.select a {
+  color: #fff;
+}
+#calendar-table td.select a {
+  color: #fff;
+  background-color: var(--sub-color-blue);
+  border-radius: 50%;
 }
 
+
 /* Reservation - Item2 */
+.reservation-item  .desc {
+  padding: 2rem;
+  align-items: center;
+  gap: 0.5rem;
+}
 .item2 .reservation-item-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#select-event {
+.reservation-item-content.select-box, 
+.reservation-item-content.select-box2 {
+  display: none;
+}
+#select-event,
+.select-event {
   height: 4rem;
-  width: 25rem;
+  width: 100%;
   border-radius: 5px;
   cursor: pointer;
   padding-left: 1rem;
@@ -160,6 +265,7 @@
 .reservation-item-content i {
   padding: 0 1rem;
 }
+
 /* Reservation - Item3 */
 #select-time {
   height: 4rem;
@@ -169,6 +275,69 @@
   padding-left: 1rem;
 }
 
+/* Reservation - add-Item 표 갯수선택박스 */
+.add-item .reservation-item-content .reservation-ticket {
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+}
+.add-item .reservation-item-content .number-ticket {
+  padding: 1.5rem;
+  display:  flex;
+  justify-content: space-between;
+  font-size: 1.8rem;
+}
+.add-item .reservation-item-content .number-ticket:first-child {
+  border-bottom: 1px solid #ddd;
+}
+.number-ticket .price-wrap .public-price,
+.number-ticket .price-wrap .discount-price {
+  font-weight: bold;
+  color: var(--sub-color-blue);
+}
+.number-ticket .price-wrap .number-box {
+  border: 1px solid var(--sub-color-blue);
+  border-radius: 0.5rem;
+  margin-left: 1rem;
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.number-ticket .price-wrap .number-box button,
+.number-ticket .price-wrap .number-box .count {
+  display: inline-block;
+  border:  none;
+  background: none;
+  width: 3rem;
+  height: 100%;
+  text-align: center;
+} 
+.number-ticket .price-wrap .number-box button {
+  cursor: pointer;
+}
+
+.number-ticket .price-wrap .number-box .count {
+  border-left: 1px solid var(--sub-color-blue);
+  border-right: 1px solid var(--sub-color-blue);
+}
+.add-item .reservation-item-content .reservation-info {
+  margin-right: 0;
+  margin-left: 0;
+  font-size: 1.4rem;
+  color: #bbb;
+}
+.add-item .reservation-item-content .reservation-info li {
+  margin-bottom: 1rem;
+}
+.reservation-total-price {
+  height: 6rem;
+  background-color: var(--sub-color-blue);
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /* Reservation - Item4 */
 .reservation-info {
   margin: 2rem;
@@ -293,16 +462,8 @@
 .item7 .reservation-item-content {
   margin: 1rem 2rem;
 }
-.item7 .reservation-item-content ul {
+.item7 .reservation-item-content p {
   margin: 1rem;
-}
-.item7 .reservation-item-content li {
-  font-size: var(--font-color-subDesc);
-  line-height: 3rem;
-}
-.item7 .reservation-item-content li::before {
-  content: "-";
-  padding-right: 1rem;
 }
 
 /* Reservation - Item8 */
@@ -327,21 +488,24 @@
 /* Reservation - Button */
 #reservation-button-submit {
   width: 100%;
-  height: 7rem;
+  height: 9rem;
   margin: 0 auto;
   background-color: var(--sub-color-blue);
-  border: 1px solid var(--sub-color-blue);
+  border: none;
   border-radius: 5rem;
   color: #fff;
   font-size: 2.4rem;
   transition: 0.3s;
 }
-#reservation-button-submit:hover {
+#reservation-button-submit:disabled {
+  background-color: #ddd;
+}
+/* #reservation-button-submit:hover {
   background-color: #fff;
   color: var(--sub-color-blue);
   cursor: pointer;
   border: 1px solid var(--sub-color-blue);
-}
+} */
 
 /* Media Query - Tablet Size */
 @media all and (max-width: 1024px) {
@@ -361,12 +525,6 @@
   .reservation-item-flex2 {
     width: 100%;
   }
-  #select-event {
-    width: 100%;
-  }
-  .reservation-info input, .phone {
-    flex: 7;
-  }
 }
 
 /* Media Query - Mobile Size */
@@ -380,12 +538,20 @@
     flex-flow: column-reverse;
     gap: 2rem;
   }
+  #calendar-table td a  {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
   .item2 .reservation-item-content {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
   }
-
+  /* #select-event,
+  .select-event {
+    width: 100%;
+  } */
   .item2 .reservation-item-content i {
     transform: rotate(90deg);
   }
@@ -411,43 +577,46 @@
   }
 }
 
+/* ########################################################################################## */
+
 
 /* ### Reservation-confirm Page ### */
+.height_100vh {
+  height: 100vh;
+}
 .reservation-confirm {
   padding-top: 10rem;
 }
 .reservation-confirm-bookbtn {
   height: 10rem;
 }
-.reservation-confirm-bookbtn a {
+.reservation-confirm-bookbtn button {
   float: right;
   width: 15rem;
   height: 5rem;
-  line-height: 5rem;
   margin: 2rem 0;
 
   background-color: var(--sub-color-blue);
   color: #fff;
-  border: 1px solid var(--sub-color-blue);
+  border: none;
   border-radius: 50px;
 
-  text-align: center;
   font-size: 2rem;
-  font-weight: 300;
   cursor: pointer;
   transition: 0.3s;
 }
-.reservation-confirm-bookbtn a i {
+.reservation-confirm-bookbtn button i {
   font-size: 2rem;
   padding-right: 0.2rem;
 }
-.reservation-confirm-bookbtn a:hover {
+.reservation-confirm-bookbtn button:hover {
   background-color: #fff;
   color: var(--sub-color-blue);
   cursor: pointer;
   border: 1px solid var(--sub-color-blue);
 }
 .reservation-confirm-main {
+  max-width: 800px;
   margin: 0px auto;
 }
 .reservation-confirm-topnav {
@@ -459,21 +628,20 @@
 label[for=confirm-mobile],
 label[for=confirm-email] {
   display: inline-block;
-  width: 30%;
+  width: 49%;
   height: 6rem;
   line-height: 6rem;
 
   background-color: #fff;
   color: #b9b9b9;
   font-size: 20rem;
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.4rem;
   cursor: pointer;
 }
 label[for=confirm-mobile] {
   border-radius: 50px 0 0 50px;
-  margin-left: 20%;
 }
 label[for=confirm-email] {
   border-radius: 0 50px 50px 0;
@@ -495,7 +663,7 @@ label[for=confirm-email] {
 }
 .confirm-mobile-form input,
 .confirm-email-form input {
-  width: 60%;
+  width: 100%;
   height: 4rem;
   margin-bottom: 1rem;
   padding-left: 2rem;
@@ -516,11 +684,10 @@ label[for=confirm-email] {
   color: #b9b9b9;
 }
 .reservation-confirm-topnav input[type=submit] {
-  width: 60%;
+  width: 100%;
   height: 5rem;
   margin: 0 auto;
   margin-bottom: 2rem;
-  padding: 0;
 
   background-color: var(--sub-color-blue);
   border: none;
@@ -545,10 +712,6 @@ label[for=confirm-email] {
   color: var(--sub-color-blue);
   font-weight: 600;
 }
-.confirm-mobile-form a:hover,
-.confirm-email-form a:hover {
-  text-decoration: underline;
-}
 #confirm-mobile:checked + label[for=confirm-mobile] {
   background-color: var(--sub-color-blue);
   color: #fff;
@@ -567,12 +730,8 @@ label[for=confirm-email] {
   padding: 5rem;
 }
 .confirm-info li {
+  margin: 1rem 0;
   font-size: var(--font-color-subDesc);
-  line-height: 3rem;
-}
-.confirm-info li::before {
-  content: "-";
-  padding-right: 1rem;
 }
 
 /* Media Query - Tablet Size */
@@ -580,29 +739,16 @@ label[for=confirm-email] {
   html {
     font-size: 55%;
   }
-  .reservation-confirm {
-    max-width: 80vw;
+  .reservation-inner {
+    max-width: 50vw;
     padding: 0;
     margin: 0px auto;
   }
   .reservation-confirm {
     padding-top: 10rem;
   }
-  label[for=confirm-mobile],
-  label[for=confirm-email] {
-    font-size: 1.8rem;
-    font-weight: 400;
-  }
   .confirm-booking-content {
     max-width: cal(80vw - 20rem);
-  }
-  #confirm-mobile-tel,
-  #confirm-mobile-password {
-    width: 80%;
-  }
-  #confirm-email-tel,
-  #confirm-email-password {
-    width: 80%;
   }
 }
 
@@ -611,17 +757,13 @@ label[for=confirm-email] {
   html {
     font-size: 55%;
   }
-  .reservation-confirm {
+  .reservation-inner {
     padding: 0;
   }
   label[for=confirm-mobile],
   label[for=confirm-email] {
-    width: 40%;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 400;
-  }
-  label[for=confirm-mobile] {
-    margin-left: 10%;
   }
   .confirm-mobile-form,
   .confirm-email-form {
@@ -645,27 +787,35 @@ label[for=confirm-email] {
 .reservation-confirm-topnav {
   position: relative;
 }
+.confirm-booking-content,
+.confirm-cancel-content {
+  left: 50%;
+  transform: translateX(-50%);
+
+  position: absolute;
+  max-width: 80vw;
+  min-width: 1000px;
+}
 #confirm-booking, #confirm-cancel {
   display: none;
 }
 label[for=confirm-booking],
 label[for=confirm-cancel] {
   display: inline-block;
-  width: 30%;
-  height: 6rem;
-  line-height: 6rem;
+  width: 49%;
+  height: 8rem;
+  line-height: 8rem;
 
   background-color: #fff;
   color: #b9b9b9;
-  font-size: 2rem;
-  font-weight: 400;
+  font-size: 20rem;
+  font-weight: 600;
   text-align: center;
   font-size: 2.4rem;
   cursor: pointer;
 }
 label[for=confirm-booking] {
   border-radius: 50px 0 0 50px;
-  margin-left: 20%;
 }
 label[for=confirm-cancel] {
   border-radius: 0 50px 50px 0;
@@ -745,9 +895,7 @@ label[for=confirm-cancel] {
 #btn-reservation-cancel {
   width: 20rem;
   height: 5rem;
-  line-height: 5rem;
   margin-top: 3rem;
-  text-align: center;
   background-color: var(--sub-color-blue);
   border: none;
   border-radius: 5rem;
@@ -764,244 +912,51 @@ label[for=confirm-cancel] {
 
 /* Media Query - Tablet Size */
 @media all and (max-width: 1024px) {
-  .reservation-confirm-info {
+  .reservation-inner {
     max-width: 80vw;
-    padding: 10rem 0 5rem 0;
+    padding: 0;
     margin: 0px auto;
+  }
+  .reservation-confirm {
+    padding-top: 10rem;
   }
   .confirm-booking {
     width: 80vw;
     padding: 2rem;
   }
-  .confirm-booking:last-child {
-    margin-bottom: 0;
-  }
-  label[for=confirm-booking],
-  label[for=confirm-cancel] {
-    font-size: 1.8rem;
-    font-weight: 400;
-  }
   .confirm-booking-content, .confirm-cancel-content {
     min-width: auto;
   }
-  .confirm-booking-inner {
-    flex-direction: column;
-  }
-  .confirm-item > div {
-    padding-bottom: 1rem;
-    height: auto;
-    line-height: auto;
-  }
-
-  #confirm-item-title {
-    height: auto;
-    line-height: auto;
-    font-size: 2.2rem;
-  }
   .confirm-item div span {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
   
 }
 
 /* Media Query - Mobile Size */
 @media all and (max-width: 768px) {
+  label[for=confirm-booking],
+  label[for=confirm-cancel] {
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
   .confirm-info {
     padding: 2rem;
   }
   .confirm-booking {
     width: 80vw;
-    padding: 4rem;
+    
   }
   .confirm-booking-desc p {
-    font-size: 2.2rem;
-  }
-  .confirm-item > div {
-    flex-direction: column;
-  }
-  .confirm-item > div > span:first-child {
-    font-weight: 600;
+    font-size: 2rem;
   }
   .confirm-booking-inner {
     flex-direction: column;
   }
-}
-
-/* ### Reservation-cancel Page ### */
-#reservation-content.modal  {
-  width: 100%;
-  background-color: #fff;
-}
-.modal .reservation-inner {
-  padding-bottom: 2rem;
-}
-.modal .reservation-inner-heading {
-  justify-content: center;
-  padding-top: 1rem;
-  font-size: var(--font-size-subTitle);
-}
-.modal .reservation-item {
-  border: 1px solid #eee;
-  border-radius: 10px;
-}
-.cancel-amount li {
-  padding: 1rem 1rem;
-}
-.cancel-amount input[type=checkbox] {
-  display: none;
-}
-.cancel-amount label:hover {
-  cursor: pointer;
-}
-.cancel-amount label::before {
-  content: "\F26B";
-  font-family: bootstrap-icons;
-  color: #b9b9b9;
-  display: inline-block;
-  transform: translateY(3px);
-  padding-right: 1rem;
-}
-.cancel-amount input:checked + label::before {
-  content: "\F26A";
-  font-family: bootstrap-icons;
-  color: var(--sub-color-blue);
-}
-.cancel-amount li > span {
-  float: right;
-}
-.cancel-amount li > span:last-child {
-  font-weight: 600;
-}
-.cancel-price {
-  width: 100%;
-  padding: 0 2rem;
-}
-.cancel-price li {
-  padding: 1rem 0;
-}
-.cancel-price li > span:last-child {
-  float: right;
-  font-weight: 600;
-}
-.cancel-price li:last-child span:last-child {
-  color: crimson;
-}
-.modal .item6 label p {
-  font-size: var(--font-size-mainText);
-  font-weight: 400;
-  color: var(--font-color-subDesc);
-}
-.modal .item6 input[type=checkbox] {
-  display: none;
-}
-.modal .item6 label:hover {
-  cursor: pointer;
-}
-.modal .item6 label::before {
-  content: "\F26B";
-  font-family: bootstrap-icons;
-  font-size: 2rem;
-  color: #b9b9b9;
-  display: inline-block;
-  transform: translateY(3px);
-  padding-right: 0.5rem;
-}
-.modal .item6 input:checked + label::before {
-  content: "\F26A";
-  font-family: bootstrap-icons;
-  color: var(--sub-color-blue);
-}
-.modal .item6 table tr:first-child {
-  background-color: var(--sub-color-blue);
-  color: #fff;
-}
-.modal .item6 td:first-child {
-  border-radius: 1rem 0 0 0;
-}
-.modal .item6 td:last-child {
-  border-radius: 0 1rem 0 0;
-}
-.cancel-booking-buttons {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-.cancel-booking-buttons a {
-  width: 200px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  background-color: var(--sub-color-blue);
-  border: 1px solid var(--sub-color-blue);
-  border-radius: 5rem;
-  color: #fff;
-  font-size: 2rem;
-  transition: 0.3s;
-}
-.cancel-booking-buttons a:hover {
-  background-color: #fff;
-  color: var(--sub-color-blue);
-  border: 1px solid var(--sub-color-blue);
-  cursor: pointer;
-}
-
-/* Featherlight */
-.featherlight .featherlight-content {
-  width: 80%;
-  max-width: 1200px;
-  height: 66vh;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-.featherlight .featherlight-inner {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.featherlight .featherlight-close-icon {
-  display: none;
-}
-
-@media all and (max-width: 1280px) {
-  .featherlight .featherlight-content {
-    height: 75vh;
-    max-height: 75vh !important;
+  .confirm-item > div {
+    flex-direction: column;
+    padding-bottom: 1rem;
+    height: auto;
+    line-height: auto;
   }
-}
-
-/* ### Reservation-reset-password Page ### */
-.reset-password .reservation-item-content {
-  margin: 1rem 2rem;
-}
-.reset-password .reservation-item-content ul {
-  margin: 1rem;
-}
-.reset-password .reservation-item-content li {
-  font-size: var(--font-color-subDesc);
-  line-height: 3rem;
-}
-.reset-password .reservation-item-content li::before {
-  content: "-";
-  padding-right: 1rem;
-}
-#btn-close-modal {
-  background-color: var(--bg-color-gray);
-  border: 1px solid var(--bg-color-gray);
-  color: #333;
-}
-#btn-close-modal:hover {
-  background-color: #fff;
-  color: #333;
-  cursor: pointer;
-  border: 1px solid #333;
-}
-
-/* Reservation-reset-password Featherlight */
-.reset-password .featherlight .featherlight-content {
-  max-width: 500px;
-  width: 500px;
 }
