@@ -3,6 +3,7 @@ import emotion2 from "../img/emotion2.png";
 import emotion3 from "../img/emotion3.png";
 import emotion4 from "../img/emotion4.png";
 import emotion5 from "../img/emotion5.png";
+//해당 경로를 컴포넌트로 저장 
 
 export const getEmotionImgById = (emotionId: any) => {
   const targetEmotionId = String(emotionId);
@@ -37,4 +38,41 @@ export const getFormattedDate = (targetDate) => {
   }
 
   return `${year}-${month}-${date}`
+};
+
+
+export const emotionList = [
+  {
+    id: 1,
+    name: '완전 좋음',
+    img: getEmotionImgById(1)
+  },
+  {
+    id: 2,
+    name: '좋음',
+    img: getEmotionImgById(2)
+  },
+  {
+    id: 3,
+    name: '그럭저럭',
+    img: getEmotionImgById(3)
+  },
+  {
+    id: 4,
+    name: '나쁨',
+    img: getEmotionImgById(4)
+  },
+  {
+    id: 5,
+    name: '끔찍함',
+    img: getEmotionImgById(5)
+  },
+]
+
+
+export const getMonthRangeByDate = (date) => {
+  const beginTimeStamp = new Date(date.getFullYear(),date.getMonth(), 1).getTime(); // 해당 월의 첫번째 날 첫시간
+  const endTimeStamp = new Date(date.getFullYear(),date.getMonth() + 1, 0, 23, 59, 59).getTime() // 해당 월의 마지막날 마지막 시간 
+
+  return {beginTimeStamp, endTimeStamp}
 }

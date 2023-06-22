@@ -10,7 +10,7 @@
   border-radius: 5px;
   background-color: #ececec;
   padding: 20px;
-  font-style: 20px ;
+  font-size: 20px ;
   font-family: "Nanum Pen script";
 }
 .Editor input {
@@ -27,4 +27,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.Editor .emotion_list_wrapper {
+  display: flex;
+  justify-content: space-around;
+  gap: 2%;
 }
