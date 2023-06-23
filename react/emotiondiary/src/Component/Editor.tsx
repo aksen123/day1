@@ -27,7 +27,7 @@ const Editor = ({initData, onSubmit}: any) => {
     })
   };
   const handleSubmit = () => {
-    onSubmit()
+    onSubmit(state)
   }
   const handleOnGoBack = () => {
     navigate(-1)
@@ -74,7 +74,8 @@ const Editor = ({initData, onSubmit}: any) => {
         <h4>오늘의 일기</h4>
         <div className="input_wrapper">
           <textarea 
-          placeholder={initData.content}
+          placeholder={"오늘은 어땠나요?"}
+          value={state.content}
           onChange={handleChangeContent}
           />
         </div>

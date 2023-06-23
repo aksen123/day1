@@ -2,6 +2,7 @@ import "./DiaryList.css"
 import Button from "./Button"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import DiaryItem from "./DiaryItem"
 
 const sortOptionList = [
   {value: "latest", name: "최신순"},
@@ -10,11 +11,12 @@ const sortOptionList = [
 
 
 const DiaryList = ({data}) => {
-
+  //select 설정 ( 최신순 / 오래된순 )
   const [sortType, setSortType] = useState("latest");
   const onChangeSortType = (e: any) => {
     setSortType(e.target.value)
   }
+  // 일기 정렬
   const [sortedData, setSortedData] = useState([])
   useEffect(()=>{
     const compare = (a, b) => {
@@ -24,7 +26,9 @@ const DiaryList = ({data}) => {
         return Number(a.date) - Number(b.date)
       }
     }
-
+    const copyList = JSON.parse(JSON.stringify(data));
+    copyList.sort(compare);
+    setSortedData(copyList)
   },[data, sortType])
   const navigate = useNavigate();
   const onClickNew = () => {
@@ -45,6 +49,11 @@ const DiaryList = ({data}) => {
         <div className="right_col">
           <Button type={'positive'}  text={"새일기 쓰기"} onClick={onClickNew}/>
         </div>
+      </div>
+      <div className="list_wrapper">
+        {sortedData.map((it)=>(
+          <DiaryItem key={it.id} {...it}/>
+        ))}
       </div>
     </div>
   )
