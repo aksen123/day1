@@ -2,9 +2,9 @@ import {useParams, useSearchParams,useNavigate} from "react-router-dom"
 import useDiary from "../Hooks/useDiary";
 import Button from "../Component/Button";
 import Header from "../Component/Header";
-import { getFormattedDate } from "../Component/Util";
+import { getFormattedDate, setPageTitle } from "../Component/Util";
 import Viewer from "../Component/Viewer";
-
+import { useEffect } from "react";
 
 const Diary = () => {
   const {id} = useParams();
@@ -20,6 +20,10 @@ const Diary = () => {
   const goEdit = () => {
     navigate(`/edit/${id}`)
   }
+
+  useEffect(()=> {
+    setPageTitle(`${id}번 일기`)
+  },[])
 
   if(!data) { //데이터가 안불러졌을때 
   return <div>아직 일기를 불러오고 있습니다.</div>

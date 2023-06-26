@@ -2,8 +2,9 @@ import { useNavigate } from "react-router-dom"
 import Button from "../Component/Button"
 import Header from "../Component/Header"
 import Editor from "../Component/Editor"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { DiaryDispatchContext } from "../App"
+import { setPageTitle } from "../Component/Util"
 
 const New = () => {
   const {onCreate} = useContext(DiaryDispatchContext)
@@ -16,6 +17,9 @@ const New = () => {
     navigate("/", {replace: true})
     //{replace: true} >> 뒤로가기 못하게 해줌
   }
+  useEffect(()=> {
+    setPageTitle('새 일기 쓰기')
+  },[])
 
   return(
     <div>

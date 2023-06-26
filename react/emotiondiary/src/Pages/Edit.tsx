@@ -3,9 +3,9 @@ import useDiary from "../Hooks/useDiary";
 import Header from "../Component/Header";
 import Button from "../Component/Button";
 import { DiaryDispatchContext } from "../App";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Editor from "../Component/Editor";
-
+import { setPageTitle } from "../Component/Util";
 
 const Edit = () => {
   const {id} = useParams();
@@ -26,6 +26,9 @@ const Edit = () => {
       navigate("/", {replace : true})
     }
   }
+  useEffect(()=> {
+    setPageTitle(`${id}번 일기 수정하기`)
+  },[])
 
   if(!data) {
     return <div>일기를 불러오고 있습니다 ...</div>

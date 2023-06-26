@@ -4,7 +4,7 @@ import Header from "../Component/Header"
 import Editor from "../Component/Editor"
 import { useState, useContext, useEffect } from "react"
 import { DiaryStateContext } from "../App"
-import { getMonthRangeByDate } from "../Component/Util"
+import { getMonthRangeByDate, setPageTitle } from "../Component/Util"
 import DiaryList from "../Component/DiaryList"
 
 const Home = () => {
@@ -22,7 +22,11 @@ useEffect(()=>{
   } else {
     setFilteredData([])
   }
-},[data, pivotDate])
+},[data, pivotDate]);
+
+useEffect(()=> {
+  setPageTitle('나의 감정 일기장')
+},[])
 const onIncreaseMonth = () => {
   setPivotDate(new Date(pivotDate.getFullYear(),pivotDate.getMonth() + 1))
 }
