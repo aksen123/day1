@@ -1,45 +1,33 @@
-import React, { useEffect, useRef } from 'react';
-import { useState } from 'react';
-import './App.css';
-import Header from './Component/Header';
-import Body from './Component/Body';
-import Footer from './Component/Footer';
-import Viewer from './Component/Viewer';
-import Controller from './Component/Controller';
-import Even from './Component/Even';
-function App() {
-const [count, setCount] = useState(0);
-const [text, setText] = useState('');
-const handleChangeText = (e: any) => {
-  setText(e.target.value)
-}
-const didMountRef = useRef(false);
-useEffect(()=>{
-  if(!didMountRef.current) {
-    didMountRef.current = true;
-    return
-  } else {
-    console.log('컴포넌트 업데이트')
+import React from 'react'
+import { useState, useReducer } from 'react'
+
+const reducer  = (state, action) => {
+  switch(action.type) {
+    case "INCREASE" : 
+      return state + action.data;
+    case "DECREASE" : 
+      return state - action.data;
+    case "INIT" : 
+      return 0;
+    default :
+      return state
   }
-})
-const handleSetCount = (value) => {
-  setCount(count + value)
-}
-  return (
-    <div className="App">
-      <h1>Simple Counter</h1>
-      <section>
-        <input onChange={handleChangeText} value={text} type="text" />
-      </section>
-      <section>
-        <Viewer  count={count}/>
-        {count % 2 === 0 && <Even />}
-      </section>
-      <section>
-        <Controller handleSetCount={handleSetCount} />
-      </section>
-    </div>
-  );
 }
 
-export default App;
+const App = () => {
+  // const [count, setCount] = useState(0);
+  const [count, dispatch] = useReducer(reducer, 0)
+  return (
+    <div>
+      <h4>테스트</h4>
+      <div>
+        <h1>{count}</h1>
+        <button onClick={()=>dispatch({type: "INCREASE", data: 1})}>+</button>
+        <button onClick={()=>dispatch({type: "INIT"})}>0</button>
+        <button onClick={()=>dispatch({type: "DECREASE", data: 1})}>-</button>
+      </div>
+    </div>
+  )
+}
+
+export default App
