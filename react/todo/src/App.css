@@ -8,7 +8,9 @@
   pointer-events: none;
 
 
-
+  position: absolute;
+  top: 0;
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {
