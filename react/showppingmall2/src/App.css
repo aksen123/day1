@@ -1,0 +1,29 @@
+.App {
+
+}
+.logo  img {
+  cursor: pointer;
+}
+.nav-menu-wrap span a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.search-box input{
+  border: none;
+  background-color: inherit;
+  outline: none;
+  font-size: 1rem;
+  margin-left: 5px;
+}
+.wishList {
+  padding: 10px;
+  display: flex;
+  gap: 10px ;
+}
+.wishList svg {
+  cursor: pointer;
+}
+

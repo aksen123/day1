@@ -13,7 +13,8 @@ const ProductDetail = () => {
   //함수가 순서대로 실행 돼야해서 async와 await를 사용 json데이터가 있는 서버에서 정보를 받아온뒤
   //응답받은 JSON데이터를 js객체로 바꿔줌 
   const getProductDetail = async() => {
-    let url = `http://localhost:3004/products/${id}`
+    // let url = `http://localhost:3004/products/${id}`
+    let url = `https://my-json-server.typicode.com/aksen123/reactshowppingmall/products/${id}`
     let response = await fetch(url);
     let data = await response.json()
     // setLoading(false)
