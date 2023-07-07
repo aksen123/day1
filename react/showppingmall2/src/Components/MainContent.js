@@ -1,6 +1,7 @@
 import React from 'react'
 import { styled } from 'styled-components'
 import Button from './Button'
+import { useNavigate } from 'react-router-dom'
 const Container = styled.div`
   text-align: center;
   display: flex;
@@ -21,15 +22,16 @@ const Desc = styled.p`
   width : 50%;
   text-align: center;
 `
-const MainContent = ({ content, idx }) => {
+const MainContent = ({ content }) => {
+  const navigate = useNavigate()
   return (
     <Container className='main-content'>
       <img src={content.img} />
       <h1>{content.title}</h1>
       <Desc>{content.desc}</Desc>
       <Buttons>
-      {content.buttonVal.map((value) =>(
-        <Button label={value} />
+      {content.buttonVal.map((value, idx) =>(
+        <Button label={value} onClick={()=>navigate(`/detail/${content.id}`)}/>
       ))}
       </Buttons>
     </Container>

@@ -1,5 +1,5 @@
 .App {
-
+  
 }
 .logo  img {
   cursor: pointer;
@@ -10,13 +10,6 @@
   color: #000;
   font-size: 1rem;
   font-weight: bold;
-}
-.search-box input{
-  border: none;
-  background-color: inherit;
-  outline: none;
-  font-size: 1rem;
-  margin-left: 5px;
 }
 .wishList {
   padding: 10px;

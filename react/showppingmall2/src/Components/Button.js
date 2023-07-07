@@ -11,12 +11,17 @@ const Container = styled.button`
   cursor: pointer;
 
 `
+const LinkImg = styled.img`
+  cursor: pointer;
+`
 const Button = ({ label, onClick }) => {
-  return (
-    <Container onClick={onClick}>
-      {label}
-    </Container>
-  )
+  if(label !== ''){
+    return (
+      <Container onClick={onClick}>{label}</Container>
+    )
+  } else {
+    return (<LinkImg src='https://i.pinimg.com/originals/ed/eb/ff/edebffb9cb814a895fbee7b8814a0489.jpg' onClick={onClick}/>)
+  }
 }
 
 export default Button

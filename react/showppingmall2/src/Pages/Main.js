@@ -5,7 +5,8 @@ const Main = () => {
   const [contents, setContents] = useState([]);
   
   const getContent = async() => {
-    let url = `http://localhost:3004/MainItem`;
+    // let url = `http://localhost:3004/MainItem`;
+    let url = `https://my-json-server.typicode.com/aksen123/nike/MainItem`;
     let response = await fetch(url);
     let data = await response.json();
     setContents(data)
@@ -16,8 +17,8 @@ const Main = () => {
   },[])
   return (
     <div>
-      {contents.map((content, idx)=> (
-        <MainContent content={content} idx={idx}/>
+      {contents.map((content)=> (
+        <MainContent content={content}/>
       ))}
     </div>
   )
