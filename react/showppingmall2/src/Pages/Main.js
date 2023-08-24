@@ -6,7 +6,7 @@ const Main = () => {
   
   const getContent = async() => {
     // let url = `http://localhost:3004/MainItem`;
-    let url = `https://my-json-server.typicode.com/aksen123/nike`;
+    let url = `https://my-json-server.typicode.com/aksen123/nike/MainItem`;
     let response = await fetch(url);
     let data = await response.json();
     setContents(data)

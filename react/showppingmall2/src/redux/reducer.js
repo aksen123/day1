@@ -1,6 +1,6 @@
 import React from 'react'
 let data = {
-  loginId : null,
+  loginId : '',
   loginPw : '',
   loginCheck : false,
 

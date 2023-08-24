@@ -2,6 +2,7 @@ import React from 'react'
 import { styled } from 'styled-components'
 import Button from './Button'
 import { useNavigate } from 'react-router-dom'
+import PrivateRouter from './PrivateRouter'
 const Container = styled.div`
   text-align: center;
   display: flex;

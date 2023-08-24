@@ -18,8 +18,8 @@ function App() {
         <Route path='/' element={<Main />}/> 
         <Route path='/login' element={<Login />}/> 
         <Route path='/loginPw' element={<LoginPassword />} />
-        <Route path='/detail/:id' element={<Detail />} />
-        <Route path='/product/:id' element={<PrivateRouter/>}/>
+        {/* <Route path='/detail/:id' element={<Detail />} /> */}
+        <Route path='/detail/:id' element={<PrivateRouter/>}/>
       </Routes>
     </div>
   );
